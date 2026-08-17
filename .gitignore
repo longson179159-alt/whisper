@@ -1,0 +1,8 @@
+# Audio files (keep local; do not commit)
+*.mp3
+*.wav
+*.m4a
+*.flac
+*.aac
+*.ogg
+*.webm
