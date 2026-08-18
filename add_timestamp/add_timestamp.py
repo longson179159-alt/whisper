@@ -2,16 +2,15 @@ import json
 import sys
 import os
 
+# os.path.dirname
+os.path.abspath(__file__)
 
-PROJECT_ROOT = os.path.dirname(
-    os.path.dirname(
-        os.path.dirname(
-            os.path.dirname(
-                os.path.abspath(__file__)
-            )
-        )
-    )
-)  # Go up 4 directories from the current file.
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+CURRENT_FOLDER = 'listen_a_minute'
+CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 
 if PROJECT_ROOT not in sys.path:  # Check whether the project root is already in Python's import path.
     sys.path.insert(0, PROJECT_ROOT)  # Add the project root to the beginning of the import path.
@@ -161,19 +160,13 @@ def find_matching_file(folder, suffix):
 
 
 def process_raw_timestamp(folder):
-    folder_name = os.path.basename(folder)
-    txt_path = os.path.join(folder, f"{folder_name}.txt")
-    raw_timestamp_path = os.path.join(folder, f"raw_{folder_name}_timestamp.json")
-
-    if not os.path.exists(txt_path):
-        txt_path = find_matching_file(folder, ".txt")
-    if not os.path.exists(raw_timestamp_path):
-        raw_timestamp_path = find_matching_file(folder, "_timestamp.json")
-
+    txt_path = os.path.join(folder, "text.txt")
+    raw_timestamp_path = os.path.join(folder, "raw_timestamp.json")
+    
     if txt_path is None or raw_timestamp_path is None:
         raise FileNotFoundError(f"Missing txt or raw timestamp file in {folder}")
 
-    output_name = os.path.basename(raw_timestamp_path).removeprefix("raw_")
+    output_name = 'timestamp.json'
     output_path = os.path.join(folder, output_name)
 
     standard_timestamp = build_standard_timestamp(txt_path, raw_timestamp_path)
@@ -184,14 +177,11 @@ def process_raw_timestamp(folder):
 
 
 def main():
-    sample_dir = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)),
-    "sample"
-)
+    # sample_dir = CURRENT_FOLDER_PATH
     created_files = []
 
-    for folder in sorted(os.listdir(sample_dir)):
-        folder = os.path.join(sample_dir, folder)
+    for folder in sorted(os.listdir(CURRENT_FOLDER_PATH)):
+        folder = os.path.join(CURRENT_FOLDER_PATH, folder)
         if not os.path.isdir(folder):
             continue
         created_files.append(process_raw_timestamp(folder))

@@ -47,6 +47,24 @@ def get_lists_txt(txt_path):
     return list_ref, list_id
 
 
+def get_lists_from_text(text):
+    two_dimention_sentence_list = get_sentence_lists(text)
+    list_id = []
+    list_ref = []
+
+    count_sentence = 0
+    for p_idx, paragraph in enumerate(two_dimention_sentence_list):
+        for s_idx, sentence in enumerate(paragraph):
+            sentence_idx = count_sentence + s_idx
+            tokens = sentence.split()
+            for idx_in_s, word in enumerate(tokens):
+                list_id.append((word, p_idx, sentence_idx, idx_in_s))
+                list_ref.append(clean_word(word))
+        count_sentence += len(paragraph)
+
+    return list_ref, list_id
+
+
 def nw_ref_match_flags(
     ref: List[str], whisper: List[str]
 ) -> List[Tuple[str, int, Optional[int]]]:

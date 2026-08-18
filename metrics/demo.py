@@ -11,7 +11,7 @@ from jiwer import wer
 
 
 DEFAULT_INPUT_ROOT = Path(
-    r"C:\Users\PC\Desktop\whisper\en\listen_a_minute\whisper_output"
+    r"C:\Users\PC\Desktop\whisper\en\listen_a_minute"
 )
 
 
