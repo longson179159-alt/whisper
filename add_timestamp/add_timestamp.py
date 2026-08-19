@@ -9,7 +9,7 @@ os.path.abspath(__file__)
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-CURRENT_FOLDER = 'listen_a_minute'
+CURRENT_FOLDER = '6_minute_bbc/lessons/'  # Name of the folder containing the text and raw timestamp files.
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 
 if PROJECT_ROOT not in sys.path:  # Check whether the project root is already in Python's import path.
@@ -180,8 +180,8 @@ def main():
     # sample_dir = CURRENT_FOLDER_PATH
     created_files = []
 
-    for folder in sorted(os.listdir(CURRENT_FOLDER_PATH)):
-        folder = os.path.join(CURRENT_FOLDER_PATH, folder)
+    for folder_name in sorted(os.listdir(CURRENT_FOLDER_PATH)):
+        folder = os.path.join(CURRENT_FOLDER_PATH, folder_name)
         if not os.path.isdir(folder):
             continue
         created_files.append(process_raw_timestamp(folder))
