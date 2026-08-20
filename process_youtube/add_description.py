@@ -4,14 +4,19 @@ from ast import arg
 import os
 
 import json
-from urllib.parse import parse_qs, urlparse
+# from urllib.parse import parse_qs, urlparse
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-CURRENT_FOLDER = '6_minute_bbc/lessons'
-CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
+CURRENT_FOLDER = 'zoe_languages/lessons'
+CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 
+def get_youtube_url(youtube_id: str) -> str:
+    """Return the watch URL for an 11-character YouTube video ID."""
+    if not isinstance(youtube_id, str) or len(youtube_id) != 11:
+        raise ValueError("youtube_id must be an 11-character string")
 
+    return f"https://www.youtube.com/watch?v={youtube_id}"
 def main():
     # add level agument
     parser = argparse.ArgumentParser(description="Add description.json to each lesson folder.")
@@ -21,12 +26,12 @@ def main():
         default="b1",
         help="Level of the lesson (default: b1)",
     )
-    # is_youtube_video argument
-    parser.add_argument(
-        "--is_youtube_video",
-        action="store_true",
-        help="Indicates if the lesson is a YouTube video",
-    )
+    # # is_youtube_video argument
+    # parser.add_argument(
+    #     "--is_youtube_video",
+    #     action="store_true",
+    #     help="Indicates if the lesson is a YouTube video",
+    # )
 
     arg = parser.parse_args()
 
@@ -36,7 +41,7 @@ def main():
         if not os.path.isdir(folder_path):
             continue
 
-        has_sentence_timestamps = True
+        has_sentence_timestamps = False
 
         # caculate the audio duration
         audio_files = [f for f in os.listdir(folder_path) if f.lower().endswith(".mp3")]
@@ -52,19 +57,19 @@ def main():
             with open(os.path.join(folder_path, "description.json"), "r", encoding="utf-8") as file:
                 old_description = json.load(file)
 
-        youtube_id = None
-        if arg.is_youtube_video:
-            url = old_description.get("url", "")
-            # extract youtube_id from url
-            youtube_id = parse_qs(urlparse(url).query).get("v", [None])[0]
+        # youtube_id = None
+        # if arg.is_youtube_video:
+        #     url = old_description.get("url", "")
+        #     # extract youtube_id from url
+        #     youtube_id = parse_qs(urlparse(url).query).get("v", [None])[0]
 
         description = {
             # round the audio duration to 2 decimal places
             "lesson_number": old_description.get("lesson_number") or idx + 1,
             "lesson_name": old_description.get("lesson_name") or folder_name,
             "level": old_description.get("level") or arg.level,
-            "youtube_id": old_description.get("youtube_id") or youtube_id,
-            "url": old_description.get("url", ""),
+            "youtube_id": old_description.get("youtube_id") ,
+            "url": old_description.get("url", "") or get_youtube_url(old_description.get("youtube_id")),
             "audio_start_time": old_description.get("audio_start_time", 0),
             "audio_duration": old_description.get("audio_duration", round(audio_duration, 2)),
             "has_sentence_timestamps": old_description.get("has_sentence_timestamps", has_sentence_timestamps),
@@ -80,4 +85,4 @@ if __name__ == "__main__":
     main()
 
 
-# python add_timestamp/add_description.py --level a1 --is_youtube_video
+# python process_youtube/add_description.py --level b1

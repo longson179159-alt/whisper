@@ -6,7 +6,7 @@ from helper import get_lists_from_text
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-CURRENT_FOLDER = 'listen_a_minute'
+CURRENT_FOLDER = '6_minute_bbc/lessons/'  # Name of the folder containing the text and raw timestamp files.
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 
 
@@ -59,10 +59,10 @@ def main():
         created_files.append(process_raw_text(folder))
 
     # Print the name of every file that was created.
-    for output_path in created_files:
+    # for output_path in created_files:
 
-        # Display only the filename, not the full path.
-        print(f"Created {os.path.basename(output_path)}")
+    #     # Display only the filename, not the full path.
+    #     print(f"Created {os.path.basename(output_path)}")
 
 if __name__ == "__main__":
     main()

@@ -187,7 +187,20 @@ def main():
         created_files.append(process_raw_timestamp(folder))
 
     for output_path in created_files:
-        print(f"Created {os.path.basename(output_path)}")
+        with open(output_path, "r", encoding="utf-8") as file:
+            timestamps = json.load(file)
+
+        null_timestamps = [
+            timestamp
+            for timestamp in timestamps
+            if timestamp["start"] is None or timestamp["end"] is None
+        ]
+
+        if null_timestamps:
+            lesson_name = os.path.basename(os.path.dirname(output_path))
+            print(f"\n{lesson_name}: {len(null_timestamps)} timestamp(s) with null values")
+            for timestamp in null_timestamps:
+                print(timestamp)
 
 
 if __name__ == "__main__":

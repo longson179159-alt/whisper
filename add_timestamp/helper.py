@@ -1,6 +1,7 @@
 import re
 import unicodedata
 from typing import List, Optional, Tuple
+from typing import List, Literal, Optional, Tuple
 
 
 def clean_word(word: str) -> str:
@@ -43,7 +44,7 @@ def get_lists_txt(txt_path):
                 list_ref.append(clean_word(word))
         count_sentence += len(paragraph)
 
-    print("total number of sentences", count_sentence)
+    # print("total number of sentences", count_sentence)
     return list_ref, list_id
 
 
@@ -158,16 +159,17 @@ def Get_timestamp(words_in_the_same_para):
     return timestamp_sentence_level
 
 
-def group_by_para_or_sentence(timestamp_word_level, group_type):
+def group_by_para_or_sentence(list_word_level : list[dict], group_type: Literal['p_idx', 's_idx']) -> list[list[dict]]:
     words_in_the_same_type = []
     current_object = []
     current_idx = 0
 
-    for word in timestamp_word_level:
+    for word in list_word_level:
         if word[group_type] == current_idx:
             current_object.append(word)
         else:
-            words_in_the_same_type.append(current_object)
+            if current_object:
+                words_in_the_same_type.append(current_object)
             current_idx = word[group_type]
             current_object = [word]
 
