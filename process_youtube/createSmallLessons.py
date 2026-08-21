@@ -13,7 +13,7 @@ PROJECT_ROOT = os.path.dirname(
 
 
 # C:\Users\PC\Desktop\whisper\youtube_data\
-CURRENT_FOLDER = "LEARN ENGLISH PODCAST 17 TIPS TO HELP YOU SPEAK FLUENT ENGLISH FAST"
+CURRENT_FOLDER = "I_can_do_id"
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)
 
 
@@ -22,7 +22,6 @@ with open(description_path, 'r', encoding='utf') as file1:
     description = json.load(file1)
 
 timestamp_path = os.path.join(CURRENT_FOLDER_PATH, 'timestamp.json') 
-
 with open(timestamp_path, 'r', encoding='utf-8') as file2:
     globalTimestamp = json.load(file2)
 
@@ -68,10 +67,18 @@ def download_thumbnail(CURRENT_FOLDER_PATH, youtube_id: str) -> None:
     with yt_dlp.YoutubeDL(options) as downloader:
         downloader.download([url])
 
-def to_seconds(value: str) -> float:
-    minutes, seconds = map(int, value.split(":"))
-    return minutes * 60 + seconds
+def to_seconds(value: str) -> int:
+    parts = [int(part) for part in value.split(":")]
 
+    if len(parts) == 2:  # MM:SS
+        minutes, seconds = parts
+        return minutes * 60 + seconds
+
+    if len(parts) == 3:  # HH:MM:SS
+        hours, minutes, seconds = parts
+        return hours * 3600 + minutes * 60 + seconds
+
+    raise ValueError(f"Invalid time format: {value}")
 
 # add endtime
 listLessonsAddEnd = []
