@@ -6,5 +6,11 @@
 *.aac
 *.ogg
 *.webm
+
+
+*.png
+*.jpg
+*.jpeg
+*.webp
 en/
 youtube_data/

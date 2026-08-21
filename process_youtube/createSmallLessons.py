@@ -76,7 +76,11 @@ def to_seconds(value: str) -> float:
 # add endtime
 listLessonsAddEnd = []
 for idx, lesson in enumerate(listLessons):
-    end = globalTimestamp[-1]["end"]
+    end = (
+    to_seconds(listLessons[idx + 1]["startTime"])
+    if idx < len(listLessons) - 1
+    else globalTimestamp[-1]["end"]
+)
 
     listLessonsAddEnd.append({
         'start':to_seconds(lesson["startTime"]),
@@ -113,11 +117,15 @@ def main():
         currentStart = lesson['start']
         currentEnd = lesson['end']
         lessonFolderName = lesson["lessonFolderName"]
-        lessonFolderPath = os.path.join(CURRENT_FOLDER_PATH, lessonFolderName)
+        lessonFolderPath = os.path.join(CURRENT_FOLDER_PATH, 'lessons', lessonFolderName)
         os.makedirs(lessonFolderPath, exist_ok = True)
 
         subTimestamp = [
-            ts
+            {
+                **ts,
+                "start": ts["start"] - currentStart,
+                "end": ts["end"] - currentStart
+            }
             for ts in globalTimestamp
             if ts["start"] >= currentStart and ts["end"] <= currentEnd
         ]
