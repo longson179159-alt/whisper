@@ -95,7 +95,7 @@ python add_timestamp/add_lesson.py
 
 python add_timestamp/timestamp.py 
 
-#### Add course description and caculate the course audio duration
+#### Add course description and calculate the course audio duration
 
 python process_youtube/add_description.py --level b1
 
@@ -103,7 +103,7 @@ then manually refine course desciption
 
 ## YouTube video (Zoe's Language)
 
-### Get timestam.json and lesson.json from the extention
+### Get timestamp.json and lesson.json from the extension
 
 
 ![YouTube create](youtube%20create.png)
@@ -114,7 +114,7 @@ python process_youtube/download_thumbnail.py
 python process_youtube/download_audio.py
 python process_youtube/add_description.py --level b1
 
-#### Add course description and caculate the course audio duration
+#### Add course description and calculate the course audio duration
 
 python process_youtube/add_description.py --level b1
 
@@ -157,18 +157,18 @@ Each item contains:
 ```
 
 ###  Create sub lessons (apply for large audios)
-ptyhon process_youtube\createSmallLessons.py
+python process_youtube\createSmallLessons.py
 
 this create audios, descriptions, timestamp.json, and text.txt
 
 ### Add lesson.json for each sublesson
 python add_timestamp/add_lesson.py 
 
-#### Add course description and caculate the course audio duration
+#### Add course description and calculate the course audio duration
 
 python process_youtube/add_description.py --level b1
 
-then manually refine course desciption
+then manually refine course description
 
 
 
