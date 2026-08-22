@@ -1,5 +1,12 @@
 # !pip install -q jiwer
-"""Calculate Whisper word-error rate (WER) for every lesson folder."""
+"""
+It measures Whisper transcription accuracy.
+For every lesson folder, it compares:
+- text.txt — correct/reference transcript
+- raw_text.txt — Whisper’s transcript
+It prints the Word Error Rate (WER) for each folder and one overall WER score.
+Lower is better; 0% means an exact match.
+"""
 
 from __future__ import annotations
 

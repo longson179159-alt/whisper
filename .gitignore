@@ -14,3 +14,10 @@
 *.webp
 en/
 youtube_data/
+
+
+# Keep images in schema/
+!schema/**/*.png
+!schema/**/*.jpg
+!schema/**/*.jpeg
+!schema/**/*.webp
