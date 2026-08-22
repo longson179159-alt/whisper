@@ -109,7 +109,7 @@ Use this workflow for sources such as Listen A Minute and BBC 6 Minute English.
 5. Create the course description and calculate total course audio duration.
 
    ```powershell
-   python process_youtube\add_description.py --level b1
+   python add_timestamp/add_audio_durations.py
    ```
 
 6. Manually refine the course description.
@@ -129,6 +129,10 @@ Use this workflow for sources such as Listen A Minute and BBC 6 Minute English.
    ```
 
 3. Review and refine the generated course description.
+
+```
+   python add_timestamp/add_audio_durations.py
+```
 
 ### 3. Audio Is Available but Text Is Missing
 
@@ -185,5 +189,5 @@ Use this workflow for a long audio source such as `I_can_do_it`.
 5. Create and refine the course description.
 
    ```powershell
-   python process_youtube\add_description.py --level b1
+   python add_timestamp/add_audio_durations.py
    ```

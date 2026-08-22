@@ -62,6 +62,9 @@ def add_course_infos(folder_course_path):
         with open(description_path, "w", encoding="utf-8") as file:
             json.dump(course_description, file, ensure_ascii=False, indent=2)
 
+    # print audio duration for verification
+    print(f"Audio duration for course '{os.path.basename(folder_course_path)}': {audio_course_duration} seconds")
+
 
 
 def main():
@@ -80,3 +83,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# python add_timestamp/add_audio_durations.py
