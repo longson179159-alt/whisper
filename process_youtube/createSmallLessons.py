@@ -13,11 +13,15 @@ PROJECT_ROOT = os.path.dirname(
 
 
 # C:\Users\PC\Desktop\whisper\youtube_data\
-CURRENT_FOLDER = "I_can_do_id"
+# C:\Users\PC\Desktop\whisper\youtube_data\little_prince
+CURRENT_FOLDER = "little_prince"
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)
 
 
 description_path = os.path.join(CURRENT_FOLDER_PATH, 'description.json')
+if not os.path.exists(description_path):
+    with open(description_path, 'w', encoding='utf-8') as file:
+        json.dump({}, file)
 with open(description_path, 'r', encoding='utf') as file1:
     description = json.load(file1)
 
@@ -96,16 +100,16 @@ for idx, lesson in enumerate(listLessons):
     })
 
 def main():
+    # APPLY FOR YOUTUBE VIDEO ONLY
+    # if not os.path.exists(os.path.join(CURRENT_FOLDER_PATH, 'audio.mp3')):
+    #     download_audio(CURRENT_FOLDER_PATH, description['youtube_id'])
+    # else:
+    #     print(f"audio.mp3 already exists in {CURRENT_FOLDER_PATH}, skipping download.")
 
-    if not os.path.exists(os.path.join(CURRENT_FOLDER_PATH, 'audio.mp3')):
-        download_audio(CURRENT_FOLDER_PATH, description['youtube_id'])
-    else:
-        print(f"audio.mp3 already exists in {CURRENT_FOLDER_PATH}, skipping download.")
-
-    if not os.path.exists(os.path.join(CURRENT_FOLDER_PATH, 'thumbnail.jpg')):
-        download_thumbnail(CURRENT_FOLDER_PATH, description['youtube_id'])
-    else:
-        print(f"thumbnail.jpg already exists in {CURRENT_FOLDER_PATH}, skipping download.")
+    # if not os.path.exists(os.path.join(CURRENT_FOLDER_PATH, 'thumbnail.jpg')):
+    #     download_thumbnail(CURRENT_FOLDER_PATH, description['youtube_id'])
+    # else:
+    #     print(f"thumbnail.jpg already exists in {CURRENT_FOLDER_PATH}, skipping download.")
 
     parser = argparse.ArgumentParser(description="Add description.json to each lesson folder.")
     parser.add_argument(
@@ -152,7 +156,7 @@ def main():
             'lesson_name': lessonFolderName,
             "level": arg.level,
             "youtube_id": None,
-            "url": description['youtube_url'],
+            "url": description.get('youtube_url', None),
 
             "audio_start_time": 0,
             "audio_duration": currentEnd - currentStart, 

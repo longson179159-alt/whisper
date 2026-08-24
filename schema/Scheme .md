@@ -148,7 +148,7 @@ Use this workflow for a long audio source such as `I_can_do_it`.
    `-- text.txt
    ```
 
-2. Add lesson timestamps to split the long course audio into individual lessons.
+2. Add lesson timestamps (list_lessons.json) to split the long course audio into individual lessons.
 
    Each item in the timestamp JSON contains:
 

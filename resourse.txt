@@ -1,1 +1,10 @@
-i can do it: https://www.youtube.com/watch?v=y62qewQ5qsQ
+    {
+        "start": 161.40000000000055,
+        "end": 165.15999999999985,
+        "text": "questions, you will know who he is."
+    },
+    {
+        "start": 165.15999999999985,
+        "end": 168.76000000000022,
+        "text": "If this should happen, please comfort me."
+    },

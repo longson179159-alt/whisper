@@ -18,7 +18,7 @@ from jiwer import wer
 
 
 DEFAULT_INPUT_ROOT = Path(
-    r"C:\Users\PC\Desktop\whisper\youtube_data\I_can_do_id\lessons"
+    r"C:\Users\PC\Desktop\whisper\youtube_data\little_prince\lessons"
 )
 
 
