@@ -24,6 +24,20 @@ from helper import clean_word, get_lists_txt, nw_ref_match_flags
 
 DEFAULT_INPUT_ROOT = PROJECT_ROOT / "youtube_data" / "little_prince" / "lessons"
 DEFAULT_OUTPUT_NAME = "missing_text_report.json"
+SEVERITY_ORDER = {"severe": 0, "high": 1, "medium": 2, "low": 3, "matched": 4}
+
+
+def get_paragraph_severity(missing_words: int, missing_rate: float) -> str:
+    """Classify a paragraph using both missing-word count and rate."""
+    if missing_words >= 10 and missing_rate >= 0.50:
+        return "severe"
+    if missing_words >= 6 and missing_rate >= 0.35:
+        return "high"
+    if missing_words >= 3 and missing_rate >= 0.20:
+        return "medium"
+    if missing_words:
+        return "low"
+    return "matched"
 
 
 def get_whisper_words(raw_timestamp_path: Path) -> list[str]:
@@ -79,7 +93,13 @@ def build_lesson_report(lesson_folder: Path, low_confidence_threshold: float) ->
 
     sentence_reports: list[dict[str, Any]] = []
     paragraphs: dict[int, dict[str, Any]] = defaultdict(
-        lambda: {"total_words": 0, "matched_words": 0, "sentence_count": 0}
+        lambda: {
+            "total_words": 0,
+            "matched_words": 0,
+            "sentence_count": 0,
+            "flagged_sentence_count": 0,
+            "missing_sentence_count": 0,
+        }
     )
 
     for sentence in sentences.values():
@@ -108,6 +128,10 @@ def build_lesson_report(lesson_folder: Path, low_confidence_threshold: float) ->
         paragraph["total_words"] += total_words
         paragraph["matched_words"] += matched_words
         paragraph["sentence_count"] += 1
+        if status != "matched":
+            paragraph["flagged_sentence_count"] += 1
+        if status == "missing":
+            paragraph["missing_sentence_count"] += 1
 
     paragraph_reports: list[dict[str, Any]] = []
     for paragraph_index, paragraph in paragraphs.items():
@@ -116,27 +140,27 @@ def build_lesson_report(lesson_folder: Path, low_confidence_threshold: float) ->
             if paragraph["total_words"]
             else 0.0
         )
-        status = (
-            "missing"
-            if paragraph["matched_words"] == 0
-            else "low_confidence"
-            if match_rate < low_confidence_threshold
-            else "matched"
-        )
+        missing_words = paragraph["total_words"] - paragraph["matched_words"]
+        missing_rate = 1 - match_rate
+        severity = get_paragraph_severity(missing_words, missing_rate)
         paragraph_reports.append(
             {
                 "paragraph_index": paragraph_index,
                 "sentence_count": paragraph["sentence_count"],
+                "flagged_sentence_count": paragraph["flagged_sentence_count"],
+                "missing_sentence_count": paragraph["missing_sentence_count"],
                 "total_words": paragraph["total_words"],
                 "matched_words": paragraph["matched_words"],
+                "missing_words": missing_words,
                 "match_rate": round(match_rate, 4),
-                "status": status,
+                "missing_rate": round(missing_rate, 4),
+                "severity": severity,
             }
         )
 
     return {
         "lesson": lesson_folder.name,
-        "reference_word_count": len(list_ref),
+        "reference_word_count": sum(item["total_words"] for item in sentence_reports),
         "whisper_word_count": len(whisper_words),
         "sentences": sentence_reports,
         "paragraphs": paragraph_reports,
@@ -144,14 +168,40 @@ def build_lesson_report(lesson_folder: Path, low_confidence_threshold: float) ->
 
 
 def print_flags(lesson_report: dict[str, Any]) -> None:
-    flagged_sentences = [
-        item for item in lesson_report["sentences"] if item["status"] != "matched"
+    priority_paragraphs = [
+        item
+        for item in lesson_report["paragraphs"]
+        if item["severity"] in {"severe", "high"}
     ]
-    if not flagged_sentences:
-        print(f"{lesson_report['lesson']}: all sentences matched")
+    priority_paragraph_indexes = {
+        item["paragraph_index"] for item in priority_paragraphs
+    }
+    flagged_sentences = [
+        item
+        for item in lesson_report["sentences"]
+        if item["status"] != "matched"
+        and item["paragraph_index"] in priority_paragraph_indexes
+    ]
+    if not priority_paragraphs:
+        print(f"{lesson_report['lesson']}: no severe or high paragraphs")
         return
 
     print(f"\n{lesson_report['lesson']}")
+    for item in sorted(
+        priority_paragraphs,
+        key=lambda paragraph: (
+            SEVERITY_ORDER[paragraph["severity"]],
+            -paragraph["missing_words"],
+        ),
+    ):
+        print(
+            f"  {item['severity'].upper()} PARAGRAPH | paragraph "
+            f"{item['paragraph_index']} | Missing: "
+            f"{item['missing_words']}/{item['total_words']} words "
+            f"({item['missing_rate']:.0%}) | "
+            f"Affected sentences: {item['flagged_sentence_count']}"
+        )
+
     for item in flagged_sentences:
         print(
             f"  {item['status'].upper()} | paragraph {item['paragraph_index']}, "
@@ -204,6 +254,12 @@ def main() -> None:
     output = {
         "input_root": str(args.input_root),
         "low_confidence_threshold": args.low_confidence_threshold,
+        "paragraph_severity_rules": {
+            "severe": "at least 10 missing words and at least 50% missing",
+            "high": "at least 6 missing words and at least 35% missing",
+            "medium": "at least 3 missing words and at least 20% missing",
+            "low": "one or more missing words that do not meet a higher rule",
+        },
         "lessons": reports,
         "skipped": skipped,
     }
