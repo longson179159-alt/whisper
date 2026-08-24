@@ -142,7 +142,7 @@ def main():
         ]
                 
 
-        subTimestampPath = os.path.join(lessonFolderPath, 'timestamp.json')
+        subTimestampPath = os.path.join(lessonFolderPath, 'raw_timestamp.json')
         with open(subTimestampPath, 'w', encoding='utf-8') as file:
             json.dump(subTimestamp, file, ensure_ascii=False, indent=4)
 
