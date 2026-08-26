@@ -7,22 +7,22 @@ from urllib.request import Request, urlopen
 OUTPUT_PATH = Path(__file__).resolve().with_name("image.jpg")
 
 
-def get_video_id(youtube_url: str) -> str:
+def get_video_id(url: str) -> str:
     """Extract a video ID from a standard YouTube or youtu.be URL."""
-    parsed_url = urlparse(youtube_url)
+    parsed_url = urlparse(url)
     if parsed_url.netloc.lower().endswith("youtu.be"):
         video_id = parsed_url.path.strip("/").split("/")[0]
     else:
         video_id = parse_qs(parsed_url.query).get("v", [""])[0]
 
     if not video_id:
-        raise ValueError(f"Could not find a YouTube video ID in: {youtube_url}")
+        raise ValueError(f"Could not find a YouTube video ID in: {url}")
     return video_id
 
 
-def download_thumbnail(youtube_url: str, destination: Path) -> Path:
+def download_thumbnail(url: str, destination: Path) -> Path:
     """Download the best available official JPEG thumbnail for a YouTube video."""
-    video_id = get_video_id(youtube_url)
+    video_id = get_video_id(url)
     destination = Path(destination)
     destination.parent.mkdir(parents=True, exist_ok=True)
     headers = {"User-Agent": "Mozilla/5.0 (thumbnail downloader)"}

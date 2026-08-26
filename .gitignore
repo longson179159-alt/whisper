@@ -21,3 +21,6 @@ youtube_data/
 !schema/**/*.jpg
 !schema/**/*.jpeg
 !schema/**/*.webp
+
+# ignore zip
+*.zip

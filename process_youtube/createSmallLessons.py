@@ -156,7 +156,7 @@ def main():
             'lesson_name': lessonFolderName,
             "level": arg.level,
             "youtube_id": None,
-            "url": description.get('youtube_url', None),
+            "url": description.get('url', None),
 
             "audio_start_time": 0,
             "audio_duration": currentEnd - currentStart, 

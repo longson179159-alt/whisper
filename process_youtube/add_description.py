@@ -11,7 +11,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CURRENT_FOLDER = 'zoe_languages/lessons'
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 
-def get_youtube_url(youtube_id: str) -> str:
+def get_url(youtube_id: str) -> str:
     """Return the watch URL for an 11-character YouTube video ID."""
     if not isinstance(youtube_id, str) or len(youtube_id) != 11:
         raise ValueError("youtube_id must be an 11-character string")
@@ -69,7 +69,7 @@ def main():
             "lesson_name": old_description.get("lesson_name") or folder_name,
             "level": old_description.get("level") or arg.level,
             "youtube_id": old_description.get("youtube_id") ,
-            "url": old_description.get("url", "") or get_youtube_url(old_description.get("youtube_id")),
+            "url": old_description.get("url", "") or get_url(old_description.get("youtube_id")),
             "audio_start_time": old_description.get("audio_start_time", 0),
             "audio_duration": old_description.get("audio_duration", round(audio_duration, 2)),
             "has_sentence_timestamps": old_description.get("has_sentence_timestamps", has_sentence_timestamps),

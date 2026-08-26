@@ -48,7 +48,7 @@ def add_course_infos(folder_course_path):
             "has_lesson_images": True,
             "level": None,
             "youtube_id": None,
-            "youtube_url": None
+            "url": None
             }
         os.makedirs(os.path.dirname(description_path), exist_ok=True)
         with open(description_path, 'w', encoding='utf-8') as file:

@@ -29,6 +29,6 @@ def download_audio( url: str) -> None:
 
 
 if __name__ == "__main__":
-    youtube_url = "https://www.youtube.com/watch?v=y62qewQ5qsQ"
-    download_audio(youtube_url)
+    url = "https://www.youtube.com/watch?v=y62qewQ5qsQ"
+    download_audio(url)
     print(f"Downloaded audio to {OUTPUT_DIR / 'audio.mp3'}")

@@ -46,7 +46,7 @@ zoe_languages
   "has_lesson_images": true,
   "level": "b1",
   "youtube_id": "PLAg1DP01xg5uh1XNnHo57BWXjKAbsFk5M",
-  "youtube_url": "https://www.youtube.com/watch?v=kUM7FBP6Lj4&list=PLAg1DP01xg5uh1XNnHo57BWXjKAbsFk5M"
+  "url": "https://www.youtube.com/watch?v=kUM7FBP6Lj4&list=PLAg1DP01xg5uh1XNnHo57BWXjKAbsFk5M"
 }
 ```
 
