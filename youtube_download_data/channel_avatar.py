@@ -3,7 +3,7 @@ import re
 import json
 import os
 
-channel_url = "https://www.youtube.com/@bbclearningenglish"
+channel_url = "https://www.youtube.com/@BuddhismInEnglish"
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 headers = {
@@ -26,7 +26,8 @@ if match:
     image = requests.get(avatar_url, headers=headers)
     image.raise_for_status()
 
-    avatar_path = OUTPUT_DIR / "avatar.jpg"
+    # avatar_path = OUTPUT_DIR / "avatar.jpg"
+    avatar_path = os.path.join(OUTPUT_DIR, "avatar.jpg")
     with open(avatar_path, "wb") as f:
         f.write(image.content)
 

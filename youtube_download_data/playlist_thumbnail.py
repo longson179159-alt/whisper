@@ -3,14 +3,14 @@ from pathlib import Path
 
 import yt_dlp
 
-playlist_url = "https://www.youtube.com/playlist?list=PLAg1DP01xg5uh1XNnHo57BWXjKAbsFk5M"
+playlist_url = "https://www.youtube.com/playlist?list=PLhfUa4jA4RkY8oa4_UY7rMdEkmA7Fj-F6"
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 ydl_opts = {
     "skip_download": True,
     "writethumbnail": True,
     "playlist_items": "0",
-    "outtmpl": str(OUTPUT_DIR / "playlist_thumbnail.%(ext)s"),
+    "outtmpl": os.path.join(OUTPUT_DIR, "image.%(ext)s"),
 }
 
 with yt_dlp.YoutubeDL(ydl_opts) as ydl:
