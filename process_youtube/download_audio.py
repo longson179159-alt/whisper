@@ -4,7 +4,7 @@ from pathlib import Path
 import yt_dlp
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-LESSONS_PATH = PROJECT_ROOT / "youtube_data" / "English A1"
+LESSONS_PATH = PROJECT_ROOT / "youtube_data" / "Buddhism"
 
 
 def download_audio(lesson_path: Path, youtube_id: str) -> None:

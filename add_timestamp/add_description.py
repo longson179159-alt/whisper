@@ -1,6 +1,6 @@
 
 import argparse
-from ast import arg
+# from ast import arg, parse
 import os
 
 import json
@@ -8,8 +8,8 @@ from urllib.parse import parse_qs, urlparse
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-CURRENT_FOLDER = '6_minute_bbc/lessons'
-CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
+CURRENT_FOLDER = 'Buddhism/lessons'
+CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 
 
 def main():
@@ -27,6 +27,13 @@ def main():
         action="store_true",
         help="Indicates if the lesson is a YouTube video",
     )
+    # optional argument to indicate if the lesson has sentence timestamps
+    parser.add_argument(
+        "--has_sentence_timestamps",
+        type=bool,
+        default=False,
+        help="Indicates if the lesson has sentence timestamps (default: False)",
+    )
 
     arg = parser.parse_args()
 
@@ -36,7 +43,7 @@ def main():
         if not os.path.isdir(folder_path):
             continue
 
-        has_sentence_timestamps = True
+        # has_sentence_timestamps = True
 
         # caculate the audio duration
         audio_files = [f for f in os.listdir(folder_path) if f.lower().endswith(".mp3")]
@@ -67,7 +74,7 @@ def main():
             "url": old_description.get("url", ""),
             "audio_start_time": old_description.get("audio_start_time", 0),
             "audio_duration": old_description.get("audio_duration", round(audio_duration, 2)),
-            "has_sentence_timestamps": old_description.get("has_sentence_timestamps", has_sentence_timestamps),
+            "has_sentence_timestamps": old_description.get("has_sentence_timestamps", arg.has_sentence_timestamps),
         }
         description_path = os.path.join(folder_path, "description.json")
 
@@ -80,4 +87,4 @@ if __name__ == "__main__":
     main()
 
 
-# python add_timestamp/add_description.py --level a1 --is_youtube_video
+# python add_timestamp/add_description.py --level b1 --is_youtube_video
