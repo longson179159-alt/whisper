@@ -4,6 +4,7 @@ import argparse
 from ast import arg
 import yt_dlp
 from pydub import AudioSegment
+import subprocess
 
 PROJECT_ROOT = os.path.dirname(
     os.path.dirname(
@@ -97,9 +98,25 @@ for idx, lesson in enumerate(listLessons):
         'end': end,
         "lessonFolderName": lesson['lessonFolderName']
     })
+def export_audio_clip(source_audio, output_audio, start_seconds, end_seconds):
+    duration = end_seconds - start_seconds
 
+    command = [
+        "ffmpeg",
+        "-y",
+        "-ss", str(start_seconds),  # Seek before reading the large source file
+        "-i", source_audio,
+        "-t", str(duration),
+        "-vn",
+        "-map", "0:a:0",
+        "-c:a", "libmp3lame",
+        "-b:a", "192k",
+        output_audio,
+    ]
 
-audio = AudioSegment.from_mp3(os.path.join(CURRENT_FOLDER_PATH, 'audio.mp3'))
+    subprocess.run(command, check=True)
+
+source_audio_path = os.path.join(CURRENT_FOLDER_PATH, "audio.mp3")
 def main():
     # APPLY FOR YOUTUBE VIDEO ONLY
     # if not os.path.exists(os.path.join(CURRENT_FOLDER_PATH, 'audio.mp3')):
@@ -162,7 +179,7 @@ def main():
 
             "audio_start_time": 0,
             "audio_duration": currentEnd - currentStart, 
-            "has_sentence_timestamps": False
+            "has_sentence_timestamps": True
 
         }
 
@@ -173,10 +190,14 @@ def main():
         # take a slice of the audio.mp3 file from currentStart to currentEnd and save it as audio.mp3 in the lesson folder
         # save audio as mp3 using pydub
         
-        audio = audio[currentStart * 1000:currentEnd * 1000]  # Convert to milliseconds
-        audio.export(os.path.join(lessonFolderPath, 'audio.mp3'), format='mp3')
-        
+        output_audio_path = os.path.join(lessonFolderPath, "audio.mp3")
 
+        export_audio_clip(
+            source_audio=source_audio_path,
+            output_audio=output_audio_path,
+            start_seconds=currentStart,
+            end_seconds=currentEnd,
+        )
 
 if __name__ == "__main__":
     main()
