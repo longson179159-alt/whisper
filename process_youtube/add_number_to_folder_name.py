@@ -3,7 +3,7 @@ import os
 
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LESSONS_PATH = os.path.join(PROJECT_ROOT, "youtube_data", "English Stories", "lessons")
+LESSONS_PATH = os.path.join(PROJECT_ROOT, "youtube_data", "short story for learning english", "lessons")
 
 list_number_lessons = []
 lesson_paths = []

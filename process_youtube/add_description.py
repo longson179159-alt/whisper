@@ -8,7 +8,7 @@ import json
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-CURRENT_FOLDER = 'zoe_languages/lessons'
+CURRENT_FOLDER = 'short story for learning english/lessons'
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 
 def get_url(youtube_id: str) -> str:

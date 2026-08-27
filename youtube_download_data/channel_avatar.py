@@ -3,7 +3,7 @@ import re
 import json
 import os
 
-channel_url = "https://www.youtube.com/@BuddhismInEnglish"
+channel_url = "https://www.youtube.com/@GrinStory"
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 headers = {

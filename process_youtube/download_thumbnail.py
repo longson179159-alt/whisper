@@ -25,7 +25,7 @@ THUMBNAIL_NAME = "image.jpg"
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-LESSONS_DIR = PROJECT_ROOT / "youtube_data" / "English Stories" / "lessons"
+LESSONS_DIR = PROJECT_ROOT / "youtube_data" / "short story for learning english" / "lessons"
 
 
 

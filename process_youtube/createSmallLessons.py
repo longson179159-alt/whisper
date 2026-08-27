@@ -12,9 +12,8 @@ PROJECT_ROOT = os.path.dirname(
 )
 
 
-# C:\Users\PC\Desktop\whisper\youtube_data\
-# C:\Users\PC\Desktop\whisper\youtube_data\little_prince
-CURRENT_FOLDER = "little_prince"
+# C:\Users\PC\Desktop\whisper\youtube_data\gatsby_the_grate
+CURRENT_FOLDER = "gatsby_the_grate"
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)
 
 
@@ -25,7 +24,7 @@ if not os.path.exists(description_path):
 with open(description_path, 'r', encoding='utf') as file1:
     description = json.load(file1)
 
-timestamp_path = os.path.join(CURRENT_FOLDER_PATH, 'timestamp.json') 
+timestamp_path = os.path.join(CURRENT_FOLDER_PATH, 'raw_timestamp.json') 
 with open(timestamp_path, 'r', encoding='utf-8') as file2:
     globalTimestamp = json.load(file2)
 
@@ -99,6 +98,8 @@ for idx, lesson in enumerate(listLessons):
         "lessonFolderName": lesson['lessonFolderName']
     })
 
+
+audio = AudioSegment.from_mp3(os.path.join(CURRENT_FOLDER_PATH, 'audio.mp3'))
 def main():
     # APPLY FOR YOUTUBE VIDEO ONLY
     # if not os.path.exists(os.path.join(CURRENT_FOLDER_PATH, 'audio.mp3')):
@@ -115,8 +116,8 @@ def main():
     parser.add_argument(
         "--level",
         type=str,
-        default="b1",
-        help="Level of the lesson (default: b1)",
+        default="c1",
+        help="Level of the lesson (default: c1)",
     )
 
     arg = parser.parse_args()
@@ -146,7 +147,8 @@ def main():
         with open(subTimestampPath, 'w', encoding='utf-8') as file:
             json.dump(subTimestamp, file, ensure_ascii=False, indent=4)
 
-        subText = '\n'.join(ts['text'] for ts in subTimestamp)
+        # subText = '\n'.join(ts['text'] for ts in subTimestamp)
+        subText = ''
         textFilePath = os.path.join(lessonFolderPath, 'text.txt')
         with open(textFilePath, 'w', encoding='utf-8') as file:
             file.write(subText)
@@ -170,7 +172,7 @@ def main():
 
         # take a slice of the audio.mp3 file from currentStart to currentEnd and save it as audio.mp3 in the lesson folder
         # save audio as mp3 using pydub
-        audio = AudioSegment.from_mp3(os.path.join(CURRENT_FOLDER_PATH, 'audio.mp3'))
+        
         audio = audio[currentStart * 1000:currentEnd * 1000]  # Convert to milliseconds
         audio.export(os.path.join(lessonFolderPath, 'audio.mp3'), format='mp3')
         
@@ -178,18 +180,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-# {
-#     "lesson_number": 10,
-#     "lesson_name": "5 Habits That Made Me A Successful Language Learner",
-#     "level": "b1",
-#     "youtube_id": "tnSPMi0pYNc",
-#     "url": "https://www.youtube.com/watch?v=tnSPMi0pYNc",
-
-
-#     "audio_start_time": 0,
-#     "audio_duration": 553.6,
-#     "has_sentence_timestamps": false
-# }
 
 
     
