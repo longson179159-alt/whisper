@@ -12,9 +12,9 @@ PROJECT_ROOT = os.path.dirname(
     )
 )
 
-
+# C:\Users\PC\Desktop\whisper\youtube_data\The_alchemist_chapters
 # C:\Users\PC\Desktop\whisper\youtube_data\gatsby_the_grate
-CURRENT_FOLDER = "gatsby_the_grate"
+CURRENT_FOLDER = "The_alchemist_chapters"
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)
 
 
@@ -71,19 +71,18 @@ def download_thumbnail(CURRENT_FOLDER_PATH, youtube_id: str) -> None:
     with yt_dlp.YoutubeDL(options) as downloader:
         downloader.download([url])
 
-def to_seconds(value: str) -> int:
-    parts = [int(part) for part in value.split(":")]
+def to_seconds(value: str) -> float:
+    parts = value.split(":")
 
-    if len(parts) == 2:  # MM:SS
+    if len(parts) == 2:  # MM:SS.ss
         minutes, seconds = parts
-        return minutes * 60 + seconds
+        return int(minutes) * 60 + float(seconds)
 
-    if len(parts) == 3:  # HH:MM:SS
+    if len(parts) == 3:  # HH:MM:SS.ss
         hours, minutes, seconds = parts
-        return hours * 3600 + minutes * 60 + seconds
+        return int(hours) * 3600 + int(minutes) * 60 + float(seconds)
 
     raise ValueError(f"Invalid time format: {value}")
-
 # add endtime
 listLessonsAddEnd = []
 for idx, lesson in enumerate(listLessons):
@@ -156,7 +155,8 @@ def main():
                 "end": ts["end"] - currentStart
             }
             for ts in globalTimestamp
-            if ts["start"] >= currentStart and ts["end"] <= currentEnd
+            # if ts["start"] >= currentStart and ts["end"] <= currentEnd
+            if currentStart <= ts["start"] < currentEnd
         ]
                 
 
@@ -165,10 +165,10 @@ def main():
             json.dump(subTimestamp, file, ensure_ascii=False, indent=4)
 
         # subText = '\n'.join(ts['text'] for ts in subTimestamp)
-        subText = ''
-        textFilePath = os.path.join(lessonFolderPath, 'text.txt')
-        with open(textFilePath, 'w', encoding='utf-8') as file:
-            file.write(subText)
+        # subText = ''
+        # textFilePath = os.path.join(lessonFolderPath, 'text.txt')
+        # with open(textFilePath, 'w', encoding='utf-8') as file:
+        #     file.write(subText)
 
         subLessonDescription = {
             "lesson_number": idx +1,
@@ -184,20 +184,20 @@ def main():
         }
 
         subLessonDescriptionPath = os.path.join(lessonFolderPath, 'description.json')
-        with open(subLessonDescriptionPath, 'w', encoding='utf-8') as file:
-            json.dump(subLessonDescription, file, ensure_ascii=False, indent=4)
+        # with open(subLessonDescriptionPath, 'w', encoding='utf-8') as file:
+        #     json.dump(subLessonDescription, file, ensure_ascii=False, indent=4)
 
         # take a slice of the audio.mp3 file from currentStart to currentEnd and save it as audio.mp3 in the lesson folder
         # save audio as mp3 using pydub
         
-        output_audio_path = os.path.join(lessonFolderPath, "audio.mp3")
+        # output_audio_path = os.path.join(lessonFolderPath, "audio.mp3")
 
-        export_audio_clip(
-            source_audio=source_audio_path,
-            output_audio=output_audio_path,
-            start_seconds=currentStart,
-            end_seconds=currentEnd,
-        )
+        # export_audio_clip(
+        #     source_audio=source_audio_path,
+        #     output_audio=output_audio_path,
+        #     start_seconds=currentStart,
+        #     end_seconds=currentEnd,
+        # )
 
 if __name__ == "__main__":
     main()

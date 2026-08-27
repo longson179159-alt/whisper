@@ -7,9 +7,9 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # C:\Users\PC\Desktop\whisper\youtube_data\gatsby_the_greate\lessons
 # C:\Users\PC\Desktop\whisper\youtube_data\how_to_stop_worrying
-# 
+# C:\Users\PC\Desktop\whisper\youtube_data\The_alchemist_chapters
 
-CURRENT_FOLDER = 'how_to_stop_worrying/lessons/'
+CURRENT_FOLDER = 'The_alchemist_chapters/lessons/'
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 def build_standard_text(text_path):
     with open(text_path, "r", encoding="utf-8") as file:
