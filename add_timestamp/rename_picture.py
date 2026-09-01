@@ -5,7 +5,7 @@ import os
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-CURRENT_FOLDER = '6_minute_bbc/lessons/'  # Name of the folder containing the text and raw timestamp files.
+CURRENT_FOLDER = 'en_easy_stories/lessons/'  # Name of the folder containing the text and raw timestamp files.
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 
 def main():

@@ -13,14 +13,13 @@ from __future__ import annotations
 import argparse
 import re
 from pathlib import Path
+import os
 
 from jiwer import wer
 
-
-DEFAULT_INPUT_ROOT = Path(
-    r"C:\Users\PC\Desktop\whisper\youtube_data\little_prince\lessons"
-)
-
+# C:\Users\PC\Desktop\kaggle\whisper\en\en_easy_stories
+ROOT_DIR = Path(__file__).parent.parent.parent
+DEFAULT_INPUT_ROOT = os.path.join(ROOT_DIR, "en", "en_easy_stories")
 
 def normalize(text: str) -> str:
     """Normalize text before comparing the reference with Whisper output."""

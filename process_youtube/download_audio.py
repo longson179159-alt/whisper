@@ -4,8 +4,8 @@ from pathlib import Path
 import yt_dlp
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-LESSONS_PATH = PROJECT_ROOT / "youtube_data" / "short story for learning english" / 'lessons'
-# C:\Users\PC\Desktop\whisper\youtube_data\short story for learning english
+LESSONS_PATH = PROJECT_ROOT / "youtube_data" / "Johnny Harris"
+# C:\Users\PC\Desktop\whisper\youtube_data\Johnny Harris\Is Fascism Back
 
 def download_audio(lesson_path: Path, youtube_id: str) -> None:
     options = {

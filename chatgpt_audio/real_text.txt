@@ -1,0 +1,2199 @@
+### FILE: Clothes.txt
+
+### TOPIC: Clothes
+
+Emma needs some new clothes for school.
+
+She goes to a clothing store with her mother.
+
+First, she looks at some T-shirts.
+
+She finds a blue T-shirt that she really likes.
+
+She tries it on, but it is too small.
+
+A shop assistant brings her a larger size.
+
+The larger T-shirt fits her very well.
+
+Then Emma finds a pair of black jeans.
+
+The jeans are comfortable, so she decides to buy them too.
+
+Emma pays for her new clothes and goes home feeling happy.
+
+Now let's listen to the same story told by Emma.
+
+I need some new clothes for school.
+
+I go to a clothing store with my mother.
+
+First, I look at some T-shirts.
+
+I find a blue T-shirt that I really like.
+
+I try it on, but it is too small.
+
+A shop assistant brings me a larger size.
+
+The larger T-shirt fits me very well.
+
+Then I find a pair of black jeans.
+
+The jeans are comfortable, so I decide to buy them too.
+
+I pay for my new clothes and go home feeling happy.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I need some new clothes for school.
+
+Why do you need new clothes?
+
+I need some new clothes for school.
+
+Two: I go to a clothing store with my mother.
+
+Where do you go with your mother?
+
+I go to a clothing store.
+
+Three: First, I look at some T-shirts.
+
+Do you look at shoes first?
+
+No, I don't. I look at some T-shirts first.
+
+Four: I find a blue T-shirt that I really like.
+
+What color is the T-shirt?
+
+It is blue.
+
+Five: I try it on, but it is too small.
+
+Is the first T-shirt too big?
+
+No, it isn't. It is too small.
+
+Six: A shop assistant brings me a larger size.
+
+Who brings you a larger size?
+
+A shop assistant brings me a larger size.
+
+Seven: The larger T-shirt fits me very well.
+
+Does the larger T-shirt fit you?
+
+Yes, it does. It fits me very well.
+
+Eight: Then I find a pair of black jeans.
+
+What do you find after the T-shirt?
+
+I find a pair of black jeans.
+
+Nine: The jeans are comfortable, so I decide to buy them too.
+
+Why do you decide to buy the jeans?
+
+Because they are comfortable.
+
+Ten: I pay for my new clothes and go home feeling happy.
+
+How do you feel when you go home?
+
+I feel happy.
+
+### END FILE
+
+### FILE: Exercise.txt
+
+### TOPIC: Exercise
+
+Daniel wants to get more exercise because he sits a lot during the day.
+
+He decides to go for a walk every morning before school.
+
+On Monday, he wakes up at six thirty and puts on his sports clothes.
+
+He walks to a small park near his home.
+
+At first, he walks slowly because he still feels tired.
+
+After ten minutes, he feels more awake and starts to walk faster.
+
+He sees several people running and riding their bikes in the park.
+
+Daniel walks for thirty minutes and then goes back home.
+
+He takes a shower, eats breakfast, and gets ready for school.
+
+He feels good, so he decides to exercise again the next morning.
+
+Now let's listen to the same story told by Daniel.
+
+I want to get more exercise because I sit a lot during the day.
+
+I decide to go for a walk every morning before school.
+
+On Monday, I wake up at six thirty and put on my sports clothes.
+
+I walk to a small park near my home.
+
+At first, I walk slowly because I still feel tired.
+
+After ten minutes, I feel more awake and start to walk faster.
+
+I see several people running and riding their bikes in the park.
+
+I walk for thirty minutes and then go back home.
+
+I take a shower, eat breakfast, and get ready for school.
+
+I feel good, so I decide to exercise again the next morning.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I want to get more exercise because I sit a lot during the day.
+
+Why do you want to get more exercise?
+
+I want to get more exercise because I sit a lot during the day.
+
+Two: I decide to go for a walk every morning before school.
+
+When do you decide to go for a walk?
+
+I decide to go every morning before school.
+
+Three: On Monday, I wake up at six thirty.
+
+Do you wake up at eight o'clock?
+
+No, I don't. I wake up at six thirty.
+
+Four: I walk to a small park near my home.
+
+Where do you walk?
+
+I walk to a small park near my home.
+
+Five: At first, I walk slowly because I still feel tired.
+
+Why do you walk slowly at first?
+
+Because I still feel tired.
+
+Six: After ten minutes, I feel more awake.
+
+How do you feel after ten minutes?
+
+I feel more awake.
+
+Seven: I see several people running and riding their bikes in the park.
+
+What are the people doing?
+
+They are running and riding their bikes.
+
+Eight: I walk for thirty minutes.
+
+How long do you walk?
+
+I walk for thirty minutes.
+
+Nine: I take a shower, eat breakfast, and get ready for school.
+
+What do you do when you get home?
+
+I take a shower, eat breakfast, and get ready for school.
+
+Ten: I decide to exercise again the next morning.
+
+Do you decide to stop exercising?
+
+No, I don't. I decide to exercise again.
+
+### END FILE
+
+### FILE: Family.txt
+
+### TOPIC: Family
+
+Lucy lives with her parents and her younger brother, Ben.
+
+Her family usually eats breakfast together in the kitchen.
+
+On weekdays, Lucy's father drives to work, and her mother works from home.
+
+Lucy and Ben go to the same school, but they are in different classes.
+
+After school, Lucy sometimes helps Ben with his homework.
+
+In the evening, their mother cooks dinner while their father sets the table.
+
+The family sits together and talks about their day during dinner.
+
+After dinner, Lucy and Ben help clean the kitchen.
+
+On weekends, the family often visits their grandparents or goes to the park.
+
+Lucy enjoys spending time with her family because they have fun together.
+
+Now let's listen to the same story told by Lucy.
+
+I live with my parents and my younger brother, Ben.
+
+My family usually eats breakfast together in the kitchen.
+
+On weekdays, my father drives to work, and my mother works from home.
+
+Ben and I go to the same school, but we are in different classes.
+
+After school, I sometimes help Ben with his homework.
+
+In the evening, my mother cooks dinner while my father sets the table.
+
+We sit together and talk about our day during dinner.
+
+After dinner, Ben and I help clean the kitchen.
+
+On weekends, we often visit our grandparents or go to the park.
+
+I enjoy spending time with my family because we have fun together.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I live with my parents and my younger brother, Ben.
+
+Who do you live with?
+
+I live with my parents and my younger brother, Ben.
+
+Two: My family usually eats breakfast together in the kitchen.
+
+Where does your family eat breakfast?
+
+We usually eat breakfast in the kitchen.
+
+Three: My father drives to work, and my mother works from home.
+
+Does your mother drive to work?
+
+No, she doesn't. She works from home.
+
+Four: Ben and I go to the same school.
+
+Do you and Ben go to different schools?
+
+No, we don't. We go to the same school.
+
+Five: I sometimes help Ben with his homework.
+
+When do you help Ben?
+
+I sometimes help him after school.
+
+Six: My mother cooks dinner.
+
+Who cooks dinner?
+
+My mother cooks dinner.
+
+Seven: We talk about our day during dinner.
+
+What do you talk about?
+
+We talk about our day.
+
+Eight: Ben and I help clean the kitchen.
+
+What do you do after dinner?
+
+We help clean the kitchen.
+
+Nine: We often visit our grandparents or go to the park.
+
+Where do you go on weekends?
+
+We visit our grandparents or go to the park.
+
+Ten: I enjoy spending time with my family.
+
+Why do you enjoy it?
+
+Because we have fun together.
+
+### END FILE
+
+### FILE: Food.txt
+
+### TOPIC: Food
+
+Mia enjoys trying different kinds of food.
+
+On Saturday, she goes to a small restaurant with her friend Jack.
+
+They look at the menu and talk about what they want to eat.
+
+Mia orders chicken with rice and vegetables.
+
+Jack chooses a bowl of noodles because noodles are his favorite food.
+
+While they wait, they drink some water and talk about their week.
+
+When the food arrives, Mia thinks her chicken smells very good.
+
+She tries some of Jack's noodles, and Jack tries some of her chicken.
+
+After the meal, they share a piece of chocolate cake.
+
+Mia goes home feeling full and happy because she enjoyed the food and time with her friend.
+
+Now let's listen to the same story told by Mia.
+
+I enjoy trying different kinds of food.
+
+On Saturday, I go to a small restaurant with my friend Jack.
+
+We look at the menu and talk about what we want to eat.
+
+I order chicken with rice and vegetables.
+
+Jack chooses a bowl of noodles because noodles are his favorite food.
+
+While we wait, we drink some water and talk about our week.
+
+When the food arrives, I think my chicken smells very good.
+
+I try some of Jack's noodles, and Jack tries some of my chicken.
+
+After the meal, we share a piece of chocolate cake.
+
+I go home feeling full and happy because I enjoyed the food and time with my friend.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I enjoy trying different kinds of food.
+
+Do you enjoy trying different food?
+
+Yes, I do.
+
+Two: I go to a small restaurant with Jack.
+
+Where do you go?
+
+I go to a small restaurant.
+
+Three: We look at the menu.
+
+What do you look at?
+
+We look at the menu.
+
+Four: I order chicken with rice and vegetables.
+
+What do you order?
+
+I order chicken with rice and vegetables.
+
+Five: Jack chooses noodles.
+
+Why does Jack choose noodles?
+
+Because noodles are his favorite food.
+
+Six: We drink some water while we wait.
+
+What do you drink?
+
+We drink water.
+
+Seven: My chicken smells very good.
+
+How does your chicken smell?
+
+It smells very good.
+
+Eight: I try some of Jack's noodles.
+
+What do you try?
+
+I try some of Jack's noodles.
+
+Nine: We share chocolate cake.
+
+Do you eat the cake alone?
+
+No, I don't. We share it.
+
+Ten: I go home feeling full and happy.
+
+How do you feel?
+
+I feel full and happy.
+
+### END FILE
+
+### FILE: Friends.txt
+
+### TOPIC: Friends
+
+Sophie has a good friend named Anna.
+
+They go to the same school and often spend time together.
+
+On Friday afternoon, Sophie asks Anna to go to the park with her.
+
+They walk around the park and talk about school, music, and their weekend plans.
+
+After a while, they sit on a bench because they are tired.
+
+Anna takes two sandwiches from her bag and gives one to Sophie.
+
+While they eat, they see a small dog playing with a ball nearby.
+
+After lunch, Sophie and Anna take some photos together.
+
+Before they go home, they decide to meet again on Sunday.
+
+Sophie feels lucky because she has a good friend who makes her laugh.
+
+Now let's listen to the same story told by Sophie.
+
+I have a good friend named Anna.
+
+We go to the same school and often spend time together.
+
+On Friday afternoon, I ask Anna to go to the park with me.
+
+We walk around the park and talk about school, music, and our weekend plans.
+
+After a while, we sit on a bench because we are tired.
+
+Anna takes two sandwiches from her bag and gives one to me.
+
+While we eat, we see a small dog playing with a ball nearby.
+
+After lunch, Anna and I take some photos together.
+
+Before we go home, we decide to meet again on Sunday.
+
+I feel lucky because I have a good friend who makes me laugh.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I have a good friend named Anna.
+
+What is your friend's name?
+
+My friend's name is Anna.
+
+Two: We go to the same school.
+
+Do you go to different schools?
+
+No, we don't.
+
+Three: I ask Anna to go to the park.
+
+When do you ask her?
+
+On Friday afternoon.
+
+Four: We talk about school, music, and our weekend plans.
+
+What do you talk about?
+
+We talk about school, music, and our weekend plans.
+
+Five: We sit on a bench because we are tired.
+
+Why do you sit down?
+
+Because we are tired.
+
+Six: Anna gives me a sandwich.
+
+What does Anna give you?
+
+She gives me a sandwich.
+
+Seven: We see a dog playing with a ball.
+
+What is the dog doing?
+
+It is playing with a ball.
+
+Eight: We take some photos after lunch.
+
+Do you take photos before lunch?
+
+No, we don't.
+
+Nine: We decide to meet again on Sunday.
+
+When will you meet again?
+
+On Sunday.
+
+Ten: I feel lucky.
+
+Why do you feel lucky?
+
+Because I have a good friend who makes me laugh.
+
+### END FILE
+
+### FILE: Health.txt
+
+### TOPIC: Health
+
+Oliver wants to stay healthy and have more energy.
+
+He usually gets up at seven o'clock and drinks a glass of water.
+
+For breakfast, he eats eggs and fruit instead of sweet food.
+
+He walks to school when the weather is nice.
+
+At school, Oliver drinks water and eats a healthy lunch.
+
+After school, he sometimes plays basketball with his friends.
+
+In the evening, he helps his mother prepare vegetables for dinner.
+
+He tries not to spend too much time on his phone before bed.
+
+At ten o'clock, he goes to bed because he wants to get enough sleep.
+
+Oliver knows that small healthy habits can help him feel good every day.
+
+Now let's listen to the same story told by Oliver.
+
+I want to stay healthy and have more energy.
+
+I usually get up at seven o'clock and drink a glass of water.
+
+For breakfast, I eat eggs and fruit instead of sweet food.
+
+I walk to school when the weather is nice.
+
+At school, I drink water and eat a healthy lunch.
+
+After school, I sometimes play basketball with my friends.
+
+In the evening, I help my mother prepare vegetables for dinner.
+
+I try not to spend too much time on my phone before bed.
+
+At ten o'clock, I go to bed because I want to get enough sleep.
+
+I know that small healthy habits can help me feel good every day.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I want to stay healthy and have more energy.
+
+Why do you want to stay healthy?
+
+I want to have more energy.
+
+Two: I drink water after I get up.
+
+What do you drink?
+
+A glass of water.
+
+Three: I eat eggs and fruit for breakfast.
+
+Do you eat sweet food?
+
+No, I don't.
+
+Four: I walk to school when the weather is nice.
+
+When do you walk to school?
+
+When the weather is nice.
+
+Five: I drink water at school.
+
+What do you drink?
+
+Water.
+
+Six: I sometimes play basketball with my friends.
+
+Who do you play with?
+
+My friends.
+
+Seven: I help prepare vegetables.
+
+What do you prepare?
+
+Vegetables.
+
+Eight: I try not to spend too much time on my phone.
+
+When?
+
+Before bed.
+
+Nine: I go to bed at ten o'clock.
+
+Why?
+
+Because I want enough sleep.
+
+Ten: Small healthy habits help me feel good.
+
+What helps you feel good?
+
+Small healthy habits.
+
+### END FILE
+
+### FILE: Homes.txt
+
+### TOPIC: Homes
+
+Emily lives in a small house with her family.
+
+Her house has two bedrooms, a kitchen, a bathroom, and a living room.
+
+Emily's favorite room is the living room because it is bright and comfortable.
+
+There is a large sofa near the window and a small table in front of it.
+
+Every evening, her family sits there and talks about their day.
+
+Emily often does her homework at the table in her bedroom.
+
+On Saturday mornings, she helps her parents clean the house.
+
+She usually cleans her room and puts her clothes away.
+
+After cleaning, Emily likes to sit in the garden and read a book.
+
+Her home is not very big, but she loves it because she feels comfortable there.
+
+Now let's listen to the same story told by Emily.
+
+I live in a small house with my family.
+
+My house has two bedrooms, a kitchen, a bathroom, and a living room.
+
+My favorite room is the living room because it is bright and comfortable.
+
+There is a large sofa near the window and a small table in front of it.
+
+Every evening, my family sits there and talks about our day.
+
+I often do my homework at the table in my bedroom.
+
+On Saturday mornings, I help my parents clean the house.
+
+I usually clean my room and put my clothes away.
+
+After cleaning, I like to sit in the garden and read a book.
+
+My home is not very big, but I love it because I feel comfortable there.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I live in a small house with my family.
+
+Do you live alone?
+
+No, I don't.
+
+Two: My house has two bedrooms.
+
+How many bedrooms are there?
+
+Two.
+
+Three: My favorite room is the living room.
+
+What is your favorite room?
+
+The living room.
+
+Four: The sofa is near the window.
+
+Where is the sofa?
+
+Near the window.
+
+Five: We talk about our day.
+
+What do you talk about?
+
+Our day.
+
+Six: I do my homework in my bedroom.
+
+Where do you do homework?
+
+In my bedroom.
+
+Seven: I help clean on Saturday mornings.
+
+When do you help clean?
+
+On Saturday mornings.
+
+Eight: I put my clothes away.
+
+Do you leave them on the floor?
+
+No, I don't.
+
+Nine: I read in the garden.
+
+What do you do after cleaning?
+
+I read a book.
+
+Ten: I love my home.
+
+Why?
+
+Because I feel comfortable there.
+
+### END FILE
+
+### FILE: Internet.txt
+
+### TOPIC: Internet
+
+Ethan needs the internet to finish a school project.
+
+He sits at his desk and opens his laptop after dinner.
+
+He searches for some information, but suddenly the internet stops working.
+
+Ethan checks his laptop, but he cannot open any websites.
+
+He feels worried because he needs to send his project to his teacher that evening.
+
+First, he turns the Wi-Fi off and on, but this does not help.
+
+Then he asks his older sister, Lily, to check the internet on her phone.
+
+Lily cannot use the internet either, so they restart the Wi-Fi router.
+
+After a few minutes, the internet starts working again, and Ethan quickly finishes his project.
+
+He sends it to his teacher on time and feels very happy that the problem is solved.
+
+Now let's listen to the same story told by Ethan.
+
+I need the internet to finish a school project.
+
+I sit at my desk and open my laptop after dinner.
+
+I search for some information, but suddenly the internet stops working.
+
+I check my laptop, but I cannot open any websites.
+
+I feel worried because I need to send my project to my teacher that evening.
+
+First, I turn the Wi-Fi off and on, but this does not help.
+
+Then I ask my older sister, Lily, to check the internet on her phone.
+
+Lily cannot use the internet either, so we restart the Wi-Fi router.
+
+After a few minutes, the internet starts working again, and I quickly finish my project.
+
+I send it to my teacher on time and feel very happy that the problem is solved.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I need the internet for a school project.
+
+Why do you need it?
+
+For a school project.
+
+Two: I open my laptop after dinner.
+
+When?
+
+After dinner.
+
+Three: The internet stops working.
+
+What happens?
+
+The internet stops working.
+
+Four: I cannot open websites.
+
+Can you open them?
+
+No, I can't.
+
+Five: I feel worried.
+
+Why?
+
+Because I need to send my project.
+
+Six: Turning Wi-Fi off and on does not help.
+
+Does it solve the problem?
+
+No, it doesn't.
+
+Seven: I ask Lily for help.
+
+Who do you ask?
+
+My older sister, Lily.
+
+Eight: Lily cannot use the internet either.
+
+Can she use it?
+
+No, she can't.
+
+Nine: We restart the router.
+
+What happens afterward?
+
+The internet works again.
+
+Ten: I send my project on time.
+
+Are you late?
+
+No, I'm not.
+
+### END FILE
+
+### FILE: Mobile Phones.txt
+
+### TOPIC: Mobile Phones
+
+Ryan uses his mobile phone every day to call his family and talk to his friends.
+
+One afternoon, he takes the bus home after school.
+
+While he is sitting on the bus, he listens to music on his phone.
+
+When the bus reaches his stop, Ryan gets off quickly because he almost misses it.
+
+A few minutes later, he wants to call his mother, but he cannot find his phone.
+
+Ryan feels worried and thinks he left it on the bus.
+
+He borrows a phone from a friend and calls his own number.
+
+A woman answers and says she found the phone on a seat on the bus.
+
+Ryan meets the woman at the next bus stop, thanks her, and gets his phone back.
+
+After that, Ryan always checks his pockets before he gets off the bus.
+
+Now let's listen to the same story told by Ryan.
+
+I use my mobile phone every day to call my family and talk to my friends.
+
+One afternoon, I take the bus home after school.
+
+While I am sitting on the bus, I listen to music on my phone.
+
+When the bus reaches my stop, I get off quickly because I almost miss it.
+
+A few minutes later, I want to call my mother, but I cannot find my phone.
+
+I feel worried and think I left it on the bus.
+
+I borrow a phone from a friend and call my own number.
+
+A woman answers and says she found my phone on a seat on the bus.
+
+I meet the woman at the next bus stop, thank her, and get my phone back.
+
+After that, I always check my pockets before I get off the bus.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I use my phone every day.
+
+What do you use it for?
+
+To call family and talk to friends.
+
+Two: I take the bus home.
+
+How do you go home?
+
+By bus.
+
+Three: I listen to music.
+
+What do you do on the bus?
+
+I listen to music.
+
+Four: I get off quickly.
+
+Why?
+
+Because I almost miss my stop.
+
+Five: I cannot find my phone.
+
+Can you find it?
+
+No, I can't.
+
+Six: I think I left it on the bus.
+
+Where do you think it is?
+
+On the bus.
+
+Seven: I borrow a friend's phone.
+
+Whose phone do you use?
+
+My friend's phone.
+
+Eight: A woman found my phone.
+
+Who found it?
+
+A woman.
+
+Nine: I get my phone back.
+
+Do you get it back?
+
+Yes, I do.
+
+Ten: I always check my pockets.
+
+When?
+
+Before I get off the bus.
+
+### END FILE
+
+### FILE: Money.txt
+
+### TOPIC: Money
+
+Tom is saving money because he wants to buy a new pair of shoes.
+
+Every week, he puts some money in a small box in his bedroom.
+
+On Friday evening, Tom opens the box and counts his money.
+
+He thinks there should be sixty dollars, but there are only forty dollars in the box.
+
+Tom is surprised and counts the money again, but the number is still the same.
+
+He looks under his bed and inside his desk because he sometimes leaves money there.
+
+Then he asks his sister if she saw any money in his room, but she says no.
+
+Tom tries to remember if he bought something during the week.
+
+He remembers buying lunch on Tuesday, but he paid for it with money from his wallet.
+
+Tom sits on his bed and looks at the forty dollars, but he still cannot understand where the other twenty dollars went.
+
+Now let's listen to the same story told by Tom.
+
+I am saving money because I want to buy a new pair of shoes.
+
+Every week, I put some money in a small box in my bedroom.
+
+On Friday evening, I open the box and count my money.
+
+I think there should be sixty dollars, but there are only forty dollars in the box.
+
+I am surprised and count the money again, but the number is still the same.
+
+I look under my bed and inside my desk because I sometimes leave money there.
+
+Then I ask my sister if she saw any money in my room, but she says no.
+
+I try to remember if I bought something during the week.
+
+I remember buying lunch on Tuesday, but I paid for it with money from my wallet.
+
+I sit on my bed and look at the forty dollars, but I still cannot understand where the other twenty dollars went.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I am saving money for shoes.
+
+Why are you saving money?
+
+To buy new shoes.
+
+Two: I keep money in a box.
+
+Where?
+
+In my bedroom.
+
+Three: I count it on Friday evening.
+
+When?
+
+On Friday evening.
+
+Four: There should be sixty dollars.
+
+How much should there be?
+
+Sixty dollars.
+
+Five: There are only forty dollars.
+
+How much is there?
+
+Forty dollars.
+
+Six: I look under my bed and in my desk.
+
+Where do you look?
+
+Under my bed and in my desk.
+
+Seven: I ask my sister.
+
+Does she know?
+
+No, she doesn't.
+
+Eight: I try to remember what I bought.
+
+What do you try to remember?
+
+If I bought something.
+
+Nine: I bought lunch with money from my wallet.
+
+Did you use money from the box?
+
+No, I didn't.
+
+Ten: Twenty dollars are still missing.
+
+Do you know where they went?
+
+No, I don't.
+
+### END FILE
+
+### FILE: Movies.txt
+
+### TOPIC: Movies
+
+Kevin loves watching movies, especially funny ones.
+
+On Saturday evening, he buys a ticket to see a new comedy at the movie theater.
+
+He gets some popcorn and finds his seat a few minutes before the movie starts.
+
+When the lights go down, Kevin notices that the movie is not a comedy at all.
+
+The people on the screen are talking about a serious crime, and nobody in the theater is laughing.
+
+Kevin checks his ticket, but the name of the comedy is printed on it.
+
+He looks at the number above the door and sees that he is in the correct room.
+
+Kevin asks the man next to him if they are watching the right movie, but the man is confused too.
+
+A few other people begin checking their tickets and talking quietly to each other.
+
+Kevin sits with his popcorn and wonders why the wrong movie is playing.
+
+Now let's listen to the same story told by Kevin.
+
+I love watching movies, especially funny ones.
+
+On Saturday evening, I buy a ticket to see a new comedy at the movie theater.
+
+I get some popcorn and find my seat a few minutes before the movie starts.
+
+When the lights go down, I notice that the movie is not a comedy at all.
+
+The people on the screen are talking about a serious crime, and nobody in the theater is laughing.
+
+I check my ticket, but the name of the comedy is printed on it.
+
+I look at the number above the door and see that I am in the correct room.
+
+I ask the man next to me if we are watching the right movie, but he is confused too.
+
+A few other people begin checking their tickets and talking quietly to each other.
+
+I sit with my popcorn and wonder why the wrong movie is playing.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I love funny movies.
+
+What kind do you like?
+
+Funny movies.
+
+Two: I buy a ticket for a comedy.
+
+What do you buy?
+
+A ticket for a comedy.
+
+Three: I get popcorn.
+
+What do you get?
+
+Popcorn.
+
+Four: The movie is not a comedy.
+
+Is it a comedy?
+
+No, it isn't.
+
+Five: Nobody is laughing.
+
+Are people laughing?
+
+No, they aren't.
+
+Six: The comedy name is on my ticket.
+
+What is on your ticket?
+
+The comedy name.
+
+Seven: I am in the correct room.
+
+Are you in the wrong room?
+
+No, I'm not.
+
+Eight: The man next to me is confused too.
+
+Who do you ask?
+
+The man next to me.
+
+Nine: Other people check their tickets.
+
+What do they do?
+
+They check their tickets.
+
+Ten: I still do not understand.
+
+Do you know why the wrong movie is playing?
+
+No, I don't.
+
+### END FILE
+
+### FILE: Music.txt
+
+### TOPIC: Music
+
+Alex loves listening to music when he has free time.
+
+One evening, he wants to find some new music to listen to.
+
+He opens a music app and sees many different kinds of music.
+
+There is pop, rock, jazz, dance music, and many other choices.
+
+First, Alex chooses a pop song, but after one minute, he wants to try something different.
+
+Then he listens to a rock song, but he starts thinking about the other choices.
+
+He looks at several playlists, and each playlist has hundreds of songs.
+
+Alex spends a long time reading song names and listening to the first few seconds of different songs.
+
+After thirty minutes, he realizes that he has not listened to one complete song.
+
+Alex looks at all the choices on his screen and still cannot decide what he wants to hear.
+
+Now let's listen to the same story told by Alex.
+
+I love listening to music when I have free time.
+
+One evening, I want to find some new music to listen to.
+
+I open a music app and see many different kinds of music.
+
+There is pop, rock, jazz, dance music, and many other choices.
+
+First, I choose a pop song, but after one minute, I want to try something different.
+
+Then I listen to a rock song, but I start thinking about the other choices.
+
+I look at several playlists, and each playlist has hundreds of songs.
+
+I spend a long time reading song names and listening to the first few seconds of different songs.
+
+After thirty minutes, I realize that I have not listened to one complete song.
+
+I look at all the choices on my screen and still cannot decide what I want to hear.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I love listening to music.
+
+What do you love doing?
+
+Listening to music.
+
+Two: I want to find new music.
+
+What do you want?
+
+New music.
+
+Three: I use a music app.
+
+Where do you look?
+
+On a music app.
+
+Four: There are many kinds of music.
+
+Do you have only one choice?
+
+No, I don't.
+
+Five: I choose pop first.
+
+What do you choose first?
+
+Pop.
+
+Six: Then I listen to rock.
+
+What do you listen to next?
+
+Rock.
+
+Seven: Each playlist has hundreds of songs.
+
+Are there many songs?
+
+Yes, there are.
+
+Eight: I listen to only a few seconds.
+
+Do you listen to complete songs?
+
+No, I don't.
+
+Nine: Thirty minutes pass.
+
+How long do you spend choosing?
+
+Thirty minutes.
+
+Ten: I still cannot decide.
+
+Can you choose?
+
+No, I can't.
+
+### END FILE
+
+### FILE: Restaurants.txt
+
+### TOPIC: Restaurants
+
+David often eats at a small restaurant near his office.
+
+One evening, he goes there for dinner and orders chicken with rice and vegetables.
+
+After twenty minutes, a waiter brings his food, but the chicken is cold.
+
+David calls the waiter and politely says that his food is not hot enough.
+
+The waiter takes the plate back to the kitchen and says he will bring another one.
+
+David waits for fifteen more minutes, but nobody brings his food.
+
+He calls another waiter and explains the problem again.
+
+A few minutes later, a plate arrives, but this time it has fish instead of chicken.
+
+David tells the waiter that he ordered chicken, and the waiter looks confused.
+
+David is now hungry and tired, and he wonders if he should complain again or just leave the restaurant.
+
+Now let's listen to the same story told by David.
+
+I often eat at a small restaurant near my office.
+
+One evening, I go there for dinner and order chicken with rice and vegetables.
+
+After twenty minutes, a waiter brings my food, but the chicken is cold.
+
+I call the waiter and politely say that my food is not hot enough.
+
+The waiter takes the plate back to the kitchen and says he will bring another one.
+
+I wait for fifteen more minutes, but nobody brings my food.
+
+I call another waiter and explain the problem again.
+
+A few minutes later, a plate arrives, but this time it has fish instead of chicken.
+
+I tell the waiter that I ordered chicken, and the waiter looks confused.
+
+I am now hungry and tired, and I wonder if I should complain again or just leave the restaurant.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I eat near my office.
+
+Where?
+
+At a small restaurant.
+
+Two: I order chicken with rice and vegetables.
+
+What do you order?
+
+Chicken with rice and vegetables.
+
+Three: The chicken is cold.
+
+What is wrong?
+
+It is cold.
+
+Four: I complain politely.
+
+Do you complain politely?
+
+Yes, I do.
+
+Five: The waiter takes the plate away.
+
+Where?
+
+Back to the kitchen.
+
+Six: I wait fifteen more minutes.
+
+How long?
+
+Fifteen minutes.
+
+Seven: I explain the problem again.
+
+What do you do?
+
+I explain it again.
+
+Eight: The new plate has fish.
+
+Does it have chicken?
+
+No, it doesn't.
+
+Nine: I tell the waiter I ordered chicken.
+
+What do you say?
+
+I say I ordered chicken.
+
+Ten: I do not know whether to complain or leave.
+
+Do you know what to do?
+
+No, I don't.
+
+### END FILE
+
+### FILE: Shopping.txt
+
+### TOPIC: Shopping
+
+Sarah wants to buy some new clothes for a party.
+
+On Saturday afternoon, she goes to a large shopping center near her home.
+
+First, she finds a beautiful red dress, but it is too expensive.
+
+Then she tries on a cheaper blue dress, but it does not fit her well.
+
+Sarah goes to another store and sees a nice white shirt, but they do not have her size.
+
+After that, she finds a pair of black shoes that she likes, but they are not very comfortable.
+
+She walks around the shopping center for two hours and visits several more stores.
+
+There are many things to buy, but Sarah always finds a small problem with each one.
+
+She becomes tired and starts to wonder if she really needs anything new for the party.
+
+In the end, Sarah leaves the shopping center with empty hands and laughs because she spent two hours shopping but bought nothing.
+
+Now let's listen to the same story told by Sarah.
+
+I want to buy some new clothes for a party.
+
+On Saturday afternoon, I go to a large shopping center near my home.
+
+First, I find a beautiful red dress, but it is too expensive.
+
+Then I try on a cheaper blue dress, but it does not fit me well.
+
+I go to another store and see a nice white shirt, but they do not have my size.
+
+After that, I find a pair of black shoes that I like, but they are not very comfortable.
+
+I walk around the shopping center for two hours and visit several more stores.
+
+There are many things to buy, but I always find a small problem with each one.
+
+I become tired and start to wonder if I really need anything new for the party.
+
+In the end, I leave the shopping center with empty hands and laugh because I spent two hours shopping but bought nothing.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I want clothes for a party.
+
+Why are you shopping?
+
+For a party.
+
+Two: I go on Saturday afternoon.
+
+When?
+
+Saturday afternoon.
+
+Three: The red dress is too expensive.
+
+Why don't you buy it?
+
+It is too expensive.
+
+Four: The blue dress does not fit.
+
+Does it fit?
+
+No, it doesn't.
+
+Five: The store does not have my size.
+
+Why don't you buy the shirt?
+
+They do not have my size.
+
+Six: The shoes are uncomfortable.
+
+Do you buy them?
+
+No, I don't.
+
+Seven: I shop for two hours.
+
+How long?
+
+Two hours.
+
+Eight: I find problems with everything.
+
+Are there many things?
+
+Yes, there are.
+
+Nine: I become tired.
+
+How do you feel?
+
+Tired.
+
+Ten: I buy nothing.
+
+What do you buy?
+
+Nothing.
+
+### END FILE
+
+### FILE: Sleep.txt
+
+### TOPIC: Sleep
+
+Ben usually goes to bed at about ten o'clock every night.
+
+Last night, he went to bed at the usual time, but he could not sleep.
+
+He closed his eyes and tried to relax, but his mind was still busy.
+
+After some time, Ben looked at the clock and saw that it was already eleven thirty.
+
+He remembered that some people count sheep when they cannot sleep, so he decided to try it.
+
+Ben imagined white sheep jumping over a small fence and slowly counted them.
+
+He counted fifty sheep, then one hundred sheep, but he was still awake.
+
+After a while, he forgot what number he was on and had to start again.
+
+At two o'clock in the morning, Ben was still lying in bed, thinking about sheep and wondering why he could not sleep.
+
+He closed his eyes again and started counting from one, but he had no idea how many more sheep he would need.
+
+Now let's listen to the same story told by Ben.
+
+I usually go to bed at about ten o'clock every night.
+
+Last night, I went to bed at the usual time, but I could not sleep.
+
+I closed my eyes and tried to relax, but my mind was still busy.
+
+After some time, I looked at the clock and saw that it was already eleven thirty.
+
+I remembered that some people count sheep when they cannot sleep, so I decided to try it.
+
+I imagined white sheep jumping over a small fence and slowly counted them.
+
+I counted fifty sheep, then one hundred sheep, but I was still awake.
+
+After a while, I forgot what number I was on and had to start again.
+
+At two o'clock in the morning, I was still lying in bed, thinking about sheep and wondering why I could not sleep.
+
+I closed my eyes again and started counting from one, but I had no idea how many more sheep I would need.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I usually go to bed at ten.
+
+What time?
+
+Ten o'clock.
+
+Two: I could not sleep last night.
+
+Could you sleep?
+
+No, I couldn't.
+
+Three: I tried to relax.
+
+What did you do?
+
+I tried to relax.
+
+Four: It was eleven thirty.
+
+What time was it?
+
+Eleven thirty.
+
+Five: I decided to count sheep.
+
+Why?
+
+Because I could not sleep.
+
+Six: I imagined white sheep.
+
+What did you imagine?
+
+White sheep.
+
+Seven: I counted one hundred sheep.
+
+Did you fall asleep?
+
+No, I didn't.
+
+Eight: I forgot my number.
+
+Why did you start again?
+
+Because I forgot my number.
+
+Nine: I was still awake at two.
+
+Were you asleep?
+
+No, I wasn't.
+
+Ten: I started counting again.
+
+Did you know how many sheep you needed?
+
+No, I didn't.
+
+### END FILE
+
+### FILE: Supermarkets.txt
+
+### TOPIC: Supermarkets
+
+James goes to a large supermarket near his home every Saturday morning.
+
+He likes shopping there because the supermarket is clean, bright, and easy to walk around.
+
+When he enters, he takes a shopping cart and starts in the fruit and vegetable section.
+
+There are many fresh apples, bananas, tomatoes, and other vegetables at good prices.
+
+Next, James walks to the meat and dairy sections, where he can easily find everything on his shopping list.
+
+He also likes the bakery because the bread is fresh and smells wonderful.
+
+The supermarket has many different products, so James does not need to visit several smaller stores.
+
+The workers are friendly, and they are always ready to help when he cannot find something.
+
+After shopping, James uses the self-checkout because it is quick and there is usually no long line.
+
+He leaves the supermarket with everything he needs and feels happy that shopping there is so simple and convenient.
+
+Now let's listen to the same story told by James.
+
+I go to a large supermarket near my home every Saturday morning.
+
+I like shopping there because the supermarket is clean, bright, and easy to walk around.
+
+When I enter, I take a shopping cart and start in the fruit and vegetable section.
+
+There are many fresh apples, bananas, tomatoes, and other vegetables at good prices.
+
+Next, I walk to the meat and dairy sections, where I can easily find everything on my shopping list.
+
+I also like the bakery because the bread is fresh and smells wonderful.
+
+The supermarket has many different products, so I do not need to visit several smaller stores.
+
+The workers are friendly, and they are always ready to help when I cannot find something.
+
+After shopping, I use the self-checkout because it is quick and there is usually no long line.
+
+I leave the supermarket with everything I need and feel happy that shopping there is so simple and convenient.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I go every Saturday morning.
+
+When?
+
+Every Saturday morning.
+
+Two: The supermarket is clean and bright.
+
+Why do you like it?
+
+Because it is clean and bright.
+
+Three: I start with fruit and vegetables.
+
+Where do you start?
+
+In the fruit and vegetable section.
+
+Four: The food is fresh.
+
+Is it old?
+
+No, it isn't.
+
+Five: I find everything easily.
+
+Is it difficult?
+
+No, it isn't.
+
+Six: The bread smells wonderful.
+
+Why do you like the bakery?
+
+Because the bread is fresh.
+
+Seven: There are many products.
+
+Do you need many stores?
+
+No, I don't.
+
+Eight: The workers are friendly.
+
+What are they like?
+
+Friendly and helpful.
+
+Nine: The self-checkout is quick.
+
+Why do you use it?
+
+Because it is quick.
+
+Ten: I leave with everything I need.
+
+How do you feel?
+
+Happy.
+
+### END FILE
+
+### FILE: Transportation.txt
+
+### TOPIC: Transportation
+
+Michael lives in New York City and uses public transportation almost every day.
+
+He does not have a car because buses and trains can take him to most places he needs to go.
+
+Every morning, Michael walks to the subway station near his apartment and takes a train to work.
+
+The subway is often busy, but he likes it because he does not have to worry about driving or finding a place to park.
+
+When the weather is nice, Michael sometimes takes a bus because he enjoys looking at the city through the window.
+
+On weekends, he uses the subway to visit friends, go shopping, or explore different parts of New York.
+
+There are many subway lines and bus routes, so he can travel around the city quite easily.
+
+Sometimes a train is late or a bus is crowded, but Michael is used to these small problems.
+
+He also likes walking, so he often gets off one stop early and walks the rest of the way.
+
+For Michael, public transportation makes living in a large city easier because he can go almost anywhere without a car.
+
+Now let's listen to the same story told by Michael.
+
+I live in New York City and use public transportation almost every day.
+
+I do not have a car because buses and trains can take me to most places I need to go.
+
+Every morning, I walk to the subway station near my apartment and take a train to work.
+
+The subway is often busy, but I like it because I do not have to worry about driving or finding a place to park.
+
+When the weather is nice, I sometimes take a bus because I enjoy looking at the city through the window.
+
+On weekends, I use the subway to visit friends, go shopping, or explore different parts of New York.
+
+There are many subway lines and bus routes, so I can travel around the city quite easily.
+
+Sometimes a train is late or a bus is crowded, but I am used to these small problems.
+
+I also like walking, so I often get off one stop early and walk the rest of the way.
+
+For me, public transportation makes living in a large city easier because I can go almost anywhere without a car.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I live in New York City.
+
+Where do you live?
+
+New York City.
+
+Two: I do not have a car.
+
+Do you have one?
+
+No, I don't.
+
+Three: I take the subway to work.
+
+How do you go to work?
+
+By subway.
+
+Four: The subway is often busy.
+
+Is it empty?
+
+No, it isn't.
+
+Five: I sometimes take the bus.
+
+Why?
+
+Because I enjoy looking at the city.
+
+Six: I use the subway on weekends.
+
+What for?
+
+To visit friends, shop, and explore.
+
+Seven: There are many subway lines.
+
+Is travel easy?
+
+Yes, it is.
+
+Eight: Sometimes trains are late.
+
+What problems happen?
+
+Late trains or crowded buses.
+
+Nine: I sometimes walk part of the way.
+
+Why?
+
+Because I like walking.
+
+Ten: I can travel without a car.
+
+Do you need a car?
+
+No, I don't.
+
+### END FILE
+
+### FILE: Travelling.txt
+
+### TOPIC: Travelling
+
+Daniel has always wanted to visit Paris, France.
+
+One spring morning, he arrives in Paris for the first time and feels excited to explore the city.
+
+After leaving his hotel, he walks along the streets and stops at a small café for coffee and a croissant.
+
+Later, Daniel sees the Eiffel Tower for the first time and is surprised by how tall it is.
+
+He takes several photos and sits in a nearby park to enjoy the view.
+
+In the afternoon, he walks beside the Seine River and watches boats moving slowly on the water.
+
+He also visits a small bakery and tries a French pastry that he has never eaten before.
+
+Daniel does not speak much French, but people are friendly when he asks for help.
+
+In the evening, he sits outside a restaurant and watches the city lights while eating dinner.
+
+Daniel feels tired after his long day, but he is happy because his first day in Paris is even better than he imagined.
+
+Now let's listen to the same story told by Daniel.
+
+I have always wanted to visit Paris, France.
+
+One spring morning, I arrive in Paris for the first time and feel excited to explore the city.
+
+After leaving my hotel, I walk along the streets and stop at a small café for coffee and a croissant.
+
+Later, I see the Eiffel Tower for the first time and am surprised by how tall it is.
+
+I take several photos and sit in a nearby park to enjoy the view.
+
+In the afternoon, I walk beside the Seine River and watch boats moving slowly on the water.
+
+I also visit a small bakery and try a French pastry that I have never eaten before.
+
+I do not speak much French, but people are friendly when I ask for help.
+
+In the evening, I sit outside a restaurant and watch the city lights while eating dinner.
+
+I feel tired after my long day, but I am happy because my first day in Paris is even better than I imagined.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I have always wanted to visit Paris.
+
+Where?
+
+Paris, France.
+
+Two: It is my first visit.
+
+Have you been there before?
+
+No, I haven't.
+
+Three: I have coffee and a croissant.
+
+What do you have?
+
+Coffee and a croissant.
+
+Four: The Eiffel Tower is very tall.
+
+What surprises you?
+
+How tall it is.
+
+Five: I take photos.
+
+What do you do?
+
+I take photos.
+
+Six: I walk beside the Seine River.
+
+Where do you walk?
+
+Beside the Seine River.
+
+Seven: I try a French pastry.
+
+What new food do you try?
+
+A French pastry.
+
+Eight: I do not speak much French.
+
+Do you speak a lot?
+
+No, I don't.
+
+Nine: I watch the city lights.
+
+What do you watch?
+
+The city lights.
+
+Ten: I feel tired but happy.
+
+How do you feel?
+
+Tired but happy.
+
+### END FILE
+
+### FILE: Weather.txt
+
+### TOPIC: Weather
+
+Emma wakes up on Monday morning and hears heavy rain outside her window.
+
+The sky is dark, and the rain makes a loud sound on the roof.
+
+She takes an umbrella and leaves home, but her shoes and trousers still get wet on the way to work.
+
+At lunchtime, Emma looks outside and sees that the rain is still falling heavily.
+
+She usually enjoys talking with her friends, but today she feels quiet and a little sad.
+
+Nothing bad has happened, and Emma does not really understand why she feels this way.
+
+After work, she walks slowly to the bus stop while the cold rain continues around her.
+
+On the bus, she watches the wet streets through the window and listens to the sound of the rain.
+
+When she gets home, she changes into dry clothes, makes a warm drink, and sits quietly by the window.
+
+The rain continues into the evening, and Emma still feels a little sad, but she knows that some days simply feel different from others.
+
+Now let's listen to the same story told by Emma.
+
+I wake up on Monday morning and hear heavy rain outside my window.
+
+The sky is dark, and the rain makes a loud sound on the roof.
+
+I take an umbrella and leave home, but my shoes and trousers still get wet on the way to work.
+
+At lunchtime, I look outside and see that the rain is still falling heavily.
+
+I usually enjoy talking with my friends, but today I feel quiet and a little sad.
+
+Nothing bad has happened, and I do not really understand why I feel this way.
+
+After work, I walk slowly to the bus stop while the cold rain continues around me.
+
+On the bus, I watch the wet streets through the window and listen to the sound of the rain.
+
+When I get home, I change into dry clothes, make a warm drink, and sit quietly by the window.
+
+The rain continues into the evening, and I still feel a little sad, but I know that some days simply feel different from others.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: I hear heavy rain.
+
+What do you hear?
+
+Heavy rain.
+
+Two: The sky is dark.
+
+Is it bright?
+
+No, it isn't.
+
+Three: My clothes get wet.
+
+What gets wet?
+
+My shoes and trousers.
+
+Four: It is still raining at lunchtime.
+
+Does it stop?
+
+No, it doesn't.
+
+Five: I feel quiet and sad.
+
+How do you feel?
+
+A little sad.
+
+Six: Nothing bad happened.
+
+Do you know why you feel sad?
+
+No, I don't.
+
+Seven: I walk to the bus stop.
+
+Where do you go?
+
+To the bus stop.
+
+Eight: I watch the wet streets.
+
+What do you watch?
+
+The wet streets.
+
+Nine: I change into dry clothes.
+
+What do you do at home?
+
+I change clothes and make a warm drink.
+
+Ten: I still feel a little sad.
+
+Do you know exactly why?
+
+No, I don't.
+
+### END FILE
+
+### FILE: Weekends.txt
+
+### TOPIC: Weekends
+
+Ryan usually has quiet weekends, but last weekend was very exciting.
+
+On Saturday morning, he met his friends at a park and they rented bicycles together.
+
+They rode around the park for an hour and had a race to see who was the fastest.
+
+After that, they went to a new restaurant and ate burgers and fries for lunch.
+
+In the afternoon, Ryan went to a basketball game with his older brother.
+
+The game was very close, and their favorite team won in the last few minutes.
+
+On Sunday morning, Ryan and his family drove to a lake outside the city.
+
+They had a picnic, played games, and took many funny photos together.
+
+When Ryan got home on Sunday evening, he was tired, but he could not stop talking about everything he had done.
+
+Before going to bed, he smiled and thought that it was one of the most exciting weekends he had had in a long time.
+
+Now let's listen to the same story told by Ryan.
+
+I usually have quiet weekends, but last weekend was very exciting.
+
+On Saturday morning, I met my friends at a park and we rented bicycles together.
+
+We rode around the park for an hour and had a race to see who was the fastest.
+
+After that, we went to a new restaurant and ate burgers and fries for lunch.
+
+In the afternoon, I went to a basketball game with my older brother.
+
+The game was very close, and our favorite team won in the last few minutes.
+
+On Sunday morning, my family and I drove to a lake outside the city.
+
+We had a picnic, played games, and took many funny photos together.
+
+When I got home on Sunday evening, I was tired, but I could not stop talking about everything I had done.
+
+Before going to bed, I smiled and thought that it was one of the most exciting weekends I had had in a long time.
+
+Now let's listen to some questions and you can try to answer if you want.
+
+One: Last weekend was exciting.
+
+Was it quiet?
+
+No, it wasn't.
+
+Two: I rented bicycles with my friends.
+
+Who were you with?
+
+My friends.
+
+Three: We had a bicycle race.
+
+What did you do?
+
+We had a race.
+
+Four: We ate burgers and fries.
+
+What did you eat?
+
+Burgers and fries.
+
+Five: I went to a basketball game.
+
+Who did you go with?
+
+My older brother.
+
+Six: Our team won.
+
+Did it lose?
+
+No, it didn't.
+
+Seven: We drove to a lake.
+
+Where did you go Sunday?
+
+To a lake.
+
+Eight: We had a picnic and played games.
+
+What did you do?
+
+We had a picnic and played games.
+
+Nine: I was tired but excited.
+
+How did you feel?
+
+Tired but excited.
+
+Ten: It was one of my most exciting weekends.
+
+Did you enjoy it?
+
+Yes, I did.
+
+### END FILE

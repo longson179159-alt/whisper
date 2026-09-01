@@ -12,9 +12,9 @@ PROJECT_ROOT = os.path.dirname(
     )
 )
 
-
+# C:\Users\PC\Desktop\whisper\youtube_data\Johnny Harris\Is Fascism Back
 # C:\Users\PC\Desktop\whisper\youtube_data\gatsby_the_grate
-CURRENT_FOLDER = "gatsby_the_grate"
+CURRENT_FOLDER = "Johnny Harris\Is Fascism Back"
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)
 
 
@@ -160,12 +160,12 @@ def main():
         ]
                 
 
-        subTimestampPath = os.path.join(lessonFolderPath, 'raw_timestamp.json')
+        subTimestampPath = os.path.join(lessonFolderPath, 'timestamp.json')
         with open(subTimestampPath, 'w', encoding='utf-8') as file:
             json.dump(subTimestamp, file, ensure_ascii=False, indent=4)
 
-        # subText = '\n'.join(ts['text'] for ts in subTimestamp)
-        subText = ''
+        subText = '\n'.join(ts['text'] for ts in subTimestamp)
+        # subText = ''
         textFilePath = os.path.join(lessonFolderPath, 'text.txt')
         with open(textFilePath, 'w', encoding='utf-8') as file:
             file.write(subText)

@@ -7,10 +7,11 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # C:\Users\PC\Desktop\whisper\youtube_data\gatsby_the_greate\lessons
 # C:\Users\PC\Desktop\whisper\youtube_data\how_to_stop_worrying
+# english_at_work
 # 
 
-CURRENT_FOLDER = 'how_to_stop_worrying/lessons/'
-CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
+CURRENT_FOLDER = 'en_easy_stories/lessons/'
+CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 def build_standard_text(text_path):
     with open(text_path, "r", encoding="utf-8") as file:
         text = file.read()
@@ -28,6 +29,7 @@ def process_text(folder):
 
     if not os.path.exists(text_path):
         raise FileNotFoundError(f"Missing raw text file in {folder}")
+
 
     output_path = os.path.join(folder, "lesson.json")
     standard_text = build_standard_text(text_path)

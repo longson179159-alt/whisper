@@ -1,12 +1,15 @@
 import json
 import os
+import re
 
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LESSONS_PATH = os.path.join(PROJECT_ROOT, "youtube_data", "short story for learning english", "lessons")
+LESSONS_PATH = os.path.join(PROJECT_ROOT, "youtube_data", "Johnny Harris", "lessons")
 
 list_number_lessons = []
 lesson_paths = []
+
+# modify these foldername, because the lesson_number can be 1a, 2b, 3c
 
 for folder_name in sorted(os.listdir(LESSONS_PATH)):
     lesson_path = os.path.join(LESSONS_PATH, folder_name)
@@ -22,16 +25,18 @@ for folder_name in sorted(os.listdir(LESSONS_PATH)):
         if not isinstance(description, dict):
             raise ValueError(f"{folder_name}: description.json is not a JSON object")
         lesson_number = description.get("lesson_number")
-
-        if not isinstance(lesson_number, int):
+        #  lesson_number can be 1a, 2b, 3c, take the number and the text
+        match = re.fullmatch(r"(\d+)([A-Za-z]*)", str(lesson_number).strip())
+        if not match:
             raise ValueError(f"{folder_name}: lesson_number is missing or invalid")
+        number_part, text_part = match.groups()
 
         # check if the folder name already starts with a number
-        if len(folder_name) >= 6 and folder_name[:3].isdigit() and folder_name[3:6] == " - ":
+        if re.match(r"^\d{3}[A-Za-z]* - ", folder_name):
             print(f"{folder_name}: folder already has a number prefix, skipping")
             continue
 
-    new_folder_name = f"{lesson_number:03d} - {folder_name}"
+    new_folder_name = f"{int(number_part):03d}{text_part} - {folder_name}"
 
     new_lesson_path = os.path.join(LESSONS_PATH, new_folder_name)
     os.rename(lesson_path, new_lesson_path)

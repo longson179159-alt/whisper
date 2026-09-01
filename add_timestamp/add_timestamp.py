@@ -7,11 +7,9 @@ os.path.abspath(__file__)
 
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# C:\Users\PC\Desktop\whisper\youtube_data\gatsby_the_greate\lessons
-# C:\Users\PC\Desktop\whisper\youtube_data\how_to_stop_worrying
-# C:\Users\PC\Desktop\whisper\youtube_data\The_alchemist_chapters
-CURRENT_FOLDER = 'The_alchemist_chapters/lessons/'  # Name of the folder containing the text and raw timestamp files.
-CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
+
+CURRENT_FOLDER = 'en_easy_stories/lessons/'  # Name of the folder containing the text and raw timestamp files.
+CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 
 if PROJECT_ROOT not in sys.path:  # Check whether the project root is already in Python's import path.
     sys.path.insert(0, PROJECT_ROOT)  # Add the project root to the beginning of the import path.

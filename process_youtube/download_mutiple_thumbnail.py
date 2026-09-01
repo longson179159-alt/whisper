@@ -23,9 +23,10 @@ from urllib.request import Request, urlopen
 # LESSONS_DIR = SCRIPT_DIR
 THUMBNAIL_NAME = "image.jpg"
 
-
+# C:\Users\PC\Desktop\whisper\youtube_data\The_alchemist_chapters
+# C:\Users\PC\Desktop\whisper\youtube_data\english_at_work
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-LESSONS_DIR = PROJECT_ROOT / "youtube_data" / "short story for learning english" / "lessons"
+LESSONS_DIR = PROJECT_ROOT / "youtube_data" / "Johnny Harris" / "lessons"
 
 
 
@@ -50,7 +51,8 @@ def download_thumbnail(video_id: str, destination: Path) -> str:
             raise RuntimeError(f"Could not download {url}: {error.reason}") from error
 
         # A missing image can occasionally be returned as a tiny placeholder.
-        if len(data) < 1_000:
+        # Also reject an HTML page accidentally returned by the remote server.
+        if len(data) < 1_000 or not data.startswith(b"\xff\xd8\xff"):
             continue
 
         destination.write_bytes(data)

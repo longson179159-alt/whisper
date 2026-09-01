@@ -7,9 +7,11 @@ import json
 from urllib.parse import parse_qs, urlparse
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-CURRENT_FOLDER = 'Buddhism/lessons'
-CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
+# C:\Users\PC\Desktop\whisper\youtube_data\The_alchemist_chapters
+# C:\Users\PC\Desktop\whisper\youtube_data\how_to_stop_worrying
+# C:\Users\PC\Desktop\whisper\youtube_data\english_at_work
+CURRENT_FOLDER = 'en_easy_stories/lessons'
+CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 
 
 def main():
@@ -72,8 +74,8 @@ def main():
             "level": old_description.get("level") or arg.level,
             "youtube_id": old_description.get("youtube_id") or youtube_id,
             "url": old_description.get("url", ""),
-            "audio_start_time": old_description.get("audio_start_time", 0),
-            "audio_duration": old_description.get("audio_duration", round(audio_duration, 2)),
+            "audio_start_time": old_description.get("audio_start_time") or 0,
+            "audio_duration": old_description.get("audio_duration") or  round(audio_duration, 2),
             "has_sentence_timestamps": old_description.get("has_sentence_timestamps", arg.has_sentence_timestamps),
         }
         description_path = os.path.join(folder_path, "description.json")

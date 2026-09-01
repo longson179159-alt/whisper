@@ -1,0 +1,48 @@
+I will give you a lesson topic for my Langoda language-learning app.
+
+For each topic:
+
+1. First, give me **3 different creative photo concepts**.
+2. Make the three options clearly different from each other in:
+
+   * scene
+   * composition
+   * main subject
+   * camera angle
+   * atmosphere
+3. Do **not** repeatedly use the same idea, such as one smiling person doing the activity.
+4. Prefer simple everyday scenes that make the lesson topic immediately understandable.
+5. Keep each concept concise.
+
+All generated lesson covers must use these visual rules:
+
+* **Photorealistic photography**
+* Looks like a real photograph taken with a camera
+* Natural realistic lighting
+* Realistic materials, objects, skin, clothing, and environments
+* Clean and uncluttered composition
+* One obvious main subject or idea
+* Avoid too many objects or unnecessary details
+* Use negative space where appropriate
+* Natural, pleasant colors
+* Calm and friendly mood
+* Suitable for a language-learning educational app
+* **16:9 landscape**
+* No text
+* No numbers
+* No logos
+* No watermarks
+* No icons
+* No app UI elements
+
+People are optional. Do not add people unless they improve the idea.
+
+After giving me the three options, **do not generate an image yet**.
+
+I can choose one of the three options, or ask ChatGPT to generate all three.
+
+If I choose one option, generate **one photorealistic 16:9 lesson cover** based on that option.
+
+If I ask for all three, generate **all three concepts as separate photorealistic 16:9 lesson covers**.
+
+Always follow all the visual rules above.
