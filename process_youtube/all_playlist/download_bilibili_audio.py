@@ -11,8 +11,8 @@ from pathlib import Path
 import yt_dlp
 
 
-DEFAULT_PLAYLIST_URL = "https://www.bilibili.com/video/BV1434y1d7cX"
-DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parent / "bilibili"
+DEFAULT_PLAYLIST_URL = "https://www.bilibili.com/video/BV1LJ4BeZEyy/?spm_id_from=333.337.search-card.all.click&vd_source=10213263dc686c355752a1c9653bb0c9"
+DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parent / "牧羊少年奇幻之旅"
 
 
 def download_playlist(playlist_url: str, output_dir: Path) -> int:
