@@ -8,9 +8,9 @@ os.path.abspath(__file__)
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-CURRENT_FOLDER = 'en_easy_stories/lessons/'  # Name of the folder containing the text and raw timestamp files.
+CURRENT_FOLDER = 'English Stories/lessons/'  # Name of the folder containing the text and raw timestamp files.
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
-CURRENT_FOLDER_PATH = r"D:\english course\System_course\a2\en_easy_stories\lessons"
+# CURRENT_FOLDER_PATH = r"c:\Users\PC\Desktop\kaggle\whisper\en\English Stories\lessons"
 if PROJECT_ROOT not in sys.path:  # Check whether the project root is already in Python's import path.
     sys.path.insert(0, PROJECT_ROOT)  # Add the project root to the beginning of the import path.
 

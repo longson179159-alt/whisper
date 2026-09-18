@@ -30,5 +30,8 @@ for folder_name in os.listdir(WORKING_FOLDER):
     with open(text_txt_path, "w", encoding="utf-8") as f:
         f.write("")
 
+
     youtube_timestamp_json_path = os.path.join(folder_path, "youtube_timestamp.json")
     os.rename(timestamp_json_path, youtube_timestamp_json_path)
+
+print("Processing completed.")
