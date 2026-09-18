@@ -1,7 +1,7 @@
 import os
 from shutil import copy
 
-OUTPUT_FOLDER = r"C:\Users\PC\Desktop\kaggle\whisper\output"
+OUTPUT_FOLDER = r"C:\Users\PC\Desktop\kaggle\whisper\audio"
 WORKING_FOLDER = r"C:\Users\PC\Desktop\kaggle\whisper\en"
 
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
