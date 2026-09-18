@@ -7,11 +7,11 @@ import re
 import sys
 import unicodedata
 from pathlib import Path
-
+# C:\Users\PC\Desktop\kaggle\whisper\en\English Stories\lessons
 
 REPOSITORY_DIR = Path(__file__).resolve().parent.parent
 LESSONS_DIR = (
-    REPOSITORY_DIR / "en" / "short story for learning english" / "lessons"
+    REPOSITORY_DIR / "en" / "English Stories" / "lessons"
 )
 RAW_FILENAME = "raw_text.txt"
 NEW_FILENAME = "text.txt"
