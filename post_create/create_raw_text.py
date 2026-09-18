@@ -4,7 +4,7 @@ import json
 WORKING_FOLDER = r"C:\Users\PC\Desktop\kaggle\whisper\en\English Stories\lessons"
 
 # read the text in timestamp and save it in raw_text.txt,
-# create a text.txt
+# create a text.txt with empty conttent
 # change the name of timmstamp.json to youtube_timestamp.json
 
 for folder_name in os.listdir(WORKING_FOLDER):
@@ -28,7 +28,7 @@ for folder_name in os.listdir(WORKING_FOLDER):
 
     text_txt_path = os.path.join(folder_path, "text.txt")
     with open(text_txt_path, "w", encoding="utf-8") as f:
-        f.write(raw_text)
+        f.write("")
 
     youtube_timestamp_json_path = os.path.join(folder_path, "youtube_timestamp.json")
     os.rename(timestamp_json_path, youtube_timestamp_json_path)
