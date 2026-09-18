@@ -24,3 +24,5 @@ youtube_data/
 
 # ignore zip
 *.zip
+# ignore C:\Users\PC\Desktop\kaggle\whisper\audio
+/audio

@@ -1,0 +1,32 @@
+Please fine-tune the following transcript while keeping it as faithful to the original as possible.
+
+Your main goal is to improve readability WITHOUT rewriting the story.
+
+Rules:
+
+1. Add proper punctuation, including periods, commas, question marks, quotation marks, and apostrophes.
+2. Add proper paragraph breaks so the story is easy to read.
+3. Fix capitalization at the beginning of sentences and for proper names.
+4. Correct only obvious transcription errors, such as:
+
+   * accidentally repeated words: “open opened” → “opened”
+   * duplicated words: “old old house” → “old house”
+   * clearly incomplete or corrupted words caused by automatic transcription
+5. Remove transcript artifacts such as “[Music]” or unrelated section labels if they are not part of the story.
+6. DO NOT paraphrase or rewrite sentences just to make them sound better.
+7. DO NOT replace words with synonyms.
+
+   * Keep “big eyes” instead of changing it to “wide eyes.”
+   * Keep “scared” instead of changing it to “terrified.”
+8. DO NOT add descriptive words or information that is not present in the original.
+9. DO NOT remove words, sentences, or details unless they are clearly transcription errors or artifacts.
+10. Preserve the original vocabulary level and simple writing style.
+11. Preserve the original order of all sentences and events.
+12. Keep dialogue faithful to the original wording; only add the necessary punctuation and quotation marks.
+13. If a sentence sounds awkward but is grammatically understandable, keep it rather than rewriting it.
+14. If you are uncertain whether something is a transcription error, preserve the original wording.
+15. After editing, compare the cleaned version against the original transcript one more time and make sure no meaningful words, sentences, or details were accidentally added, removed, or changed.
+
+Important: This transcript needs to remain closely synchronized with the original audio. Therefore, faithfulness to the original wording is more important than improving the writing style.
+
+Output only the final cleaned story.
