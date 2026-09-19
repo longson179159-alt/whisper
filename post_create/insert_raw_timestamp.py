@@ -2,8 +2,8 @@
 import os
 import json
 import shutil
-NEW_TIMESATMP_SOURSE = r"C:\Users\PC\Desktop\raw_whisper\greate_gastby"
-DESTINATION = r"C:\Users\PC\Desktop\kaggle\whisper\en\gatsby_the_greate\lessons"
+NEW_TIMESATMP_SOURSE = r"C:\Users\PC\Desktop\raw_whisper\How_to_stop_worring_and_start_living"
+DESTINATION = r"C:\Users\PC\Desktop\kaggle\whisper\en\how_to_stop_worrying_and_start_living\lessons"
 # raw_timestamp.json
 for folder_name in os.listdir(DESTINATION):
     folder_path = os.path.join(DESTINATION, folder_name)
@@ -16,7 +16,7 @@ for folder_name in os.listdir(DESTINATION):
         continue
 
     new_destination_path = os.path.join(DESTINATION, folder_name, 'raw_timestamp.json')
-
+    print(f'Copying {raw_timestamp_path} to {new_destination_path}')
     shutil.copy2(raw_timestamp_path, new_destination_path)
 
 print('finished process!')

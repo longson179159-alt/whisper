@@ -21,8 +21,9 @@ if str(HELPER_DIR) not in sys.path:
 
 from helper import clean_word, get_lists_txt, nw_ref_match_flags
 
-
-DEFAULT_INPUT_ROOT = PROJECT_ROOT / "youtube_data" / "little_prince" / "lessons"
+# C:\Users\PC\Desktop\kaggle\whisper\en\English Stories
+# C:\Users\PC\Desktop\kaggle\whisper\en\short story for learning english
+DEFAULT_INPUT_ROOT = PROJECT_ROOT / "en" / "short story for learning english" / "lessons"
 DEFAULT_OUTPUT_NAME = "missing_text_report.json"
 SEVERITY_ORDER = {"severe": 0, "high": 1, "medium": 2, "low": 3, "matched": 4}
 
