@@ -1,3 +1,4 @@
+import argparse
 import json
 import sys
 import os
@@ -7,11 +8,6 @@ os.path.abspath(__file__)
 
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# C:\Users\PC\Desktop\kaggle\whisper\en\little_prince
-# "C:\Users\PC\Desktop\kaggle\whisper\en\how_to_stop_worrying_and_start_living\lessons"
-CURRENT_FOLDER = 'how_to_stop_worrying_and_start_living/lessons/'  # Name of the folder containing the text and raw timestamp files.
-CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
-# CURRENT_FOLDER_PATH = r"c:\Users\PC\Desktop\kaggle\whisper\en\English Stories\lessons"
 if PROJECT_ROOT not in sys.path:  # Check whether the project root is already in Python's import path.
     sys.path.insert(0, PROJECT_ROOT)  # Add the project root to the beginning of the import path.
 
@@ -177,12 +173,16 @@ def process_raw_timestamp(folder):
 
 
 def main():
-    # sample_dir = CURRENT_FOLDER_PATH
+    parser = argparse.ArgumentParser(description="Create timestamp.json files.")
+    parser.add_argument("folder_path", help="Folder containing the lesson folders")
+    args = parser.parse_args()
+    current_folder_path = os.path.abspath(os.path.join(PROJECT_ROOT, args.folder_path))
+
     created_files = []
 
-    for folder_name in sorted(os.listdir(CURRENT_FOLDER_PATH)):
+    for folder_name in sorted(os.listdir(current_folder_path)):
         
-        folder = os.path.join(CURRENT_FOLDER_PATH, folder_name)
+        folder = os.path.join(current_folder_path, folder_name)
         if not os.path.isdir(folder):
             continue
 
@@ -209,3 +209,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Example:
+# python add_timestamp/add_timestamp.py "en/how_to_stop_worrying_and_start_living/lessons"

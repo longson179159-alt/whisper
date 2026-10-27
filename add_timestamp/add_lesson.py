@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 # import sys
@@ -5,13 +6,6 @@ from helper import get_lists_from_text
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# C:\Users\PC\Desktop\whisper\youtube_data\gatsby_the_greate\lessons
-# C:\Users\PC\Desktop\kaggle\whisper\en\how_to_stop_worrying_and_start_living
-# english_at_work
-# 
-# c:\Users\PC\Desktop\kaggle\whisper\en\English Stories\lessons
-CURRENT_FOLDER = 'how_to_stop_worrying_and_start_living/lessons/'
-CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 def build_standard_text(text_path):
     with open(text_path, "r", encoding="utf-8") as file:
         text = file.read()
@@ -41,17 +35,19 @@ def process_text(folder):
 
 
 def main():
-    # Get the path to the "sample" folder, which is located next to this Python file.
-    # CURRENT_FOLDER_PATH
+    parser = argparse.ArgumentParser(description="Create lesson.json files.")
+    parser.add_argument("folder_path", help="Folder containing the lesson folders")
+    args = parser.parse_args()
+    current_folder_path = os.path.abspath(os.path.join(PROJECT_ROOT, args.folder_path))
 
     # Store the paths of all files created by process_raw_text().
     created_files = []
 
     # Loop through every item (folder or file) inside the sample directory, in alphabetical order.
-    for folder_name in sorted(os.listdir(CURRENT_FOLDER_PATH)):
+    for folder_name in sorted(os.listdir(current_folder_path)):
 
         # Build the full path to the current item.
-        folder = os.path.join(CURRENT_FOLDER_PATH, folder_name)
+        folder = os.path.join(current_folder_path, folder_name)
 
         # Skip this item if it is not a folder.
         if not os.path.isdir(folder):
@@ -70,3 +66,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Example:
+# python add_timestamp/add_lesson.py "en/how_to_stop_worrying_and_start_living/lessons"

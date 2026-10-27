@@ -1,23 +1,23 @@
 from add_lesson import process_raw_text
 from add_timestamp import process_raw_timestamp
+import argparse
 import os
 
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-CURRENT_FOLDER = 'listen_a_minute'
-CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
-
-
 def main():
-  
+    parser = argparse.ArgumentParser(description="Create lesson.json and timestamp.json files.")
+    parser.add_argument("folder_path", help="Folder containing the lesson folders")
+    args = parser.parse_args()
+    current_folder_path = os.path.abspath(os.path.join(PROJECT_ROOT, args.folder_path))
 
     created_files = []
     # delete_files = []
 
-    for folder_name in sorted(os.listdir(CURRENT_FOLDER_PATH)):
-        folder = os.path.join(CURRENT_FOLDER_PATH, folder_name)
+    for folder_name in sorted(os.listdir(current_folder_path)):
+        folder = os.path.join(current_folder_path, folder_name)
 
         if not os.path.isdir(folder):
             continue
@@ -38,4 +38,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Example:
+# python add_timestamp/add_all.py "en/how_to_stop_worrying_and_start_living/lessons"
 

@@ -1,18 +1,21 @@
 
+import argparse
 import os
 
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-CURRENT_FOLDER = 'en_easy_stories/lessons/'  # Name of the folder containing the text and raw timestamp files.
-CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
-
 def main():
+    parser = argparse.ArgumentParser(description="Rename lesson image and audio files.")
+    parser.add_argument("folder_path", help="Folder containing the lesson folders")
+    args = parser.parse_args()
+    current_folder_path = os.path.abspath(os.path.join(PROJECT_ROOT, args.folder_path))
+
     renamed_pictures = []
 
-    for folder_name in sorted(os.listdir(CURRENT_FOLDER_PATH)):
-        folder_path = os.path.join(CURRENT_FOLDER_PATH, folder_name)
+    for folder_name in sorted(os.listdir(current_folder_path)):
+        folder_path = os.path.join(current_folder_path, folder_name)
         if not os.path.isdir(folder_path):
             continue
 
@@ -44,3 +47,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Example:
+# python add_timestamp/rename_picture.py "en/en_easy_stories/lessons"

@@ -7,16 +7,10 @@ import json
 from urllib.parse import parse_qs, urlparse
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# C:\Users\PC\Desktop\whisper\youtube_data\The_alchemist_chapters
-# C:\Users\PC\Desktop\whisper\youtube_data\how_to_stop_worrying
-# C:\Users\PC\Desktop\whisper\youtube_data\english_at_work
-CURRENT_FOLDER = 'en_easy_stories/lessons'
-CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
-
-
 def main():
     # add level agument
     parser = argparse.ArgumentParser(description="Add description.json to each lesson folder.")
+    parser.add_argument("folder_path", help="Folder containing the lesson folders")
     parser.add_argument(
         "--level",
         type=str,
@@ -38,10 +32,11 @@ def main():
     )
 
     arg = parser.parse_args()
+    current_folder_path = os.path.abspath(os.path.join(PROJECT_ROOT, arg.folder_path))
 
 
-    for idx, folder_name in enumerate(sorted(os.listdir(CURRENT_FOLDER_PATH))):
-        folder_path = os.path.join(CURRENT_FOLDER_PATH, folder_name)
+    for idx, folder_name in enumerate(sorted(os.listdir(current_folder_path))):
+        folder_path = os.path.join(current_folder_path, folder_name)
         if not os.path.isdir(folder_path):
             continue
 
@@ -89,4 +84,5 @@ if __name__ == "__main__":
     main()
 
 
-# python add_timestamp/add_description.py --level b1 --is_youtube_video
+# Example:
+# python add_timestamp/add_description.py "en/en_easy_stories/lessons" --level b1 --is_youtube_video
