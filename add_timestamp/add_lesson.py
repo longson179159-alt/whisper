@@ -6,11 +6,11 @@ from helper import get_lists_from_text
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # C:\Users\PC\Desktop\whisper\youtube_data\gatsby_the_greate\lessons
-# C:\Users\PC\Desktop\whisper\youtube_data\how_to_stop_worrying
+# C:\Users\PC\Desktop\kaggle\whisper\en\how_to_stop_worrying_and_start_living
 # english_at_work
 # 
 # c:\Users\PC\Desktop\kaggle\whisper\en\English Stories\lessons
-CURRENT_FOLDER = 'English A1/lessons/'
+CURRENT_FOLDER = 'how_to_stop_worrying_and_start_living/lessons/'
 CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'en', CURRENT_FOLDER)  # Path to the folder containing the text and raw timestamp files.
 def build_standard_text(text_path):
     with open(text_path, "r", encoding="utf-8") as file:
