@@ -54,6 +54,9 @@ def read_dialogue(input_file):
     return dialogue
 
 
+ouput_folder = BASE_DIR / "tts_output"
+ouput_folder.mkdir(exist_ok=True)
+
 def generate_lesson(input_file):
     dialogue = read_dialogue(input_file)
 
@@ -61,7 +64,7 @@ def generate_lesson(input_file):
         print(f"Skipped empty file: {input_file.name}")
         return False
 
-    output_file = BASE_DIR / f"tts_output/{input_file.stem}.mp3"
+    output_file = ouput_folder / f"{input_file.stem}.mp3"
     combined_audio = AudioSegment.empty()
     dialogue_pause = AudioSegment.silent(duration=DIALOGUE_PAUSE_MS)
     title_pause = AudioSegment.silent(duration=TITLE_PAUSE_MS)
