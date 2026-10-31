@@ -8,6 +8,7 @@ and ``raw_text.txt``. If English captions are unavailable, the text file is empt
 from __future__ import annotations
 
 import html
+import json
 import re
 from pathlib import Path
 
@@ -21,12 +22,40 @@ PROJECT_DIR = SCRIPT_DIR.parents[1]
 INVALID_WINDOWS_CHARS = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
 VTT_TAG = re.compile(r"<[^>]+>")
 
+COURSE_DESCRIPTION_TEMPLATE = {
+    "course_number": None,
+    "course_name": None,
+    "author": None,
+    "content_language": None,
+    "type": None,
+    "audio_duration": None,
+    "is_system_course": None,
+    "avatar": None,
+    "has_lesson_images": None,
+    "level": None,
+    "youtube_id": None,
+    "url": None,
+}
+
 
 def safe_title(title: str, max_length: int = 70) -> str:
     """Make a readable title safe for a Windows folder and filenames."""
     title = INVALID_WINDOWS_CHARS.sub("", html.unescape(title))
     title = re.sub(r"\s+", " ", title).strip().rstrip(".")
     return title[:max_length].rstrip(" .") or "Untitled lesson"
+
+
+def create_course_description(course_dir: Path) -> Path:
+    """Create a blank course description without replacing existing metadata."""
+    description_dir = course_dir / "course_infos"
+    description_dir.mkdir(parents=True, exist_ok=True)
+    description_path = description_dir / "description.json"
+    if not description_path.exists():
+        description_path.write_text(
+            json.dumps(COURSE_DESCRIPTION_TEMPLATE, indent=2) + "\n",
+            encoding="utf-8",
+        )
+    return description_path
 
 
 def english_subtitle_language(info: dict) -> str | None:
@@ -202,6 +231,8 @@ def build_course(playlist_url: str, maximum_videos: int, output_name: str) -> No
         raise ValueError("No videos found in the playlist")
 
     output_dir.mkdir(parents=True, exist_ok=True)
+    description_path = create_course_description(output_dir.parent)
+    print(f"Course description: {description_path.resolve()}")
     failures: list[tuple[int, str]] = []
 
     for index, url in enumerate(urls, start=1):

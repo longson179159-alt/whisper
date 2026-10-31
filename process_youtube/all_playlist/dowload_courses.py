@@ -6,7 +6,12 @@ from pathlib import Path
 
 from yt_dlp.utils import DownloadError
 
-from download_youtube_playlist import PROJECT_DIR, download_lesson, safe_title
+from download_youtube_playlist import (
+    PROJECT_DIR,
+    create_course_description,
+    download_lesson,
+    safe_title,
+)
 
 
 URL_FILE = Path(__file__).resolve().with_name("peding.txt")
@@ -29,6 +34,8 @@ def build_course(output_name: str) -> None:
     course_name = safe_title(output_name, max_length=60)
     output_dir = PROJECT_DIR / "en" / course_name / "LESSONS"
     output_dir.mkdir(parents=True, exist_ok=True)
+    description_path = create_course_description(output_dir.parent)
+    print(f"Course description: {description_path.resolve()}")
 
     failures: list[tuple[int, str]] = []
     for index, url in enumerate(urls, start=1):
