@@ -168,6 +168,15 @@ def download_lesson(index: int, url: str, output_dir: Path) -> None:
     lesson_dir = output_dir / base_name
     lesson_dir.mkdir(parents=True, exist_ok=True)
 
+    expected_files = (
+        lesson_dir / f"{base_name}.mp3",
+        lesson_dir / "image.jpg",
+        lesson_dir / "raw_text.txt",
+    )
+    if all(path.is_file() for path in expected_files):
+        print(f"[{index}] Already exists, skipping: {title}")
+        return
+
     subtitle_language = english_subtitle_language(info)
     print(f"[{index}] {title}")
     print(f"    English subtitles: {subtitle_language or 'not available (blank TXT)'}")
