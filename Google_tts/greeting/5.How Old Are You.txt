@@ -1,0 +1,21 @@
+Lesson 5: How Old Are You?
+
+Anna: How old are you, Tom?
+
+Tom: I'm twenty-five years old. How old are you?
+
+Anna: I'm twenty-four.
+
+Tom: When is your birthday?
+
+Anna: My birthday is in May. What about you?
+
+Tom: My birthday is in August.
+
+Anna: Nice! Are you twenty-six next year?
+
+Tom: Yes, I am.
+
+Anna: Happy early birthday!
+
+Tom: Thank you, Anna!

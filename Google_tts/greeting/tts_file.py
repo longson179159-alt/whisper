@@ -2,12 +2,14 @@ from google.cloud import texttospeech
 from pydub import AudioSegment
 from io import BytesIO
 from pathlib import Path
+from shutil import copy2
 
 # Paths
 BASE_DIR = Path(__file__).resolve().parent
-INPUT_FILE = BASE_DIR / "greeting" / "2. How Are You.txt"
-OUTPUT_DIR = BASE_DIR / "tts_output"
-OUTPUT_FILE = OUTPUT_DIR / "2. How Are You.mp3"
+INPUT_FILE = BASE_DIR / "5.How Old Are You.txt"
+LESSON_DIR = BASE_DIR / "lessons" / INPUT_FILE.stem
+OUTPUT_FILE = LESSON_DIR / f"{INPUT_FILE.stem}.mp3"
+TEXT_FILE = LESSON_DIR / INPUT_FILE.name
 
 # Google Cloud TTS
 client = texttospeech.TextToSpeechClient()
@@ -56,7 +58,7 @@ if not dialogue:
     raise ValueError(f"No dialogue found in: {INPUT_FILE}")
 
 # Generate audio
-OUTPUT_DIR.mkdir(exist_ok=True)
+LESSON_DIR.mkdir(parents=True, exist_ok=True)
 combined_audio = AudioSegment.empty()
 dialogue_pause = AudioSegment.silent(duration=DIALOGUE_PAUSE_MS)
 title_pause = AudioSegment.silent(duration=TITLE_PAUSE_MS)
@@ -104,6 +106,8 @@ for index, (speaker, text) in enumerate(dialogue, start=1):
 
 # Export MP3
 combined_audio.export(OUTPUT_FILE, format="mp3")
+copy2(INPUT_FILE, TEXT_FILE)
 
 print(f"\nSuccess! Created: {OUTPUT_FILE}")
+print(f"Copied text: {TEXT_FILE}")
 print(f"Duration: {len(combined_audio) / 1000:.1f} seconds")
