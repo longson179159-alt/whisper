@@ -37,6 +37,8 @@ COURSE_DESCRIPTION_TEMPLATE = {
     "url": None,
 }
 
+DEFAULT_LESSON_LEVEL = "b1"
+
 
 def safe_title(title: str, max_length: int = 70) -> str:
     """Make a readable title safe for a Windows folder and filenames."""
@@ -55,6 +57,45 @@ def create_course_description(course_dir: Path) -> Path:
             json.dumps(COURSE_DESCRIPTION_TEMPLATE, indent=2) + "\n",
             encoding="utf-8",
         )
+    return description_path
+
+
+def create_lesson_description(
+    lesson_dir: Path,
+    lesson_number: int,
+    lesson_name: str,
+    info: dict,
+) -> Path:
+    """Create missing metadata inside a lesson folder without replacing edits."""
+    description_path = lesson_dir / "description.json"
+    if description_path.exists():
+        return description_path
+
+    video_id = info.get("id")
+    duration = info.get("duration")
+    try:
+        audio_duration = round(float(duration), 2)
+    except (TypeError, ValueError):
+        audio_duration = 0.0
+
+    description = {
+        "lesson_number": lesson_number,
+        "lesson_name": lesson_name,
+        "level": DEFAULT_LESSON_LEVEL,
+        "youtube_id": video_id,
+        "url": (
+            f"https://www.youtube.com/watch?v={video_id}"
+            if video_id
+            else info.get("webpage_url", "")
+        ),
+        "audio_start_time": 0,
+        "audio_duration": audio_duration,
+        "has_sentence_timestamps": False,
+    }
+    description_path.write_text(
+        json.dumps(description, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     return description_path
 
 
@@ -189,8 +230,11 @@ def download_lesson(index: int, url: str, output_dir: Path) -> None:
     # The folder name and MP3 filename repeat, so limit both to a safe Windows path.
     maximum_base_length = (235 - len(str(output_dir.resolve())) - 6) // 2
     maximum_title_length = max(20, maximum_base_length - len(prefix))
+    lesson_name = html.unescape(
+        info.get("title") or info.get("id") or "Untitled lesson"
+    ).strip()
     title = safe_title(
-        info.get("title") or info.get("id") or "Untitled lesson",
+        lesson_name,
         max_length=maximum_title_length,
     )
     base_name = f"{index}. {title}"
@@ -203,7 +247,11 @@ def download_lesson(index: int, url: str, output_dir: Path) -> None:
         lesson_dir / "raw_text.txt",
     )
     if all(path.is_file() for path in expected_files):
+        description_path = create_lesson_description(
+            lesson_dir, index, lesson_name, info
+        )
         print(f"[{index}] Already exists, skipping: {title}")
+        print(f"    Lesson description: {description_path.name}")
         return
 
     subtitle_language = english_subtitle_language(info)
@@ -222,6 +270,11 @@ def download_lesson(index: int, url: str, output_dir: Path) -> None:
 
     for subtitle_file in subtitle_files:
         subtitle_file.unlink()
+
+    description_path = create_lesson_description(
+        lesson_dir, index, lesson_name, info
+    )
+    print(f"    Lesson description: {description_path.name}")
 
 
 def build_course(playlist_url: str, maximum_videos: int, output_name: str) -> None:
