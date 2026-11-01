@@ -32,7 +32,6 @@ def safe_title(title: str, max_length: int = 70) -> str:
     title = re.sub(r"\s+", " ", title).strip().rstrip(".")
     return title[:max_length].rstrip(" .") or "Untitled lesson"
 
-
 def create_course_description(
     course_dir: Path,
     course_name: str,
