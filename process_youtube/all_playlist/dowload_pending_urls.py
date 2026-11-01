@@ -34,16 +34,24 @@ def build_course(output_name: str) -> None:
     course_name = safe_title(output_name, max_length=60)
     output_dir = PROJECT_DIR / "en" / course_name / "LESSONS"
     output_dir.mkdir(parents=True, exist_ok=True)
-    description_path = create_course_description(output_dir.parent)
-    print(f"Course description: {description_path.resolve()}")
 
     failures: list[tuple[int, str]] = []
+    audio_duration = 0.0
     for index, url in enumerate(urls, start=1):
         try:
-            download_lesson(index, url, output_dir)
+            audio_duration += download_lesson(index, url, output_dir)
         except DownloadError as error:
             failures.append((index, url))
             print(f"[{index}] Download failed: {error}")
+
+    description_path = create_course_description(
+        output_dir.parent,
+        course_name,
+        audio_duration,
+        youtube_id=None,
+        url=None,
+    )
+    print(f"Course description: {description_path.resolve()}")
 
     successful = len(urls) - len(failures)
     print(f"\nFinished: {successful}/{len(urls)} lessons downloaded")
