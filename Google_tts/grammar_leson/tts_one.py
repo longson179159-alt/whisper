@@ -2,13 +2,15 @@ from google.cloud import texttospeech
 from pydub import AudioSegment
 from io import BytesIO
 from pathlib import Path
+import re
 
 
 # This demo generates audio for only the first grammar lesson.
 BASE_DIR = Path(__file__).resolve().parent
 INPUT_FILE = BASE_DIR / "text" / "1.The New Neighbor.txt"
 OUTPUT_DIR = BASE_DIR / "tts_output"
-OUTPUT_FILE = OUTPUT_DIR / f"{INPUT_FILE.stem}.mp3"
+SAFE_STEM = re.sub(r"[^a-zA-Z0-9._-]", "_", INPUT_FILE.stem)
+OUTPUT_FILE = OUTPUT_DIR / f"{SAFE_STEM}.mp3"
 
 VOICES = {
     "Narrator": "en-US-Chirp3-HD-Iapetus",

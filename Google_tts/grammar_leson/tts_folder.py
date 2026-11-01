@@ -2,6 +2,7 @@ from google.cloud import texttospeech
 from pydub import AudioSegment
 from io import BytesIO
 from pathlib import Path
+import re
 
 
 # Paths
@@ -67,7 +68,8 @@ def generate_lesson(input_file):
         print(f"Skipped empty file: {input_file.name}")
         return False
 
-    output_file = OUTPUT_DIR / f"{input_file.stem}.mp3"
+    safe_stem = re.sub(r"[^a-zA-Z0-9._-]", "_", input_file.stem)
+    output_file = OUTPUT_DIR / f"{safe_stem}.mp3"
     combined_audio = AudioSegment.empty()
     dialogue_pause = AudioSegment.silent(duration=DIALOGUE_PAUSE_MS)
     title_pause = AudioSegment.silent(duration=TITLE_PAUSE_MS)
