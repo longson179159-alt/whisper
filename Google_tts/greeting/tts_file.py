@@ -3,12 +3,14 @@ from pydub import AudioSegment
 from io import BytesIO
 from pathlib import Path
 from shutil import copy2
+import re
 
 # Paths
 BASE_DIR = Path(__file__).resolve().parent
 INPUT_FILE = BASE_DIR / "5.How Old Are You.txt"
-LESSON_DIR = BASE_DIR / "lessons" / INPUT_FILE.stem
-OUTPUT_FILE = LESSON_DIR / f"{INPUT_FILE.stem}.mp3"
+SAFE_STEM = re.sub(r"[^a-zA-Z0-9._-]", "_", INPUT_FILE.stem)
+LESSON_DIR = BASE_DIR / "lessons" / SAFE_STEM
+OUTPUT_FILE = LESSON_DIR / f"{SAFE_STEM}.mp3"
 TEXT_FILE = LESSON_DIR / INPUT_FILE.name
 
 # Google Cloud TTS
