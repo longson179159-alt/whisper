@@ -311,7 +311,7 @@ def download_lesson(index: int, url: str, output_dir: Path) -> float:
 
 def build_course(playlist_url: str, maximum_videos: int, output_name: str) -> None:
     course_name = safe_title(output_name, max_length=60)
-    output_dir = PROJECT_DIR / "en" / course_name / "LESSONS"
+    output_dir = PROJECT_DIR / "en" / course_name / "lessons"
     urls, playlist_info = playlist_video_urls(playlist_url, maximum_videos)
     if not urls:
         raise ValueError("No videos found in the playlist")

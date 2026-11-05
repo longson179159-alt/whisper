@@ -3,7 +3,7 @@ from pathlib import Path
 
 import yt_dlp
 
-playlist_url = "https://www.youtube.com/playlist?list=PLphcdvnT8lOuG5CZp9sj4QYuuXQNi_-WK"
+playlist_url = "https://www.youtube.com/playlist?list=PLcetZ6gSk96_CPSTr86vedvDhBlYZkg5D"
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 ydl_opts = {

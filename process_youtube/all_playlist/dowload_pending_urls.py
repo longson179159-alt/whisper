@@ -32,7 +32,7 @@ def build_course(output_name: str) -> None:
         raise ValueError(f"No YouTube URLs found in {URL_FILE}")
 
     course_name = safe_title(output_name, max_length=60)
-    output_dir = PROJECT_DIR / "en" / course_name / "LESSONS"
+    output_dir = PROJECT_DIR / "en" / course_name / "lessons"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     failures: list[tuple[int, str]] = []

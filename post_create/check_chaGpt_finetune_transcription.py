@@ -13,9 +13,39 @@ SOURCE_FILENAME_CHOICES = {
     "2": "youtube_subtitle.txt",
 }
 
-# Bracketed transcript labels such as [Music] and [Applause] are artifacts rather
-# than story words, so they do not participate in the comparison.
-TRANSCRIPT_ARTIFACT = re.compile(r"\[[^\[\]\r\n]*\]")
+# Known stage directions are artifacts rather than spoken words. Match only
+# recognized labels so meaningful bracketed speech such as [Nope!] is retained.
+STAGE_DIRECTION = r"""
+    airplane
+    | applause(?:\s+ends)?
+    | audience(?:\s+counting)?
+    | beatboxing(?:\s*:\s*[^()\[\]\r\n]+)?
+    | clears\s+throat
+    | didgeridoo
+    | exhales
+    | guzheng
+    | hesitant\s+applause
+    | higher\s+pitch
+    | laughter
+    | loud
+    | mumbles
+    | music
+    | noises
+    | sigh
+    | singing
+    | sitar
+    | squeaking
+    | trumpet
+    | video
+"""
+TRANSCRIPT_ARTIFACT = re.compile(
+    rf"(?:\[\s*(?:{STAGE_DIRECTION})\s*\]|\(\s*(?:{STAGE_DIRECTION})\s*\))",
+    re.IGNORECASE | re.VERBOSE,
+)
+TRANSCRIPT_CREDIT_LINE = re.compile(
+    r"^[ \t]*(?:translator|transcriber|reviewer)\s*:[^\r\n]*(?:\r?\n|$)",
+    re.IGNORECASE | re.MULTILINE,
+)
 APOSTROPHES = {"'", "\N{RIGHT SINGLE QUOTATION MARK}"}
 CONTEXT_WORDS = 5
 MAX_CHANGED_WORDS = 30
@@ -23,7 +53,9 @@ MAX_CHANGED_WORDS = 30
 
 def normalize_words(text: str) -> list[str]:
     """Return comparable words, ignoring case, punctuation, and whitespace."""
-    text = TRANSCRIPT_ARTIFACT.sub(" ", unicodedata.normalize("NFKC", text))
+    text = unicodedata.normalize("NFKC", text)
+    text = TRANSCRIPT_CREDIT_LINE.sub(" ", text)
+    text = TRANSCRIPT_ARTIFACT.sub(" ", text)
 
     normalized_characters: list[str] = []
     for character in text.casefold():
@@ -231,5 +263,5 @@ if __name__ == "__main__":
     raise SystemExit(main())
 
 
-# & C:\Users\PC\anaconda3\envs\yt311\python.exe `
-#   "C:\Users\PC\Desktop\kaggle\whisper\post_create\check_chaGpt_finetune_transcription.py"
+
+# python .\check_chaGpt_finetune_transcription.py 2>&1 Tee-Object -FilePath .\voa_learing_english_check_report.txt

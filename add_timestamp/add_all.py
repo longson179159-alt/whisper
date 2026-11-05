@@ -1,6 +1,7 @@
-from add_lesson import process_raw_text
+from add_lesson import process_text
 from add_timestamp import process_raw_timestamp
 import argparse
+import json
 import os
 
 
@@ -14,7 +15,7 @@ def main():
     current_folder_path = os.path.abspath(os.path.join(PROJECT_ROOT, args.folder_path))
 
     created_files = []
-    # delete_files = []
+    timestamp_files = []
 
     for folder_name in sorted(os.listdir(current_folder_path)):
         folder = os.path.join(current_folder_path, folder_name)
@@ -22,18 +23,29 @@ def main():
         if not os.path.isdir(folder):
             continue
         
-        created_files.append(process_raw_text(folder))
+        created_files.append(process_text(folder))
+        timestamp_path = process_raw_timestamp(folder)
+        created_files.append(timestamp_path)
+        timestamp_files.append(timestamp_path)
 
-        created_files.append(process_raw_timestamp(folder))
-
-        # remove the raw text and timestamp files after processing
-        # raw_text_path = os.path.join(folder, f"raw_text.txt")
-        # raw_timestamp_path = os.path.join(folder, f"raw_timestamp.json")
-
-     
-    
     for output_path in created_files:
         print(f"Created {os.path.basename(output_path)}")
+
+    for output_path in timestamp_files:
+        with open(output_path, "r", encoding="utf-8") as file:
+            timestamps = json.load(file)
+
+        null_timestamps = [
+            timestamp
+            for timestamp in timestamps
+            if timestamp["start"] is None or timestamp["end"] is None
+        ]
+
+        if null_timestamps:
+            lesson_name = os.path.basename(os.path.dirname(output_path))
+            print(f"\n{lesson_name}: {len(null_timestamps)} timestamp(s) with null values")
+            for timestamp in null_timestamps:
+                print(timestamp)
 
 
 if __name__ == "__main__":
