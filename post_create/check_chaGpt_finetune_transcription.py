@@ -7,15 +7,11 @@ import re
 import sys
 import unicodedata
 from pathlib import Path
-# C:\Users\PC\Desktop\kaggle\whisper\en\English Stories\lessons
-# C:\Users\PC\Desktop\kaggle\whisper\en\English A1\lessons
-
-REPOSITORY_DIR = Path(__file__).resolve().parent.parent
-LESSONS_DIR = (
-    REPOSITORY_DIR / "en" / "English A1" / "lessons"
-)
-RAW_FILENAME = "raw_text.txt"
 NEW_FILENAME = "text.txt"
+SOURCE_FILENAME_CHOICES = {
+    "1": "raw_text.txt",
+    "2": "youtube_subtitle.txt",
+}
 
 # Bracketed transcript labels such as [Music] and [Applause] are artifacts rather
 # than story words, so they do not participate in the comparison.
@@ -76,9 +72,41 @@ def context(words: list[str], start: int, end: int) -> str:
     return " ".join(parts)
 
 
-def check_lesson(lesson_dir: Path) -> tuple[str, int]:
+def get_inputs() -> tuple[Path, str]:
+    """Ask which course and original transcript file should be checked."""
+    while True:
+        entered_path = input(
+            "Enter the absolute course folder or LESSONS folder: "
+        ).strip().strip('"')
+        selected_path = Path(entered_path).expanduser()
+
+        if not selected_path.is_absolute():
+            print("Please enter an absolute path, for example C:\\courses\\Frankenstein.")
+            continue
+
+        if selected_path.is_dir() and selected_path.name.casefold() == "lessons":
+            lessons_dir = selected_path
+        else:
+            lessons_dir = selected_path / "LESSONS"
+
+        if lessons_dir.is_dir():
+            break
+
+        print(f"Lessons directory does not exist: {lessons_dir}")
+
+    print("Choose the original transcript file:")
+    print("  1. raw_text.txt")
+    print("  2. youtube_subtitle.txt")
+    while True:
+        choice = input("Enter 1 or 2: ").strip()
+        if choice in SOURCE_FILENAME_CHOICES:
+            return lessons_dir, SOURCE_FILENAME_CHOICES[choice]
+        print("Invalid choice. Enter 1 or 2.")
+
+
+def check_lesson(lesson_dir: Path, raw_filename: str) -> tuple[str, int]:
     """Print one lesson's result and return (status, difference count)."""
-    raw_text_path = lesson_dir / RAW_FILENAME
+    raw_text_path = lesson_dir / raw_filename
     new_text_path = lesson_dir / NEW_FILENAME
 
     missing_files = [
@@ -99,12 +127,12 @@ def check_lesson(lesson_dir: Path) -> tuple[str, int]:
     new_words = normalize_words(new_text)
 
     if not raw_words:
-        print(f"ERROR: {RAW_FILENAME} contains no words.")
+        print(f"ERROR: {raw_filename} contains no words.")
         return "ERROR", 0
     if not new_words:
         print(
             f"EMPTY: {NEW_FILENAME} contains no words; "
-            f"{RAW_FILENAME} contains {len(raw_words)} normalized words."
+            f"{raw_filename} contains {len(raw_words)} normalized words."
         )
         return "EMPTY", 1
 
@@ -146,16 +174,14 @@ def check_lesson(lesson_dir: Path) -> tuple[str, int]:
 
 
 def main() -> int:
-    if not LESSONS_DIR.is_dir():
-        print(f"Lessons directory does not exist: {LESSONS_DIR}", file=sys.stderr)
-        return 2
+    lessons_dir, raw_filename = get_inputs()
 
     lesson_dirs = sorted(
-        (path for path in LESSONS_DIR.iterdir() if path.is_dir()),
+        (path for path in lessons_dir.iterdir() if path.is_dir()),
         key=lambda path: path.name.casefold(),
     )
     if not lesson_dirs:
-        print(f"No lesson folders found in: {LESSONS_DIR}", file=sys.stderr)
+        print(f"No lesson folders found in: {lessons_dir}", file=sys.stderr)
         return 2
 
     results: list[tuple[str, str, int]] = []
@@ -163,7 +189,7 @@ def main() -> int:
         print("=" * 80)
         print(f"Lesson {lesson_number}/{len(lesson_dirs)}: {lesson_dir.name}")
         print("=" * 80)
-        status, difference_count = check_lesson(lesson_dir)
+        status, difference_count = check_lesson(lesson_dir, raw_filename)
         results.append((lesson_dir.name, status, difference_count))
         print()
 
