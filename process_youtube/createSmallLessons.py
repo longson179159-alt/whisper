@@ -1,206 +1,310 @@
-import os
-import json
+"""Split one long audio lesson into smaller lessons.
+
+The script asks for the source lesson folder. It finds ``list_lessons.json``
+at the course root and writes the resulting lessons to ``<course>/lessons``.
+The source lesson remains unchanged.
+"""
+
+from __future__ import annotations
+
 import argparse
-from ast import arg
-import yt_dlp
-from pydub import AudioSegment
+import json
+import shutil
 import subprocess
+from pathlib import Path
 
-PROJECT_ROOT = os.path.dirname(
-    os.path.dirname(
-        os.path.abspath(__file__)
+
+TEMP_FOLDER_NAME = ".split_lessons_tmp"
+
+
+def time_to_seconds(value: str) -> int:
+    """Convert an HH:MM:SS or MM:SS value to seconds."""
+    parts = value.split(":")
+    if len(parts) not in (2, 3):
+        raise ValueError(f"Invalid startTime: {value!r}")
+    try:
+        numbers = [int(part) for part in parts]
+    except ValueError as error:
+        raise ValueError(f"Invalid startTime: {value!r}") from error
+    if any(number < 0 for number in numbers):
+        raise ValueError(f"Invalid startTime: {value!r}")
+
+    if len(numbers) == 2:
+        minutes, seconds = numbers
+        hours = 0
+    else:
+        hours, minutes, seconds = numbers
+    if minutes >= 60 or seconds >= 60:
+        raise ValueError(f"Invalid startTime: {value!r}")
+    return hours * 3600 + minutes * 60 + seconds
+
+
+def load_json(path: Path):
+    with path.open("r", encoding="utf-8") as file:
+        return json.load(file)
+
+
+def write_json(path: Path, data) -> None:
+    with path.open("w", encoding="utf-8") as file:
+        json.dump(data, file, ensure_ascii=False, indent=2)
+        file.write("\n")
+
+
+def find_course_and_split_list(source_lesson_dir: Path) -> tuple[Path, Path]:
+    """Find the closest list_lessons.json at or above the source folder."""
+    candidates = [
+        source_lesson_dir,
+        source_lesson_dir.parent,
+        source_lesson_dir.parent.parent,
+    ]
+    for candidate in candidates:
+        split_list_path = candidate / "list_lessons.json"
+        if split_list_path.is_file():
+            return candidate, split_list_path
+
+    checked = "\n".join(
+        f"  - {candidate / 'list_lessons.json'}" for candidate in candidates
     )
-)
-
-# C:\Users\PC\Desktop\whisper\youtube_data\Johnny Harris\Is Fascism Back
-# C:\Users\PC\Desktop\whisper\youtube_data\gatsby_the_grate
-CURRENT_FOLDER = "Johnny Harris\Is Fascism Back"
-CURRENT_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'youtube_data', CURRENT_FOLDER)
+    raise FileNotFoundError(
+        "Could not find list_lessons.json. Checked:\n" + checked
+    )
 
 
-description_path = os.path.join(CURRENT_FOLDER_PATH, 'description.json')
-if not os.path.exists(description_path):
-    with open(description_path, 'w', encoding='utf-8') as file:
-        json.dump({}, file)
-with open(description_path, 'r', encoding='utf') as file1:
-    description = json.load(file1)
-
-timestamp_path = os.path.join(CURRENT_FOLDER_PATH, 'raw_timestamp.json') 
-with open(timestamp_path, 'r', encoding='utf-8') as file2:
-    globalTimestamp = json.load(file2)
+def find_source_audio(source_lesson_dir: Path) -> Path:
+    audio_files = sorted(source_lesson_dir.glob("*.mp3"))
+    if len(audio_files) != 1:
+        raise ValueError(
+            f"Expected exactly one MP3 in {source_lesson_dir}, "
+            f"found {len(audio_files)}"
+        )
+    return audio_files[0]
 
 
-list_lessons_path = os.path.join(CURRENT_FOLDER_PATH, 'list_lessons.json')
-with open(list_lessons_path, 'r', encoding='utf-8') as file3:
-    listLessons = json.load(file3)
+def load_source_timestamps(source_lesson_dir: Path) -> list[dict]:
+    timestamp_path = source_lesson_dir / "raw_timestamp.json"
+    if not timestamp_path.is_file():
+        raise FileNotFoundError(f"Missing source timestamps: {timestamp_path}")
+    data = load_json(timestamp_path)
+    if isinstance(data, dict):
+        data = data.get("segments", [])
+    if not isinstance(data, list) or not data:
+        raise ValueError(f"No timestamp segments found in {timestamp_path}")
+    return data
 
-def download_audio(CURRENT_FOLDER_PATH, youtube_id: str) -> None:
-    """Download one YouTube video's audio as ``audio.mp3``."""
-    options = {
-        "format": "bestaudio/best",
-        "outtmpl": os.path.join(CURRENT_FOLDER_PATH, "audio.%(ext)s"),
-        "noplaylist": True,
-        "postprocessors": [
-            {
-                "key": "FFmpegExtractAudio",
-                "preferredcodec": "mp3",
-                "preferredquality": "192",
-            }
-        ],
-    }
-    url = f"https://www.youtube.com/watch?v={youtube_id}"
-    with yt_dlp.YoutubeDL(options) as downloader:
-        downloader.download([url])
 
-# download thumbnail
-def download_thumbnail(CURRENT_FOLDER_PATH, youtube_id: str) -> None:
-    """Download one YouTube video's thumbnail as ``thumbnail.jpg``."""
-    options = {
-            "outtmpl": os.path.join(CURRENT_FOLDER_PATH, "thumbnail.%(ext)s"),
-            "noplaylist": True,
-            "skip_download": True,
-            "writethumbnail": True,
-            "postprocessors": [
+def build_split_ranges(
+    split_lessons: list[dict], source_end: float
+) -> list[dict]:
+    if not isinstance(split_lessons, list) or not split_lessons:
+        raise ValueError("list_lessons.json must contain a non-empty JSON list")
+
+    ranges = []
+    seen_names = set()
+    for index, lesson in enumerate(split_lessons):
+        name = str(lesson["lessonFolderName"]).strip()
+        if not name or Path(name).name != name:
+            raise ValueError(f"Unsafe lesson folder name: {name!r}")
+        if name in seen_names:
+            raise ValueError(f"Duplicate lesson folder name: {name!r}")
+        seen_names.add(name)
+
+        start = time_to_seconds(lesson["startTime"])
+        if index + 1 < len(split_lessons):
+            end = time_to_seconds(split_lessons[index + 1]["startTime"])
+        else:
+            end = source_end
+        if end <= start:
+            raise ValueError(f"Invalid time range for {name}: {start} to {end}")
+        ranges.append({"name": name, "start": start, "end": end})
+    return ranges
+
+
+def timestamps_for_range(
+    source_timestamps: list[dict], start: float, end: float
+) -> list[dict]:
+    """Assign each source segment once, according to its midpoint."""
+    result = []
+    for segment in source_timestamps:
+        segment_start = float(segment["start"])
+        segment_end = float(segment["end"])
+        midpoint = (segment_start + segment_end) / 2
+        if start <= midpoint < end:
+            result.append(
                 {
-                    "key": "FFmpegThumbnailsConvertor",
-                    "format": "jpg",
+                    **segment,
+                    "start": round(max(segment_start, start) - start, 3),
+                    "end": round(min(segment_end, end) - start, 3),
                 }
-            ],
-        }
-    url = f"https://www.youtube.com/watch?v={youtube_id}"
-    with yt_dlp.YoutubeDL(options) as downloader:
-        downloader.download([url])
+            )
+    return result
 
-def to_seconds(value: str) -> int:
-    parts = [int(part) for part in value.split(":")]
 
-    if len(parts) == 2:  # MM:SS
-        minutes, seconds = parts
-        return minutes * 60 + seconds
-
-    if len(parts) == 3:  # HH:MM:SS
-        hours, minutes, seconds = parts
-        return hours * 3600 + minutes * 60 + seconds
-
-    raise ValueError(f"Invalid time format: {value}")
-
-# add endtime
-listLessonsAddEnd = []
-for idx, lesson in enumerate(listLessons):
-    end = (
-    to_seconds(listLessons[idx + 1]["startTime"])
-    if idx < len(listLessons) - 1
-    else globalTimestamp[-1]["end"]
-)
-
-    listLessonsAddEnd.append({
-        'start':to_seconds(lesson["startTime"]),
-        'end': end,
-        "lessonFolderName": lesson['lessonFolderName']
-    })
-def export_audio_clip(source_audio, output_audio, start_seconds, end_seconds):
-    duration = end_seconds - start_seconds
-
+def export_audio_clip(
+    source_audio: Path, output_audio: Path, start: float, end: float
+) -> None:
     command = [
         "ffmpeg",
         "-y",
-        "-ss", str(start_seconds),  # Seek before reading the large source file
-        "-i", source_audio,
-        "-t", str(duration),
+        "-ss",
+        str(start),
+        "-i",
+        str(source_audio),
+        "-t",
+        str(end - start),
         "-vn",
-        "-map", "0:a:0",
-        "-c:a", "libmp3lame",
-        "-b:a", "192k",
-        output_audio,
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "192k",
+        str(output_audio),
     ]
-
     subprocess.run(command, check=True)
 
-source_audio_path = os.path.join(CURRENT_FOLDER_PATH, "audio.mp3")
-def main():
-    # APPLY FOR YOUTUBE VIDEO ONLY
-    # if not os.path.exists(os.path.join(CURRENT_FOLDER_PATH, 'audio.mp3')):
-    #     download_audio(CURRENT_FOLDER_PATH, description['youtube_id'])
-    # else:
-    #     print(f"audio.mp3 already exists in {CURRENT_FOLDER_PATH}, skipping download.")
 
-    # if not os.path.exists(os.path.join(CURRENT_FOLDER_PATH, 'thumbnail.jpg')):
-    #     download_thumbnail(CURRENT_FOLDER_PATH, description['youtube_id'])
-    # else:
-    #     print(f"thumbnail.jpg already exists in {CURRENT_FOLDER_PATH}, skipping download.")
-
-    parser = argparse.ArgumentParser(description="Add description.json to each lesson folder.")
-    parser.add_argument(
-        "--level",
-        type=str,
-        default="c1",
-        help="Level of the lesson (default: c1)",
+def create_lesson(
+    temporary_lesson_dir: Path,
+    lesson_number: int,
+    lesson_range: dict,
+    source_audio: Path,
+    source_timestamps: list[dict],
+    source_description: dict,
+    level_override: str | None,
+) -> None:
+    temporary_lesson_dir.mkdir(parents=True)
+    start = lesson_range["start"]
+    end = lesson_range["end"]
+    name = lesson_range["name"]
+    timestamps = timestamps_for_range(source_timestamps, start, end)
+    raw_text = "\n".join(
+        str(segment.get("text", "")).strip()
+        for segment in timestamps
+        if str(segment.get("text", "")).strip()
     )
 
-    arg = parser.parse_args()
+    export_audio_clip(
+        source_audio,
+        temporary_lesson_dir / "audio.mp3",
+        start,
+        end,
+    )
+    write_json(temporary_lesson_dir / "raw_timestamp.json", timestamps)
+    (temporary_lesson_dir / "raw_text.txt").write_text(
+        raw_text + ("\n" if raw_text else ""), encoding="utf-8"
+    )
+    (temporary_lesson_dir / "text.txt").write_text("", encoding="utf-8")
 
-    for idx, lesson in enumerate(listLessonsAddEnd):
+    description = {
+        "lesson_number": lesson_number,
+        "lesson_name": name,
+        "level": level_override or source_description.get("level") or "c1",
+        "youtube_id": source_description.get("youtube_id"),
+        "url": source_description.get("url"),
+        "audio_start_time": 0,
+        "audio_duration": round(end - start, 2),
+        "has_sentence_timestamps": True,
+        "youtube_subtitle": source_description.get("youtube_subtitle"),
+        "media_source": "audio",
+    }
+    write_json(temporary_lesson_dir / "description.json", description)
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Split one long audio lesson into smaller lessons."
+    )
+    parser.add_argument(
+        "--level",
+        help="Override the source lesson level for every generated lesson.",
+    )
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Replace existing generated lesson folders.",
+    )
+    return parser.parse_args()
 
-        currentStart = lesson['start']
-        currentEnd = lesson['end']
-        lessonFolderName = lesson["lessonFolderName"]
-        lessonFolderPath = os.path.join(CURRENT_FOLDER_PATH, 'lessons', lessonFolderName)
-        os.makedirs(lessonFolderPath, exist_ok = True)
 
-        subTimestamp = [
-            {
-                **ts,
-                "start": ts["start"] - currentStart,
-                "end": ts["end"] - currentStart
-            }
-            for ts in globalTimestamp
-            if ts["start"] >= currentStart and ts["end"] <= currentEnd
-        ]
-                
+def main() -> None:
+    args = parse_args()
+    input_value = input("Input source lesson folder: ").strip().strip('"')
+    if not input_value:
+        raise ValueError("Input source lesson folder cannot be blank")
 
-        subTimestampPath = os.path.join(lessonFolderPath, 'timestamp.json')
-        with open(subTimestampPath, 'w', encoding='utf-8') as file:
-            json.dump(subTimestamp, file, ensure_ascii=False, indent=4)
-
-        subText = '\n'.join(ts['text'] for ts in subTimestamp)
-        # subText = ''
-        textFilePath = os.path.join(lessonFolderPath, 'text.txt')
-        with open(textFilePath, 'w', encoding='utf-8') as file:
-            file.write(subText)
-
-        subLessonDescription = {
-            "lesson_number": idx +1,
-            'lesson_name': lessonFolderName,
-            "level": arg.level,
-            "youtube_id": None,
-            "url": description.get('url', None),
-
-            "audio_start_time": 0,
-            "audio_duration": currentEnd - currentStart, 
-            "has_sentence_timestamps": True
-
-        }
-
-        subLessonDescriptionPath = os.path.join(lessonFolderPath, 'description.json')
-        with open(subLessonDescriptionPath, 'w', encoding='utf-8') as file:
-            json.dump(subLessonDescription, file, ensure_ascii=False, indent=4)
-
-        # take a slice of the audio.mp3 file from currentStart to currentEnd and save it as audio.mp3 in the lesson folder
-        # save audio as mp3 using pydub
-        
-        output_audio_path = os.path.join(lessonFolderPath, "audio.mp3")
-
-        export_audio_clip(
-            source_audio=source_audio_path,
-            output_audio=output_audio_path,
-            start_seconds=currentStart,
-            end_seconds=currentEnd,
+    source_lesson_dir = Path(input_value).expanduser().resolve()
+    if not source_lesson_dir.is_dir():
+        raise FileNotFoundError(
+            f"Source lesson folder does not exist: {source_lesson_dir}"
         )
+
+    course_dir, split_list_path = find_course_and_split_list(source_lesson_dir)
+    output_lessons_dir = course_dir / "lessons"
+    temporary_output_dir = course_dir / TEMP_FOLDER_NAME
+    description_path = source_lesson_dir / "description.json"
+    if not description_path.is_file():
+        raise FileNotFoundError(f"Missing source description: {description_path}")
+    if temporary_output_dir.exists():
+        raise FileExistsError(
+            f"Temporary output already exists: {temporary_output_dir}. "
+            "Check and remove it before rerunning."
+        )
+
+    source_audio = find_source_audio(source_lesson_dir)
+    source_timestamps = load_source_timestamps(source_lesson_dir)
+    source_description = load_json(description_path)
+    split_lessons = load_json(split_list_path)
+
+    timestamp_end = max(float(item["end"]) for item in source_timestamps)
+    description_end = float(source_description.get("audio_duration") or 0)
+    source_end = max(timestamp_end, description_end)
+    ranges = build_split_ranges(split_lessons, source_end)
+
+    existing_targets = [
+        output_lessons_dir / lesson_range["name"]
+        for lesson_range in ranges
+        if (output_lessons_dir / lesson_range["name"]).exists()
+    ]
+    if existing_targets and not args.overwrite:
+        paths = "\n".join(f"  - {path}" for path in existing_targets)
+        raise FileExistsError(
+            "Output lesson folders already exist. "
+            "Use --overwrite to replace them:\n" + paths
+        )
+
+    print(f"Source lesson: {source_lesson_dir}")
+    print(f"Split list: {split_list_path}")
+    print(f"Output folder: {output_lessons_dir}")
+    output_lessons_dir.mkdir(parents=True, exist_ok=True)
+    temporary_output_dir.mkdir()
+
+    try:
+        for lesson_number, lesson_range in enumerate(ranges, start=1):
+            print(
+                f"Creating {lesson_range['name']}: "
+                f"{lesson_range['start']}s to {lesson_range['end']}s"
+            )
+            create_lesson(
+                temporary_output_dir / lesson_range["name"],
+                lesson_number,
+                lesson_range,
+                source_audio,
+                source_timestamps,
+                source_description,
+                args.level,
+            )
+
+        for lesson_range in ranges:
+            name = lesson_range["name"]
+            target = output_lessons_dir / name
+            if target.exists():
+                shutil.rmtree(target)
+            shutil.move(str(temporary_output_dir / name), str(target))
+            print(f"Saved: {target}")
+    finally:
+        if temporary_output_dir.exists():
+            shutil.rmtree(temporary_output_dir)
+
 
 if __name__ == "__main__":
     main()
-
-
-    
