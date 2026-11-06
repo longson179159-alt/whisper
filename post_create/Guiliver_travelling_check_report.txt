@@ -1,0 +1,1990 @@
+Enter the absolute course folder or LESSONS folder: Choose the original transcript file:
+  1. raw_text.txt
+  2. youtube_subtitle.txt
+Enter 1 or 2: ================================================================================
+Lesson 1/8: Chapter_01
+================================================================================
+Raw transcript:   4035 normalized words
+Cleaned text:     4026 normalized words
+REVIEW: Found 36 word-level difference group(s).
+
+1. REPLACED
+   Raw word 402: see
+   New word 402: sea
+   Raw context: determined to go again to [[see]] i was surgeon successfully in
+   New context: determined to go again to [[sea]] i was surgeon successively in
+
+2. REPLACED
+   Raw word 406: successfully
+   New word 406: successively
+   Raw context: to see i was surgeon [[successfully]] in two ships and made
+   New context: to sea i was surgeon [[successively]] in two ships and made
+
+3. REPLACED
+   Raw word 635: damans
+   New word 635: diemens
+   Raw context: to the northwest of van [[damans]] land by an observation we
+   New context: to the northwest of van [[diemens]] land by an observation we
+
+4. REPLACED
+   Raw word 692: seaman
+   New word 692: seamen
+   Raw context: weather being very hazy the [[seaman]] spied a rock within half
+   New context: weather being very hazy the [[seamen]] spied a rock within half
+
+5. REMOVED FROM CLEANED TEXT
+   Raw word 720: the
+   New position 720: (nothing)
+   Raw context: upon it and immediately split [[the]] six of the crew of
+   New context: upon it and immediately split [[(nothing)]] six of the crew of
+
+6. REPLACED
+   Raw word 751: rode
+   New word 750: rowed
+   Raw context: ship and the rock we [[rode]] by my computation about three
+   New context: ship and the rock we [[rowed]] by my computation about three
+
+7. REPLACED
+   Raw word 911: conjected
+   New word 910: conjectured
+   Raw context: to the shore which i [[conjected]] was about eight oclock in
+   New context: to the shore which i [[conjectured]] was about eight oclock in
+
+8. REPLACED
+   Raw word 943: weaker
+   New words 942-943: weak a
+   Raw context: least i was in so [[weaker]] condition that i did not
+   New context: least i was in so [[weak a]] condition that i did not
+
+9. REPLACED
+   Raw word 1046: and
+   New word 1046: i
+   Raw context: to lie on my back [[and]] found my arms and legs
+   New context: to lie on my back [[i]] found my arms and legs
+
+10. REPLACED
+   Raw words 1288-1290: hekhenar de gull
+   New words 1288-1289: hekinah degul
+   Raw context: a shrill but distinct voice [[hekhenar de gull]] the others repeated the same
+   New context: a shrill but distinct voice [[hekinah degul]] the others repeated the same
+
+11. REPLACED
+   Raw word 1296: word
+   New word 1295: words
+   Raw context: the others repeated the same [[word]] several times but then i
+   New context: the others repeated the same [[words]] several times but then i
+
+12. REPLACED
+   Raw word 1444: fonak
+   New word 1443: phonac
+   Raw context: of them cry aloud tolgo [[fonak]] when in an instant i
+   New context: of them cry aloud tolgo [[phonac]] when in an instant i
+
+13. REPLACED
+   Raw word 1517: agroning
+   New words 1516-1517: a groaning
+   Raw context: arrows was over i fell [[agroning]] with grief and pain and
+   New context: arrows was over i fell [[a groaning]] with grief and pain and
+
+14. REPLACED
+   Raw words 1775-1778: langreux de holle son
+   New words 1775-1777: langro dehul san
+   Raw context: he cried out three times [[langreux de holle son]] these words and the former
+   New context: he cried out three times [[langro dehul san]] these words and the former
+
+15. REPLACED
+   Raw word 1996: hergo
+   New word 1995: hurgo
+   Raw context: that i wanted food the [[hergo]] for so they call a
+   New context: that i wanted food the [[hurgo]] for so they call a
+
+16. REPLACED
+   Raw words 2190-2191: hogs heads
+   New word 2189: hogsheads
+   Raw context: dexterity one of their largest [[hogs heads]] then rolled it towards my
+   New context: dexterity one of their largest [[hogsheads]] then rolled it towards my
+
+17. REPLACED
+   Raw words 2240-2241: hogs head
+   New word 2238: hogshead
+   Raw context: they brought me a second [[hogs head]] which i drank in the
+   New context: they brought me a second [[hogshead]] which i drank in the
+
+18. REPLACED
+   Raw words 2285-2286: de gull
+   New word 2282: degul
+   Raw context: they did at first hekinah [[de gull]] they made me a sign
+   New context: they did at first hekinah [[degul]] they made me a sign
+
+19. REPLACED
+   Raw words 2299-2300: hogs heads
+   New word 2295: hogsheads
+   Raw context: should throw down the two [[hogs heads]] but first warning the people
+   New context: should throw down the two [[hogsheads]] but first warning the people
+
+20. REPLACED
+   Raw word 2315: borac
+   New word 2310: borach
+   Raw context: of the way crying aloud [[borac]] mevolah and when they saw
+   New context: of the way crying aloud [[borach]] mevolah and when they saw
+
+21. REPLACED
+   Raw words 2333-2334: de gull
+   New word 2328: degul
+   Raw context: a universal shout of hekinah [[de gull]] i confess i was often
+   New context: a universal shout of hekinah [[degul]] i confess i was often
+
+22. REPLACED
+   Raw word 2410: consider
+   New word 2404: considered
+   Raw context: these imaginations besides i now [[consider]] myself as bound by the
+   New context: these imaginations besides i now [[considered]] myself as bound by the
+
+23. REPLACED
+   Raw word 2430: of
+   New word 2424: and
+   Raw context: me with so much expense [[of]] magnificence however in my thoughts
+   New context: me with so much expense [[and]] magnificence however in my thoughts
+
+24. REPLACED
+   Raw word 2582: whether
+   New word 2576: whither
+   Raw context: about half a mile distant [[whether]] it was agreed by his
+   New context: about half a mile distant [[whither]] it was agreed by his
+
+25. ADDED TO CLEANED TEXT
+   Raw position 2670: (nothing)
+   New word 2664: a
+   Raw context: and held his hand in [[(nothing)]] posture to show that i
+   New context: and held his hand in [[a]] posture to show that i
+
+26. REPLACED
+   Raw word 2771: hergo
+   New word 2766: hurgo
+   Raw context: they pleased upon this the [[hergo]] and his train withdrew with
+   New context: they pleased upon this the [[hurgo]] and his train withdrew with
+
+27. REPLACED
+   Raw words 2961-2962: hogs heads
+   New word 2956: hogsheads
+   Raw context: a sleepy potion in the [[hogs heads]] of wine it seems that
+   New context: a sleepy potion in the [[hogsheads]] of wine it seems that
+
+28. REPLACED
+   Raw word 2995: counsel
+   New word 2989: council
+   Raw context: an express and determined in [[counsel]] that i should be tied
+   New context: an express and determined in [[council]] that i should be tied
+
+29. REPLACED
+   Raw word 3081: endeavored
+   New word 3075: endeavoured
+   Raw context: for supposing these people had [[endeavored]] to kill me with their
+   New context: for supposing these people had [[endeavoured]] to kill me with their
+
+30. REPLACED
+   Raw words 3331-3332: packed thread
+   New word 3325: packthread
+   Raw context: cords of the bigness of [[packed thread]] were fastened by hooks to
+   New context: cords of the bigness of [[packthread]] were fastened by hooks to
+
+31. REPLACED
+   Raw word 3784: king
+   New word 3777: kings
+   Raw context: on the left side the [[king]] smith conveyed four score and
+   New context: on the left side the [[kings]] smith conveyed fourscore and eleven
+
+32. REPLACED
+   Raw words 3787-3788: four score
+   New word 3780: fourscore
+   Raw context: side the king smith conveyed [[four score]] and eleven chains like those
+   New context: side the kings smith conveyed [[fourscore]] and eleven chains like those
+
+33. REPLACED
+   Raw word 3814: 60
+   New word 3806: six
+   Raw context: to my left leg with [[60]] and 30 padlocks over against
+   New context: to my left leg with [[six]] and thirty padlocks over against
+
+34. REPLACED
+   Raw word 3816: 30
+   New word 3808: thirty
+   Raw context: left leg with 60 and [[30]] padlocks over against this temple
+   New context: left leg with six and [[thirty]] padlocks over against this temple
+
+35. REPLACED
+   Raw word 3831: 20
+   New word 3823: twenty
+   Raw context: of the great highway at [[20]] feet distance there was a
+   New context: of the great highway at [[twenty]] feet distance there was a
+
+36. REPLACED
+   Raw words 4011-4012: semi circle
+   New word 4003: semicircle
+   Raw context: backwards and forwards in a [[semi circle]] but being fixed within four
+   New context: backwards and forwards in a [[semicircle]] but being fixed within four
+
+
+================================================================================
+Lesson 2/8: Chapter_02
+================================================================================
+Raw transcript:   3715 normalized words
+Cleaned text:     3712 normalized words
+REVIEW: Found 37 word-level difference group(s).
+
+1. REPLACED
+   Raw word 91: 40
+   New word 91: forty
+   Raw context: enclosed fields which were generally [[40]] feet square resembled so many
+   New context: enclosed fields which were generally [[forty]] feet square resembled so many
+
+2. REPLACED
+   Raw word 590: princess
+   New word 590: princes
+   Raw context: rest the empress and young [[princess]] of the blood of both
+   New context: rest the empress and young [[princes]] of the blood of both
+
+3. REPLACED
+   Raw word 616: empress
+   New word 616: emperors
+   Raw context: accident that happened to the [[empress]] horse they alighted and came
+   New context: accident that happened to the [[emperors]] horse they alighted and came
+
+4. REPLACED
+   Raw word 654: oar
+   New word 654: awe
+   Raw context: is enough to strike an [[oar]] into the beholders his features
+   New context: is enough to strike an [[awe]] into the beholders his features
+
+5. REPLACED
+   Raw word 859: almost
+   New words 859-860: all most
+   Raw context: the ladies and courtiers were [[almost]] magnificently clad so that the
+   New context: the ladies and courtiers were [[all most]] magnificently clad so that the
+
+6. REPLACED
+   Raw word 1000: durced
+   New word 1001: durst
+   Raw context: me as near as they [[durced]] and some of them had
+   New context: me as near as they [[durst]] and some of them had
+
+7. REPLACED
+   Raw words 1134-1135: pen knife
+   New word 1135: penknife
+   Raw context: saw me take out my [[pen knife]] but i soon put them
+   New context: saw me take out my [[penknife]] but i soon put them
+
+8. REPLACED
+   Raw word 1354: villagers
+   New word 1354: villages
+   Raw context: see me so that the [[villagers]] were almost emptied and great
+   New context: see me so that the [[villages]] were almost emptied and great
+
+9. REPLACED
+   Raw word 1416: secreties
+   New word 1416: secretaries
+   Raw context: from the court whereby the [[secreties]] of state got considerable fees
+   New context: from the court whereby the [[secretaries]] of state got considerable fees
+
+10. REPLACED
+   Raw words 1442-1443: after was
+   New word 1442: afterwards
+   Raw context: with me and i was [[after was]] assured by a particular friend
+   New context: with me and i was [[afterwards]] assured by a particular friend
+
+11. REPLACED
+   Raw word 1523: larger
+   New words 1522-1523: large a
+   Raw context: that the stench of so [[larger]] carcass might produce a plague
+   New context: that the stench of so [[large a]] carcass might produce a plague
+
+12. REPLACED
+   Raw word 1619: beaves
+   New word 1619: beeves
+   Raw context: deliver in every morning six [[beaves]] forty sheep and other victuals
+   New context: deliver in every morning six [[beeves]] forty sheep and other victuals
+
+13. REPLACED
+   Raw word 1639: liquours
+   New word 1639: liquors
+   Raw context: bread and wine and other [[liquours]] for the due payment of
+   New context: bread and wine and other [[liquors]] for the due payment of
+
+14. REPLACED
+   Raw word 1661: immenses
+   New word 1661: demesnes
+   Raw context: lives chiefly upon his own [[immenses]] seldom accept upon great occasions
+   New context: lives chiefly upon his own [[demesnes]] seldom except upon great occasions
+
+15. REPLACED
+   Raw word 1663: accept
+   New word 1663: except
+   Raw context: upon his own immenses seldom [[accept]] upon great occasions raising any
+   New context: upon his own demesnes seldom [[except]] upon great occasions raising any
+
+16. REPLACED
+   Raw word 1761: empress
+   New word 1761: emperors
+   Raw context: language and lastly that the [[empress]] horses and those of the
+   New context: language and lastly that the [[emperors]] horses and those of the
+
+17. REPLACED
+   Raw word 1889: counsel
+   New word 1889: council
+   Raw context: without the advice of his [[counsel]] and that first i must
+   New context: without the advice of his [[council]] and that first i must
+
+18. REPLACED
+   Raw word 1970: need
+   New word 1970: needs
+   Raw context: me several weapons which must [[need]] be dangerous things if they
+   New context: me several weapons which must [[needs]] be dangerous things if they
+
+19. REPLACED
+   Raw word 2139: there
+   New word 2139: that
+   Raw context: i had some little necessaries [[there]] were of no consequence to
+   New context: i had some little necessaries [[that]] were of no consequence to
+
+20. REPLACED
+   Raw words 2220-2221: in primus
+   New word 2220: imprimis
+   Raw context: word for word as follows [[in primus]] in the right coat pocket
+   New context: word for word as follows [[imprimis]] in the right coat pocket
+
+21. REPLACED
+   Raw words 2258-2259: foot cloth
+   New word 2257: footcloth
+   Raw context: large enough to be a [[foot cloth]] for your majestys chief room
+   New context: large enough to be a [[footcloth]] for your majestys chief room
+
+22. REPLACED
+   Raw word 2409: palisados
+   New word 2407: palisadoes
+   Raw context: twenty long poles resembling the [[palisados]] before your majestys court wherewith
+   New context: twenty long poles resembling the [[palisadoes]] before your majestys court wherewith
+
+23. REPLACED
+   Raw word 2609: over
+   New words 2607-2608: of a
+   Raw context: was covered and seemed all [[over]] piece but at the upper
+   New context: was covered and seemed all [[of a]] piece but at the upper
+
+24. REPLACED
+   Raw words 2821-2822: water mill
+   New word 2820: watermill
+   Raw context: noise like that of a [[water mill]] and we conjecture it is
+   New context: noise like that of a [[watermill]] and we conjecture it is
+
+25. REPLACED
+   Raw words 2921-2922: there in
+   New word 2919: therein
+   Raw context: the same use we found [[there in]] several massive pieces of yellow
+   New context: the same use we found [[therein]] several massive pieces of yellow
+
+26. REPLACED
+   Raw word 2941: us
+   New word 2938: thus
+   Raw context: be of immense value having [[us]] in obedience to your majestys
+   New context: be of immense value having [[thus]] in obedience to your majestys
+
+27. REPLACED
+   Raw word 2963: height
+   New word 2960: hide
+   Raw context: his waist made of the [[height]] of some prodigious animal from
+   New context: his waist made of the [[hide]] of some prodigious animal from
+
+28. REPLACED
+   Raw word 3056: 50
+   New word 3053: fifty
+   Raw context: for we could hold above [[50]] of them in the palms
+   New context: for we could hold above [[fifty]] of them in the palms
+
+29. REPLACED
+   Raw word 3103: 89th
+   New words 3100-3101: eighty ninth
+   Raw context: the fourth day of the [[89th]] moon of your majestys auspicious
+   New context: the fourth day of the [[eighty ninth]] moon of your majestys auspicious
+
+30. REPLACED
+   Raw word 3159: choices
+   New word 3157: choicest
+   Raw context: ordered three thousand of his [[choices]] troops who then attended him
+   New context: ordered three thousand of his [[choicest]] troops who then attended him
+
+31. REPLACED
+   Raw word 3332: express
+   New word 3330: expressed
+   Raw context: as well as i could [[express]] to him the use of
+   New context: as well as i could [[expressed]] to him the use of
+
+32. REPLACED
+   Raw word 3359: and
+   New word 3357: an
+   Raw context: escape wetting in the sea [[and]] inconvenience against which all prudent
+   New context: escape wetting in the sea [[an]] inconvenience against which all prudent
+
+33. REPLACED
+   Raw word 3420: guard
+   New word 3418: ground
+   Raw context: emperor although he stood his [[guard]] could not recover himself for
+   New context: emperor although he stood his [[ground]] could not recover himself for
+
+34. REPLACED
+   Raw word 3499: yeoman
+   New word 3497: yeomen
+   Raw context: commanded two of his tallest [[yeoman]] of the guards to bear
+   New context: commanded two of his tallest [[yeomen]] of the guards to bear
+
+35. REPLACED
+   Raw word 3513: draemon
+   New word 3511: draymen
+   Raw context: pole upon their shoulders as [[draemon]] in england do a barrel
+   New context: pole upon their shoulders as [[draymen]] in england do a barrel
+
+36. REPLACED
+   Raw words 3613-3614: snuff box
+   New word 3611: snuffbox
+   Raw context: razor my comb and silver [[snuff box]] my handkerchief and journal book
+   New context: razor my comb and silver [[snuffbox]] my handkerchief and journal book
+
+37. REPLACED
+   Raw word 3696: honor
+   New word 3693: honour
+   Raw context: not think myself bound in [[honor]] to discover and i apprehended
+   New context: not think myself bound in [[honour]] to discover and i apprehended
+
+
+================================================================================
+Lesson 3/8: Chapter_03
+================================================================================
+Raw transcript:   2841 normalized words
+Cleaned text:     2840 normalized words
+REVIEW: Found 22 word-level difference group(s).
+
+1. REPLACED
+   Raw word 180: when
+   New word 180: with
+   Raw context: and magnificence i was diverted [[when]] none so much as that
+   New context: and magnificence i was diverted [[with]] none so much as that
+
+2. REPLACED
+   Raw words 361-362: summer sets
+   New word 361: summerset
+   Raw context: have seen him do the [[summer sets]] several times together upon a
+   New context: have seen him do the [[summerset]] several times together upon a
+
+3. REPLACED
+   Raw words 380-381: pack thread
+   New word 379: packthread
+   Raw context: no thicker than a common [[pack thread]] in england my friend raelle
+   New context: no thicker than a common [[packthread]] in england my friend reldresal
+
+4. REPLACED
+   Raw words 386-387: raelle dressel
+   New word 384: reldresal
+   Raw context: thread in england my friend [[raelle dressel]] principal secretary for private affairs
+   New context: packthread in england my friend [[reldresal]] principal secretary for private affairs
+
+5. REPLACED
+   Raw word 412: offices
+   New word 409: officers
+   Raw context: the rest of the great [[offices]] are much upon a par
+   New context: the rest of the great [[officers]] are much upon a par
+
+6. ADDED TO CLEANED TEXT
+   Raw position 634: (nothing)
+   New word 631: in
+   Raw context: observed the least resemblance of [[(nothing)]] any other country of the
+   New context: observed the least resemblance of [[in]] any other country of the
+
+7. REPLACED
+   Raw word 828: coarser
+   New word 826: courser
+   Raw context: emperors huntsmen upon a large [[coarser]] took my foot shoe and
+   New context: emperors huntsmen upon a large [[courser]] took my foot shoe and
+
+8. REPLACED
+   Raw word 1024: plane
+   New word 1022: plain
+   Raw context: come and exercise upon this [[plane]] his majesty approved of the
+   New context: come and exercise upon this [[plain]] his majesty approved of the
+
+9. REPLACED
+   Raw words 1313-1314: and expressed
+   New words 1311-1312: an express
+   Raw context: kind of feat there arrived [[and expressed]] to inform his majesty that
+   New context: kind of feat there arrived [[an express]] to inform his majesty that
+
+10. REPLACED
+   Raw words 1712-1713: as sunder
+   New word 1710: asunder
+   Raw context: with my legs as far [[as sunder]] as i conveniently could he
+   New context: with my legs as far [[asunder]] as i conveniently could he
+
+11. REPLACED
+   Raw word 2124: momarum
+   New word 2121: momarem
+   Raw context: offer to the public golbasto [[momarum]] evlame gardilo shefan mulli uli
+   New context: offer to the public golbasto [[momarem]] evlame gurdilo shefin mully ully
+
+12. REPLACED
+   Raw words 2126-2130: gardilo shefan mulli uli gu
+   New words 2123-2127: gurdilo shefin mully ully gue
+   Raw context: the public golbasto momarum evlame [[gardilo shefan mulli uli gu]] most mighty emperor of lilliput
+   New context: the public golbasto momarem evlame [[gurdilo shefin mully ully gue]] most mighty emperor of lilliput
+
+13. ADDED TO CLEANED TEXT
+   Raw position 2237: (nothing)
+   New word 2234: first
+   Raw context: shall be obliged to perform [[(nothing)]] the man mountain shall not
+   New context: shall be obliged to perform [[first]] the man mountain shall not
+
+14. REPLACED
+   Raw word 2409: blefsescu
+   New word 2407: blefuscu
+   Raw context: enemies in the island of [[blefsescu]] and do his utmost to
+   New context: enemies in the island of [[blefuscu]] and do his utmost to
+
+15. REPLACED
+   Raw word 2492: places
+   New word 2490: paces
+   Raw context: a computation of his own [[places]] round the coast lastly that
+   New context: a computation of his own [[paces]] round the coast lastly that
+
+16. REPLACED
+   Raw word 2526: 1724
+   New words 2524-2525: 1 724
+   Raw context: sufficient for the support of [[1724]] of our subjects with free
+   New context: sufficient for the support of [[1 724]] of our subjects with free
+
+17. REPLACED
+   Raw words 2548-2549: belfour barak
+   New word 2547: belfaborac
+   Raw context: given at our palace at [[belfour barak]] the twelfth day of the
+   New context: given at our palace at [[belfaborac]] the twelfth day of the
+
+18. REPLACED
+   Raw words 2593-2594: skyrish volgolam
+   New words 2591-2592: skyresh bolgolam
+   Raw context: wholly from the malice of [[skyrish volgolam]] the high admiral whereupon my
+   New context: wholly from the malice of [[skyresh bolgolam]] the high admiral whereupon my
+
+19. REPLACED
+   Raw word 2728: lilapeutions
+   New word 2726: lilliputians
+   Raw context: seventeen hundred and twenty four [[lilapeutions]] some time after asking a
+   New context: seventeen hundred and twenty four [[lilliputians]] some time after asking a
+
+20. REPLACED
+   Raw word 2793: seven
+   New word 2791: seventeen
+   Raw context: mine must contain at least [[seven]] hundred and twenty four of
+   New context: mine must contain at least [[seventeen]] hundred and twenty four of
+
+21. REPLACED
+   Raw word 2815: lilapeutions
+   New word 2813: lilliputians
+   Raw context: to support that number of [[lilapeutions]] by which the reader may
+   New context: to support that number of [[lilliputians]] by which the reader may
+
+22. REPLACED
+   Raw word 2840: greater
+   New words 2838-2839: great a
+   Raw context: and exact economy of so [[greater]] prince
+   New context: and exact economy of so [[great a]] prince
+
+
+================================================================================
+Lesson 4/8: Chapter_04
+================================================================================
+Raw transcript:   1875 normalized words
+Cleaned text:     1877 normalized words
+REVIEW: Found 34 word-level difference group(s).
+
+1. REPLACED
+   Raw word 28: emperor
+   New word 28: empire
+   Raw context: concerning the affairs of that [[emperor]] the authors offers to serve
+   New context: concerning the affairs of that [[empire]] the authors offers to serve
+
+2. REPLACED
+   Raw word 87: noticed
+   New word 87: notice
+   Raw context: their houses the people had [[noticed]] by proclamation of my design
+   New context: their houses the people had [[notice]] by proclamation of my design
+
+3. REPLACED
+   Raw word 117: the
+   New word 117: a
+   Raw context: eleven inches broad so that [[the]] coach and horses may be
+   New context: eleven inches broad so that [[a]] coach and horses may be
+
+4. REPLACED
+   Raw word 246: in
+   New word 246: an
+   Raw context: populous place the city is [[in]] exact square each side of
+   New context: populous place the city is [[an]] exact square each side of
+
+5. REPLACED
+   Raw word 267: divided
+   New words 267-268: divide it
+   Raw context: streets which run across and [[divided]] into four quarters are five
+   New context: streets which run across and [[divide it]] into four quarters are five
+
+6. REPLACED
+   Raw word 322: empress
+   New word 323: emperors
+   Raw context: and markets well provided the [[empress]] palace is in the centre
+   New context: and markets well provided the [[emperors]] palace is in the centre
+
+7. REPLACED
+   Raw word 400: other
+   New words 401-402: are the
+   Raw context: other courts in the inmost [[other]] royal apartments which i was
+   New context: other courts in the inmost [[are the]] royal apartments which i was
+
+8. REMOVED FROM CLEANED TEXT
+   Raw word 551: for
+   New position 553: (nothing)
+   Raw context: enough to bear my weight [[for]] the people having received notice
+   New context: enough to bear my weight [[(nothing)]] the people having received notice
+
+9. REPLACED
+   Raw word 746: reserved
+   New word 747: reserve
+   Raw context: of this kind because i [[reserved]] them for a greater work
+   New context: of this kind because i [[reserve]] them for a greater work
+
+10. REPLACED
+   Raw words 848-849: red dressel
+   New word 849: reldresal
+   Raw context: i had obtained my liberty [[red dressel]] principal secretary as they style
+   New context: i had obtained my liberty [[reldresal]] principal secretary as they style
+
+11. REPLACED
+   Raw word 1000: into
+   New word 1000: to
+   Raw context: we may appear to be [[into]] foreigners we labor under two
+   New context: we may appear to be [[to]] foreigners we labour under two
+
+12. REPLACED
+   Raw word 1003: labor
+   New word 1003: labour
+   Raw context: to be into foreigners we [[labor]] under two mighty evils a
+   New context: to be to foreigners we [[labour]] under two mighty evils a
+
+13. REPLACED
+   Raw word 1053: tramaxan
+   New word 1053: tramecksan
+   Raw context: empire under the names of [[tramaxan]] and slamaxan from the high
+   New context: empire under the names of [[tramecksan]] and slamecksan from the high
+
+14. REPLACED
+   Raw word 1055: slamaxan
+   New word 1055: slamecksan
+   Raw context: the names of tramaxan and [[slamaxan]] from the high and low
+   New context: the names of tramecksan and [[slamecksan]] from the high and low
+
+15. REPLACED
+   Raw word 1133: drer
+   New word 1133: drurr
+   Raw context: lower at least by a [[drer]] than any of his court
+   New context: lower at least by a [[drurr]] than any of his court
+
+16. REPLACED
+   Raw word 1139: drer
+   New word 1139: drurr
+   Raw context: than any of his court [[drer]] is a measure about the
+   New context: than any of his court [[drurr]] is a measure about the
+
+17. REPLACED
+   Raw word 1174: tramaxan
+   New word 1174: tramecksan
+   Raw context: each other we compute the [[tramaxan]] or high heels to exceed
+   New context: each other we compute the [[tramecksan]] or high heels to exceed
+
+18. REPLACED
+   Raw word 1232: gate
+   New word 1232: gait
+   Raw context: him a hobble in his [[gate]] now in the midst of
+   New context: him a hobble in his [[gait]] now in the midst of
+
+19. REPLACED
+   Raw word 1240: disquietes
+   New word 1240: disquiets
+   Raw context: the midst of these intestine [[disquietes]] we are threatened with an
+   New context: the midst of these intestine [[disquiets]] we are threatened with an
+
+20. REPLACED
+   Raw word 1250: blephescu
+   New words 1250-1251: of blefuscu
+   Raw context: an invasion from the island [[blephescu]] which is the other great
+   New context: an invasion from the island [[of blefuscu]] which is the other great
+
+21. REPLACED
+   Raw word 1328: belt
+   New word 1329: bulk
+   Raw context: a hundred mortals of your [[belt]] would in a short time
+   New context: a hundred mortals of your [[bulk]] would in a short time
+
+22. REPLACED
+   Raw word 1367: blephescu
+   New word 1368: blefuscu
+   Raw context: great empires of lilliput and [[blephescu]] which two mighty powers have
+   New context: great empires of lilliput and [[blefuscu]] which two mighty powers have
+
+23. REPLACED
+   Raw word 1516: blephescu
+   New word 1517: blefuscu
+   Raw context: fermented by the monarchs of [[blephescu]] and when they quelled the
+   New context: fermented by the monarchs of [[blefuscu]] and when they were quelled
+
+24. ADDED TO CLEANED TEXT
+   Raw position 1520: (nothing)
+   New word 1521: were
+   Raw context: of blephescu and when they [[(nothing)]] quelled the exiles always fled
+   New context: of blefuscu and when they [[were]] quelled the exiles always fled
+
+25. REPLACED
+   Raw word 1593: empress
+   New word 1595: emperors
+   Raw context: course of these troubles the [[empress]] of blephescu did frequently exposulate
+   New context: course of these troubles the [[emperors]] of blefuscu did frequently expostulate
+
+26. REPLACED
+   Raw word 1595: blephescu
+   New word 1597: blefuscu
+   Raw context: these troubles the empress of [[blephescu]] did frequently exposulate by their
+   New context: these troubles the emperors of [[blefuscu]] did frequently expostulate by their
+
+27. REPLACED
+   Raw word 1598: exposulate
+   New word 1600: expostulate
+   Raw context: empress of blephescu did frequently [[exposulate]] by their ambassadors accusing us
+   New context: emperors of blefuscu did frequently [[expostulate]] by their ambassadors accusing us
+
+28. REPLACED
+   Raw word 1620: lostrogh
+   New word 1622: lustrog
+   Raw context: doctrine of our great prophet [[lostrogh]] in the fifty fourth chapter
+   New context: doctrine of our great prophet [[lustrog]] in the fifty fourth chapter
+
+29. REPLACED
+   Raw word 1628: blunderkrau
+   New word 1630: blundecral
+   Raw context: fifty fourth chapter of the [[blunderkrau]] which is their alcaran this
+   New context: fifty fourth chapter of the [[blundecral]] which is their alcoran this
+
+30. REPLACED
+   Raw word 1632: alcaran
+   New word 1634: alcoran
+   Raw context: the blunderkrau which is their [[alcaran]] this however is thought to
+   New context: the blundecral which is their [[alcoran]] this however is thought to
+
+31. REPLACED
+   Raw word 1648: of
+   New word 1650: are
+   Raw context: the text for the words [[of]] these that all true believers
+   New context: the text for the words [[are]] these that all true believers
+
+32. REPLACED
+   Raw word 1705: blephescus
+   New word 1707: blefuscus
+   Raw context: credit in the emperor of [[blephescus]] court and so much private
+   New context: credit in the emperor of [[blefuscus]] court and so much private
+
+33. REPLACED
+   Raw word 1809: valor
+   New word 1811: valour
+   Raw context: placing great confidence in your [[valor]] and strength as commanded me
+   New context: placing great confidence in your [[valour]] and strength has commanded me
+
+34. REPLACED
+   Raw word 1812: as
+   New word 1814: has
+   Raw context: in your valor and strength [[as]] commanded me to lay this
+   New context: in your valour and strength [[has]] commanded me to lay this
+
+
+================================================================================
+Lesson 5/8: Chapter_05
+================================================================================
+Raw transcript:   2469 normalized words
+Cleaned text:     2455 normalized words
+REVIEW: Found 46 word-level difference group(s).
+
+1. REPLACED
+   Raw word 27: blevyskou
+   New word 27: blefuscu
+   Raw context: arrive from the emperor of [[blevyskou]] and sue for peace the
+   New context: arrive from the emperor of [[blefuscu]] and sue for peace the
+
+2. REPLACED
+   Raw word 53: blevyskou
+   New word 53: blefuscu
+   Raw context: the palace the empire of [[blevyskou]] is an island situated to
+   New context: the palace the empire of [[blefuscu]] is an island situated to
+
+3. REPLACED
+   Raw words 60-61: north east
+   New word 60: northeast
+   Raw context: an island situated to the [[north east]] of lilliput from which it
+   New context: an island situated to the [[northeast]] of lilliput from which it
+
+4. REPLACED
+   Raw words 212-213: glum gluffs
+   New word 211: glumgluffs
+   Raw context: high water it was 70 [[glum gluffs]] deep which is about six
+   New context: high water it was 70 [[glumgluffs]] deep which is about six
+
+5. REPLACED
+   Raw words 229-230: glum gluffs
+   New word 227: glumgluffs
+   Raw context: the rest of it 50 [[glum gluffs]] at most i walked towards
+   New context: the rest of it 50 [[glumgluffs]] at most i walked towards
+
+6. REPLACED
+   Raw words 237-238: north east
+   New word 234: northeast
+   Raw context: most i walked towards the [[north east]] coast over against blevyskou where
+   New context: most i walked towards the [[northeast]] coast over against blefuscu where
+
+7. REPLACED
+   Raw word 242: blevyskou
+   New word 238: blefuscu
+   Raw context: north east coast over against [[blevyskou]] where lying down behind a
+   New context: the northeast coast over against [[blefuscu]] where lying down behind a
+
+8. REPLACED
+   Raw word 248: hillard
+   New word 244: hillock
+   Raw context: where lying down behind a [[hillard]] i took out my small
+   New context: where lying down behind a [[hillock]] i took out my small
+
+9. REPLACED
+   Raw words 311-312: pack thread
+   New word 307: packthread
+   Raw context: was about as thick as [[pack thread]] and the bars of the
+   New context: was about as thick as [[packthread]] and the bars of the
+
+10. REPLACED
+   Raw words 382-383: leaven jerken
+   New words 377-378: leathern jerkin
+   Raw context: into the sea in my [[leaven jerken]] about half an hour before
+   New context: into the sea in my [[leathern jerkin]] about half an hour before
+
+11. REPLACED
+   Raw word 715: blevyskudians
+   New word 710: blefuscudians
+   Raw context: of war after me the [[blevyskudians]] who had not the least
+   New context: of war after me the [[blefuscudians]] who had not the least
+
+12. REPLACED
+   Raw word 835: formally
+   New word 830: formerly
+   Raw context: first arrival as i have [[formally]] mentioned i then took off
+   New context: first arrival as i have [[formerly]] mentioned i then took off
+
+13. REPLACED
+   Raw word 860: of
+   New word 855: with
+   Raw context: i waded through the middle [[of]] my cargo and arrived safe
+   New context: i waded through the middle [[with]] my cargo and arrived safe
+
+14. REPLACED
+   Raw word 896: the
+   New word 891: a
+   Raw context: the ships move forward in [[the]] large half moon but could
+   New context: the ships move forward in [[a]] large half moon but could
+
+15. REPLACED
+   Raw word 1002: pucent
+   New word 997: puissant
+   Raw context: voice long live the most [[pucent]] king of lilliput this great
+   New context: voice long live the most [[puissant]] king of lilliput this great
+
+16. REPLACED
+   Raw word 1017: ecomiums
+   New word 1012: encomiums
+   Raw context: my landing with all possible [[ecomiums]] and created me a gnar
+   New context: my landing with all possible [[encomiums]] and created me a nardac
+
+17. REPLACED
+   Raw words 1022-1023: gnar dak
+   New word 1017: nardac
+   Raw context: ecomiums and created me a [[gnar dak]] upon the spot which is
+   New context: encomiums and created me a [[nardac]] upon the spot which is
+
+18. REPLACED
+   Raw word 1079: blefiscu
+   New word 1073: blefuscu
+   Raw context: reducing the whole empire of [[blefiscu]] into a province and governing
+   New context: reducing the whole empire of [[blefuscu]] into a province and governing
+
+19. REPLACED
+   Raw word 1093: indian
+   New word 1087: endian
+   Raw context: viceroy of destroying the big [[indian]] exiles and compelling that people
+   New context: viceroy of destroying the big [[endian]] exiles and compelling that people
+
+20. REPLACED
+   Raw word 1152: to
+   New word 1146: of
+   Raw context: would never be an instrument [[to]] bringing a free and brave
+   New context: would never be an instrument [[of]] bringing a free and brave
+
+21. REPLACED
+   Raw word 1181: bowl
+   New word 1175: bold
+   Raw context: of my opinion this open [[bowl]] declaration of mine was so
+   New context: of my opinion this open [[bold]] declaration of mine was so
+
+22. ADDED TO CLEANED TEXT
+   Raw position 1195: (nothing)
+   New word 1189: majesty
+   Raw context: schemes and politics of his [[(nothing)]] that he could never forgive
+   New context: schemes and politics of his [[majesty]] that he could never forgive
+
+23. REPLACED
+   Raw word 1280: liked
+   New word 1275: like
+   Raw context: than two months and had [[liked]] to have ended in my
+   New context: than two months and had [[like]] to have ended in my
+
+24. REPLACED
+   Raw word 1322: blythyskou
+   New word 1317: blefuscu
+   Raw context: arrived a solemn embassy from [[blythyskou]] with humble offers of a
+   New context: arrived a solemn embassy from [[blefuscu]] with humble offers of a
+
+25. REPLACED
+   Raw word 1430: valor
+   New word 1425: valour
+   Raw context: with many compliments upon my [[valor]] and generosity invited me to
+   New context: with many compliments upon my [[valour]] and generosity invited me to
+
+26. REMOVED FROM CLEANED TEXT
+   Raw word 1441: of
+   New position 1436: (nothing)
+   Raw context: that kingdom in the emperor [[of]] their masters name and desired
+   New context: that kingdom in the emperor [[(nothing)]] their masters name and desired
+
+27. REPLACED
+   Raw word 1502: honor
+   New word 1496: honour
+   Raw context: they would do me the [[honor]] to present my most humble
+   New context: they would do me the [[honour]] to present my most humble
+
+28. REPLACED
+   Raw word 1550: honor
+   New word 1544: honour
+   Raw context: next time i had the [[honor]] to see our emperor i
+   New context: next time i had the [[honour]] to see our emperor i
+
+29. REPLACED
+   Raw word 1564: blytheskudian
+   New word 1558: blefuscudian
+   Raw context: license to wait on the [[blytheskudian]] monarch which he was pleased
+   New context: license to wait on the [[blefuscudian]] monarch which he was pleased
+
+30. REPLACED
+   Raw words 1598-1602: flim nac that flim nap
+   New word 1592: flimnap
+   Raw context: from a certain person that [[flim nac that flim nap]] and bold golem had represented
+   New context: from a certain person that [[flimnap]] and bolgolam had represented my
+
+31. REPLACED
+   Raw words 1604-1605: bold golem
+   New word 1594: bolgolam
+   Raw context: nac that flim nap and [[bold golem]] had represented my intercourse with
+   New context: certain person that flimnap and [[bolgolam]] had represented my intercourse with
+
+32. REPLACED
+   Raw word 1613: at
+   New word 1602: as
+   Raw context: my intercourse with those ambassadors [[at]] a mark of disaffection from
+   New context: my intercourse with those ambassadors [[as]] a mark of disaffection from
+
+33. REPLACED
+   Raw word 1698: neighbor
+   New word 1687: neighbour
+   Raw context: contempt for that of their [[neighbor]] yet our emperor standing upon
+   New context: contempt for that of their [[neighbour]] yet our emperor standing upon
+
+34. REPLACED
+   Raw word 1830: blefiscu
+   New word 1819: blefuscu
+   Raw context: respects to the emperor of [[blefiscu]] which in the midst of
+   New context: respects to the emperor of [[blefuscu]] which in the midst of
+
+35. REPLACED
+   Raw word 1905: nardak
+   New word 1894: nardac
+   Raw context: submit but being now a [[nardak]] of the highest rank in
+   New context: submit but being now a [[nardac]] of the highest rank in
+
+36. REPLACED
+   Raw word 1957: signaled
+   New word 1946: signal
+   Raw context: i then thought a most [[signaled]] service i was alarmed at
+   New context: i then thought a most [[signal]] service i was alarmed at
+
+37. REPLACED
+   Raw word 1990: burglam
+   New word 1979: burglum
+   Raw context: terror i heard the word [[burglam]] repeated incessantly several of the
+   New context: terror i heard the word [[burglum]] repeated incessantly several of the
+
+38. REPLACED
+   Raw words 2158-2159: leather jerken
+   New words 2147-2148: leathern jerkin
+   Raw context: came away only in my [[leather jerken]] the case seemed wholly desperate
+   New context: came away only in my [[leathern jerkin]] the case seemed wholly desperate
+
+39. REPLACED
+   Raw word 2173: invalidly
+   New word 2162: infallibly
+   Raw context: this magnificent palace would have [[invalidly]] been burnt to the ground
+   New context: this magnificent palace would have [[infallibly]] been burnt to the ground
+
+40. REPLACED
+   Raw words 2209-2210: glimmy grim
+   New word 2198: glimigrim
+   Raw context: a most delicious wine called [[glimmy grim]] the blyphyskudians call it flu
+   New context: a most delicious wine called [[glimigrim]] the blefuscudians call it flunec
+
+41. REPLACED
+   Raw word 2212: blyphyskudians
+   New word 2200: blefuscudians
+   Raw context: wine called glimmy grim the [[blyphyskudians]] call it flu neck but
+   New context: delicious wine called glimigrim the [[blefuscudians]] call it flunec but ours
+
+42. REPLACED
+   Raw words 2215-2216: flu neck
+   New word 2203: flunec
+   Raw context: grim the blyphyskudians call it [[flu neck]] but ours is esteemed a
+   New context: glimigrim the blefuscudians call it [[flunec]] but ours is esteemed a
+
+43. REPLACED
+   Raw word 2258: laboring
+   New word 2245: labouring
+   Raw context: near the flames and by [[laboring]] to quench them made the
+   New context: near the flames and by [[labouring]] to quench them made the
+
+44. REPLACED
+   Raw word 2303: caused
+   New word 2290: cost
+   Raw context: that noble pile which had [[caused]] so many ages in erecting
+   New context: that noble pile which had [[cost]] so many ages in erecting
+
+45. REPLACED
+   Raw words 2375-2376: so ever
+   New word 2362: soever
+   Raw context: any person of what quality [[so ever]] to make water within the
+   New context: any person of what quality [[soever]] to make water within the
+
+46. REPLACED
+   Raw word 2464: confidence
+   New word 2450: confidents
+   Raw context: the presence of her chief [[confidence]] could not forbear vowing revenge
+   New context: the presence of her chief [[confidents]] could not forbear vowing revenge
+
+
+================================================================================
+Lesson 6/8: Chapter_06
+================================================================================
+Raw transcript:   3720 normalized words
+Cleaned text:     3711 normalized words
+REVIEW: Found 53 word-level difference group(s).
+
+1. REPLACED
+   Raw word 27: is
+   New word 27: his
+   Raw context: of living in that country [[is]] vindication of a great lady
+   New context: of living in that country [[his]] vindication of a great lady
+
+2. REPLACED
+   Raw word 98: oxens
+   New word 98: oxen
+   Raw context: instance the tallest horses and [[oxens]] are between four and five
+   New context: instance the tallest horses and [[oxen]] are between four and five
+
+3. REPLACED
+   Raw words 321-322: a slant
+   New word 321: aslant
+   Raw context: down like the chinese but [[a slant]] from one corner of the
+   New context: down like the chinese but [[aslant]] from one corner of the
+
+4. REPLACED
+   Raw word 550: thunby
+   New words 549-550: fund be
+   Raw context: his defence or if that [[thunby]] deficient it is largely supplied
+   New context: his defence or if that [[fund be]] deficient it is largely supplied
+
+5. REMOVED FROM CLEANED TEXT
+   Raw word 626: a
+   New position 626: (nothing)
+   Raw context: honesty has no defence against [[a]] superior cunning and since it
+   New context: honesty has no defence against [[(nothing)]] superior cunning and since it
+
+6. REPLACED
+   Raw word 718: extenduation
+   New word 717: extenuation
+   Raw context: his majesty by way of [[extenduation]] that it was only a
+   New context: his majesty by way of [[extenuation]] that it was only a
+
+7. REPLACED
+   Raw word 827: acclaimed
+   New words 826-827: a claim
+   Raw context: for seventy three moons has [[acclaimed]] to certain privileges according to
+   New context: for seventy three moons has [[a claim]] to certain privileges according to
+
+8. REPLACED
+   Raw word 859: snilpole
+   New word 859: snilpall
+   Raw context: likewise acquires the title of [[snilpole]] or legal which is added
+   New context: likewise acquires the title of [[snilpall]] or legal which is added
+
+9. REPLACED
+   Raw word 882: defective
+   New words 882-883: defect of
+   Raw context: people thought it a prodigious [[defective]] policy among us when i
+   New context: people thought it a prodigious [[defect of]] policy among us when i
+
+10. REPLACED
+   Raw word 1031: their
+   New word 1032: there
+   Raw context: of sublime genius of which [[their]] seldom are three born in
+   New context: of sublime genius of which [[there]] seldom are three born in
+
+11. REPLACED
+   Raw word 1143: wheel
+   New word 1144: weal
+   Raw context: fatal consequence to the public [[wheel]] as the practices of a
+   New context: fatal consequence to the public [[weal]] as the practices of a
+
+12. REPLACED
+   Raw word 1276: favor
+   New word 1277: favour
+   Raw context: the ropes or badges of [[favor]] and distinction by leaping over
+   New context: the ropes or badges of [[favour]] and distinction by leaping over
+
+13. REPLACED
+   Raw words 1319-1320: in gratitude
+   New word 1320: ingratitude
+   Raw context: increase of party and faction [[in gratitude]] is among them a capital
+   New context: increase of party and faction [[ingratitude]] is among them a capital
+
+14. REPLACED
+   Raw word 1419: need
+   New word 1419: needs
+   Raw context: the species the lilliputians will [[need]] have it that men and
+   New context: the species the lilliputians will [[needs]] have it that men and
+
+15. REPLACED
+   Raw word 1436: conucupiscence
+   New word 1436: concupiscence
+   Raw context: animals by the motives of [[conucupiscence]] and that their tenderness towards
+   New context: animals by the motives of [[concupiscence]] and that their tenderness towards
+
+16. REPLACED
+   Raw word 1625: capabilities
+   New word 1625: capacities
+   Raw context: their parents and their own [[capabilities]] as well as inclinations i
+   New context: their parents and their own [[capacities]] as well as inclinations i
+
+17. REPLACED
+   Raw words 1752-1755: age proportionally two hours
+   New words 1752-1755: aged proportionably to ours
+   Raw context: the women attendant who are [[age proportionally two hours]] at fifty perform only the
+   New context: the women attendant who are [[aged proportionably to ours]] at fifty perform only the
+
+18. REPLACED
+   Raw word 1868: presence
+   New word 1868: presents
+   Raw context: fondling expressions or bring any [[presence]] of toys sweeteners and the
+   New context: fondling expressions or bring any [[presents]] of toys sweetmeats and the
+
+19. REPLACED
+   Raw word 1871: sweeteners
+   New word 1871: sweetmeats
+   Raw context: bring any presence of toys [[sweeteners]] and the like the pension
+   New context: bring any presents of toys [[sweetmeats]] and the like the pension
+
+20. REPLACED
+   Raw word 1898: offices
+   New word 1898: officers
+   Raw context: is levied by the emperors [[offices]] the nurseries for children of
+   New context: is levied by the emperors [[officers]] the nurseries for children of
+
+21. REPLACED
+   Raw word 1911: manned
+   New word 1911: managed
+   Raw context: merchants traders and handicrafts are [[manned]] proportionably after the same manner
+   New context: merchants traders and handicrafts are [[managed]] proportionably after the same manner
+
+22. REPLACED
+   Raw word 1930: where
+   New word 1930: whereas
+   Raw context: apprentices at eleven years old [[where]] those of persons of quality
+   New context: apprentices at eleven years old [[whereas]] those of persons of quality
+
+23. REPLACED
+   Raw word 2017: presumed
+   New word 2017: presume
+   Raw context: found that these nurses ever [[presumed]] to entertain the girls with
+   New context: found that these nurses ever [[presume]] to entertain the girls with
+
+24. REPLACED
+   Raw word 2031: practiced
+   New word 2031: practised
+   Raw context: stories or the common follies [[practiced]] by chambermaids among us they
+   New context: stories or the common follies [[practised]] by chambermaids among us they
+
+25. REPLACED
+   Raw words 2044-2045: in prison
+   New word 2044: imprisoned
+   Raw context: whipped thrice about the city [[in prison]] for a year and banished
+   New context: whipped thrice about the city [[imprisoned]] for a year and banished
+
+26. REPLACED
+   Raw words 2205-2207: manner of sword
+   New words 2204-2205: meaner sort
+   Raw context: nurseries of females of the [[manner of sword]] the children are instructed in
+   New context: nurseries of females of the [[meaner sort]] the children are instructed in
+
+27. REPLACED
+   Raw words 2242-2243: men of
+   New word 2240: meaner
+   Raw context: are kept to eleven the [[men of]] families who have children at
+   New context: are kept to eleven the [[meaner]] families who have children at
+
+28. REPLACED
+   Raw words 2277-2278: get tings
+   New word 2274: gettings
+   Raw context: small monthly share of their [[get tings]] to be a portion for
+   New context: small monthly share of their [[gettings]] to be a portion for
+
+29. REPLACED
+   Raw word 2482: cemstresses
+   New word 2478: sempstresses
+   Raw context: the royal park two hundred [[cemstresses]] were employed to make me
+   New context: the royal park two hundred [[sempstresses]] were employed to make me
+
+30. REPLACED
+   Raw word 2501: courses
+   New word 2497: coarsest
+   Raw context: all of the strongest and [[courses]] kind they could get which
+   New context: all of the strongest and [[coarsest]] kind they could get which
+
+31. REPLACED
+   Raw word 2540: cemstresses
+   New word 2536: sempstresses
+   Raw context: feet make a piece the [[cemstresses]] took my measure as i
+   New context: feet make a piece the [[sempstresses]] took my measure as i
+
+32. REPLACED
+   Raw word 2691: plum
+   New word 2687: plumb
+   Raw context: mounted and let fall a [[plum]] line from my collar to
+   New context: mounted and let fall a [[plumb]] line from my collar to
+
+33. REPLACED
+   Raw word 2751: the
+   New word 2747: that
+   Raw context: the ladies in england only [[the]] mine were all of a
+   New context: the ladies in england only [[that]] mine were all of a
+
+34. REPLACED
+   Raw word 2873: draft
+   New word 2869: draught
+   Raw context: their liquor was a reasonable [[draft]] their mutton yields to ours
+   New context: their liquor was a reasonable [[draught]] their mutton yields to ours
+
+35. REPLACED
+   Raw word 3030: flimnapp
+   New word 3026: flimnap
+   Raw context: with their guards about them [[flimnapp]] the lord high treasurer attended
+   New context: with their guards about them [[flimnap]] the lord high treasurer attended
+
+36. REPLACED
+   Raw word 3056: could
+   New word 3052: would
+   Raw context: a sour countenance which i [[could]] not seem to regard but
+   New context: a sour countenance which i [[would]] not seem to regard but
+
+37. REPLACED
+   Raw word 3095: flimnapp
+   New word 3091: flimnap
+   Raw context: visit from his majesty gave [[flimnapp]] an opportunity of doing me
+   New context: visit from his majesty gave [[flimnap]] an opportunity of doing me
+
+38. REPLACED
+   Raw words 3125-3126: morose ness
+   New word 3121: moroseness
+   Raw context: than was usual to the [[morose ness]] of his nature he represented
+   New context: than was usual to the [[moroseness]] of his nature he represented
+
+39. REPLACED
+   Raw word 3249: me
+   New word 3244: him
+   Raw context: some evil tongues who informed [[me]] that her grace had taken
+   New context: some evil tongues who informed [[him]] that her grace had taken
+
+40. REPLACED
+   Raw word 3309: owned
+   New word 3304: own
+   Raw context: of freedom and friendship i [[owned]] she came often to my
+   New context: of freedom and friendship i [[own]] she came often to my
+
+41. REMOVED FROM CLEANED TEXT
+   Raw word 3323: or
+   New position 3318: (nothing)
+   Raw context: publicly nor ever without three [[or]] more in the coach who
+   New context: publicly nor ever without three [[(nothing)]] more in the coach who
+
+42. REPLACED
+   Raw word 3421: postilian
+   New word 3415: postilion
+   Raw context: there were six horses the [[postilian]] always unharnessed for and place
+   New context: there were six horses the [[postilion]] always unharnessed four and place
+
+43. REPLACED
+   Raw word 3424: for
+   New word 3418: four
+   Raw context: horses the postilian always unharnessed [[for]] and place them on a
+   New context: horses the postilion always unharnessed [[four]] and place them on a
+
+44. REPLACED
+   Raw word 3484: coachman
+   New word 3478: coachmen
+   Raw context: engaged with one set the [[coachman]] would gently drive the others
+   New context: engaged with one set the [[coachmen]] would gently drive the others
+
+45. REPLACED
+   Raw word 3527: drunlow
+   New word 3521: drunlo
+   Raw context: best of it clustril and [[drunlow]] to prove that any person
+   New context: best of it clustril and [[drunlo]] to prove that any person
+
+46. REPLACED
+   Raw words 3541-3542: rael dressel
+   New word 3535: reldresal
+   Raw context: me incognito except the secretary [[rael dressel]] who was sent by express
+   New context: me incognito except the secretary [[reldresal]] who was sent by express
+
+47. REPLACED
+   Raw word 3569: he
+   New word 3562: it
+   Raw context: long upon this particular if [[he]] had not been a point
+   New context: long upon this particular if [[it]] had not been a point
+
+48. REPLACED
+   Raw words 3575-3576: where in
+   New word 3568: wherein
+   Raw context: had not been a point [[where in]] the reputation of a great
+   New context: had not been a point [[wherein]] the reputation of a great
+
+49. REPLACED
+   Raw word 3598: honor
+   New word 3590: honour
+   Raw context: though i then had the [[honor]] to be a nardak which
+   New context: though i then had the [[honour]] to be a nardac which
+
+50. REPLACED
+   Raw word 3602: nardak
+   New word 3594: nardac
+   Raw context: the honor to be a [[nardak]] which the treasurer himself is
+   New context: the honour to be a [[nardac]] which the treasurer himself is
+
+51. REPLACED
+   Raw words 3619-3620: glum glum
+   New word 3611: glumglum
+   Raw context: that he is only a [[glum glum]] a title inferior by one
+   New context: that he is only a [[glumglum]] a title inferior by one
+
+52. REPLACED
+   Raw word 3689: undiseived
+   New word 3680: undeceived
+   Raw context: although he was at last [[undiseived]] and reconciled to her yet
+   New context: although he was at last [[undeceived]] and reconciled to her yet
+
+53. REPLACED
+   Raw word 3720: favorite
+   New word 3711: favourite
+   Raw context: too much governed by that [[favorite]]
+   New context: too much governed by that [[favourite]]
+
+
+================================================================================
+Lesson 7/8: Chapter_07
+================================================================================
+Raw transcript:   2845 normalized words
+Cleaned text:     2848 normalized words
+REVIEW: Found 58 word-level difference group(s).
+
+1. REPLACED
+   Raw word 20: blythyscu
+   New word 20: blefuscu
+   Raw context: treason makes his escape to [[blythyscu]] his reception there before i
+   New context: treason makes his escape to [[blefuscu]] his reception there before i
+
+2. REPLACED
+   Raw word 134: blythyscu
+   New word 134: blefuscu
+   Raw context: attendance on the emperor of [[blythyscu]] a considerable person at court
+   New context: attendance on the emperor of [[blefuscu]] a considerable person at court
+
+3. REPLACED
+   Raw word 171: closed
+   New word 171: close
+   Raw context: privately at night in a [[closed]] chair and without sending his
+   New context: privately at night in a [[close]] chair and without sending his
+
+4. REPLACED
+   Raw words 181-182: chairman was
+   New words 181-182: chairmen were
+   Raw context: his name desired admittance the [[chairman was]] dismissed i put the chair
+   New context: his name desired admittance the [[chairmen were]] dismissed i put the chair
+
+5. REPLACED
+   Raw word 311: matter
+   New word 311: manner
+   Raw context: called in the most private [[matter]] on your account and it
+   New context: called in the most private [[manner]] on your account and it
+
+6. REPLACED
+   Raw word 335: bogolam
+   New word 335: bolgolam
+   Raw context: are very sensible that skyresh [[bogolam]] galbet or high admiral has
+   New context: are very sensible that skyresh [[bolgolam]] galbet or high admiral has
+
+7. REPLACED
+   Raw word 363: greatness
+   New words 363-364: great success
+   Raw context: hatred is increased since your [[greatness]] against blefescu by which his
+   New context: hatred is increased since your [[great success]] against blefuscu by which his
+
+8. REPLACED
+   Raw word 365: blefescu
+   New word 366: blefuscu
+   Raw context: increased since your greatness against [[blefescu]] by which his glory as
+   New context: since your great success against [[blefuscu]] by which his glory as
+
+9. REPLACED
+   Raw word 395: limtok
+   New word 396: limtoc
+   Raw context: on account of his lady [[limtok]] the general lalcon the chamberlain
+   New context: on account of his lady [[limtoc]] the general lalcon the chamberlain
+
+10. REPLACED
+   Raw word 402: baomuf
+   New word 403: balmuff
+   Raw context: general lalcon the chamberlain and [[baomuf]] the great judiciary have prepared
+   New context: general lalcon the chamberlain and [[balmuff]] the grand justiciary have prepared
+
+11. REPLACED
+   Raw words 404-405: great judiciary
+   New words 405-406: grand justiciary
+   Raw context: the chamberlain and baomuf the [[great judiciary]] have prepared articles of impeachment
+   New context: the chamberlain and balmuff the [[grand justiciary]] have prepared articles of impeachment
+
+12. REPLACED
+   Raw word 415: than
+   New word 416: and
+   Raw context: impeachment against you for treason [[than]] other capital crimes this preface
+   New context: impeachment against you for treason [[and]] other capital crimes this preface
+
+13. REPLACED
+   Raw words 485-486: quinvas fletstrin
+   New words 486-487: quinbus flestrin
+   Raw context: service articles of impeachment against [[quinvas fletstrin]] the man mountain article 1
+   New context: service articles of impeachment against [[quinbus flestrin]] the man mountain article 1
+
+14. REPLACED
+   Raw words 504-506: kallin de faplune
+   New words 505-507: calin deffar plune
+   Raw context: reign of his imperial majesty [[kallin de faplune]] it is enacted that whoever
+   New context: reign of his imperial majesty [[calin deffar plune]] it is enacted that whoever
+
+15. REPLACED
+   Raw words 536-537: quinvas fletstrin
+   New words 537-538: quinbus flestrin
+   Raw context: high treason notwithstanding the said [[quinvas fletstrin]] in open breach of the
+   New context: high treason notwithstanding the said [[quinbus flestrin]] in open breach of the
+
+16. REPLACED
+   Raw word 564: traitoriously
+   New word 565: traitorously
+   Raw context: dear imperial consort did maliciously [[traitoriously]] and devilishly by discharge of
+   New context: dear imperial consort did maliciously [[traitorously]] and devilishly by discharge of
+
+17. REPLACED
+   Raw words 610-611: quinvas fletstrin
+   New words 611-612: quinbus flestrin
+   Raw context: article 2 that the said [[quinvas fletstrin]] having brought the imperial fleet
+   New context: article 2 that the said [[quinbus flestrin]] having brought the imperial fleet
+
+18. REPLACED
+   Raw word 618: blefiscu
+   New word 619: blefuscu
+   Raw context: brought the imperial fleet of [[blefiscu]] into the royal port and
+   New context: brought the imperial fleet of [[blefuscu]] into the royal port and
+
+19. REPLACED
+   Raw word 642: blefiscu
+   New word 643: blefuscu
+   Raw context: of the said empire of [[blefiscu]] and reduce that empire to
+   New context: of the said empire of [[blefuscu]] and reduce that empire to
+
+20. REPLACED
+   Raw word 670: indian
+   New word 671: endian
+   Raw context: not only all the big [[indian]] exiles but likewise all the
+   New context: not only all the big [[endian]] exiles but likewise all the
+
+21. REPLACED
+   Raw word 687: indian
+   New word 688: endian
+   Raw context: not immediately forsake the big [[indian]] heresy he the said fletstrin
+   New context: not immediately forsake the big [[endian]] heresy he the said flestrin
+
+22. REPLACED
+   Raw word 692: fletstrin
+   New word 693: flestrin
+   Raw context: indian heresy he the said [[fletstrin]] like a false traitor against
+   New context: endian heresy he the said [[flestrin]] like a false traitor against
+
+23. REPLACED
+   Raw word 742: blefiscu
+   New word 743: blefuscu
+   Raw context: arrived from the court of [[blefiscu]] to sue for peace in
+   New context: arrived from the court of [[blefuscu]] to sue for peace in
+
+24. REPLACED
+   Raw word 754: fletstrin
+   New word 755: flestrin
+   Raw context: majestys court he the said [[fletstrin]] did like a false traitor
+   New context: majestys court he the said [[flestrin]] did like a false traitor
+
+25. REPLACED
+   Raw word 802: fletstrin
+   New word 803: flestrin
+   Raw context: 4 that the said quinbus [[fletstrin]] contrary to the duty of
+   New context: 4 that the said quinbus [[flestrin]] contrary to the duty of
+
+26. REPLACED
+   Raw word 824: blefiscu
+   New word 825: blefuscu
+   Raw context: the court and empire of [[blefiscu]] for which he has received
+   New context: the court and empire of [[blefuscu]] for which he has received
+
+27. REPLACED
+   Raw word 847: traitoriously
+   New word 848: traitorously
+   Raw context: said license does falsely and [[traitoriously]] intend to take the said
+   New context: said license does falsely and [[traitorously]] intend to take the said
+
+28. REPLACED
+   Raw word 864: blefiscu
+   New word 865: blefuscu
+   Raw context: and abet the emperor of [[blefiscu]] so lately an enemy and
+   New context: and abet the emperor of [[blefuscu]] so lately an enemy and
+
+29. REPLACED
+   Raw words 877-879: of four said
+   New word 878: aforesaid
+   Raw context: war with his imperial majesty [[of four said]] there are some other articles
+   New context: war with his imperial majesty [[aforesaid]] there are some other articles
+
+30. REPLACED
+   Raw word 915: remarks
+   New word 914: marks
+   Raw context: that his majesty gave many [[remarks]] of his great lenity often
+   New context: that his majesty gave many [[marks]] of his great lenity often
+
+31. REPLACED
+   Raw word 1053: reldressel
+   New word 1052: reldresal
+   Raw context: the chamberlain upon this incident [[reldressel]] principal secretary for private affairs
+   New context: the chamberlain upon this incident [[reldresal]] principal secretary for private affairs
+
+32. REPLACED
+   Raw word 1139: honorable
+   New word 1138: honourable
+   Raw context: world that perhaps the most [[honorable]] board might think impartial however
+   New context: world that perhaps the most [[honourable]] board might think him partial
+
+33. REPLACED
+   Raw word 1143: impartial
+   New words 1142-1143: him partial
+   Raw context: most honorable board might think [[impartial]] however in obedience to the
+   New context: most honourable board might think [[him partial]] however in obedience to the
+
+34. REPLACED
+   Raw word 1197: experience
+   New word 1197: expedient
+   Raw context: humbly conceived that by this [[experience]] justice might in some measure
+   New context: humbly conceived that by this [[expedient]] justice might in some measure
+
+35. REPLACED
+   Raw word 1229: honor
+   New word 1229: honour
+   Raw context: of those who have the [[honor]] to be his counselors that
+   New context: of those who have the [[honour]] to be his counsellors that
+
+36. REPLACED
+   Raw word 1233: counselors
+   New word 1233: counsellors
+   Raw context: the honor to be his [[counselors]] that the loss of your
+   New context: the honour to be his [[counsellors]] that the loss of your
+
+37. REPLACED
+   Raw word 1322: orgalam
+   New word 1322: bolgolam
+   Raw context: disapprobation by the whole board [[orgalam]] the admiral could not preserve
+   New context: disapprobation by the whole board [[bolgolam]] the admiral could not preserve
+
+38. REPLACED
+   Raw word 1342: presumed
+   New word 1342: presume
+   Raw context: wondered how the secretary durst [[presumed]] to give his opinion for
+   New context: wondered how the secretary durst [[presume]] to give his opinion for
+
+39. REPLACED
+   Raw word 1445: indian
+   New word 1445: endian
+   Raw context: think you were a big [[indian]] in your heart and as
+   New context: think you were a big [[endian]] in your heart and as
+
+40. REPLACED
+   Raw word 1695: for
+   New word 1695: food
+   Raw context: which for want of sufficient [[for]] you would grow weak and
+   New context: which for want of sufficient [[food]] you would grow weak and
+
+41. REPLACED
+   Raw word 1746: subject
+   New word 1746: subjects
+   Raw context: six thousand of his majestys [[subject]] might in two or three
+   New context: six thousand of his majestys [[subjects]] might in two or three
+
+42. REPLACED
+   Raw word 1795: comprised
+   New word 1795: compromised
+   Raw context: secretary the whole affair was [[comprised]] it was strictly enjoined that
+   New context: secretary the whole affair was [[compromised]] it was strictly enjoined that
+
+43. REPLACED
+   Raw word 1807: degree
+   New word 1807: degrees
+   Raw context: project of starving you by [[degree]] should be kept a secret
+   New context: project of starving you by [[degrees]] should be kept a secret
+
+44. REPLACED
+   Raw word 1829: boghulam
+   New word 1829: bolgolam
+   Raw context: the books none dissenting except [[boghulam]] the admiral who being a
+   New context: the books none dissenting except [[bolgolam]] the admiral who being a
+
+45. REPLACED
+   Raw word 1852: bore
+   New word 1852: borne
+   Raw context: upon your death she having [[bore]] perpetual malice against you on
+   New context: upon your death she having [[borne]] perpetual malice against you on
+
+46. REPLACED
+   Raw word 2098: ecomiums
+   New word 2098: encomiums
+   Raw context: people so much as those [[ecomiums]] on his majestys mercy because
+   New context: people so much as those [[encomiums]] on his majestys mercy because
+
+47. REPLACED
+   Raw word 2163: in
+   New word 2163: and
+   Raw context: could not discover the lenity [[in]] favour of this sentence but
+   New context: could not discover the lenity [[and]] favour of this sentence but
+
+48. ADDED TO CLEANED TEXT
+   Raw position 2223: (nothing)
+   New word 2223: as
+   Raw context: i ever observed to terminate [[(nothing)]] the judges thought fit to
+   New context: i ever observed to terminate [[as]] the judges thought fit to
+
+49. REPLACED
+   Raw word 2230: dourced
+   New word 2231: durst
+   Raw context: thought fit to direct i [[dourced]] not rely on so dangerous
+   New context: thought fit to direct i [[durst]] not rely on so dangerous
+
+50. REPLACED
+   Raw word 2311: nardak
+   New word 2312: nardac
+   Raw context: and the high title of [[nardak]] he conferred upon me neither
+   New context: and the high title of [[nardac]] he conferred upon me neither
+
+51. REPLACED
+   Raw word 2333: 70s
+   New word 2334: severities
+   Raw context: myself that his majestys present [[70s]] acquitted me of all past
+   New context: myself that his majestys present [[severities]] acquitted me of all past
+
+52. REPLACED
+   Raw word 2425: easier
+   New words 2426-2427: easy a
+   Raw context: readiness have submitted to so [[easier]] punishment but hurried on by
+   New context: readiness have submitted to so [[easy a]] punishment but hurried on by
+
+53. REPLACED
+   Raw word 2449: blevyskou
+   New word 2451: blefuscu
+   Raw context: attendance upon the emperor of [[blevyskou]] i took this opportunity before
+   New context: attendance upon the emperor of [[blefuscu]] i took this opportunity before
+
+54. REPLACED
+   Raw word 2477: blevyskou
+   New word 2479: blefuscu
+   Raw context: setting out that morning for [[blevyskou]] pursuant to the leave i
+   New context: setting out that morning for [[blefuscu]] pursuant to the leave i
+
+55. REPLACED
+   Raw word 2555: blevyskou
+   New word 2557: blefuscu
+   Raw context: at the royal port of [[blevyskou]] where the people had long
+   New context: at the royal port of [[blefuscu]] where the people had long
+
+56. REPLACED
+   Raw word 2700: calm
+   New word 2702: come
+   Raw context: his majesty that i was [[calm]] according to my promise and
+   New context: his majesty that i was [[come]] according to my promise and
+
+57. REPLACED
+   Raw word 2818: greater
+   New words 2820-2821: great a
+   Raw context: to the generosity of so [[greater]] prince nor of the difficulties
+   New context: to the generosity of so [[great a]] prince nor of the difficulties
+
+58. REPLACED
+   Raw words 2828-2830: one to the
+   New words 2831-2833: want of a
+   Raw context: difficulties i was in for [[one to the]] house and bed being forced
+   New context: difficulties i was in for [[want of a]] house and bed being forced
+
+
+================================================================================
+Lesson 8/8: Chapter_08
+================================================================================
+Raw transcript:   2387 normalized words
+Cleaned text:     2383 normalized words
+REVIEW: Found 31 word-level difference group(s).
+
+1. REPLACED
+   Raw word 13: blefuscue
+   New word 13: blefuscu
+   Raw context: accident finds means to leave [[blefuscue]] and after some difficulty returns
+   New context: accident finds means to leave [[blefuscu]] and after some difficulty returns
+
+2. REPLACED
+   Raw word 95: suppose
+   New word 95: supposed
+   Raw context: a real boat which i [[suppose]] might by some tempest have
+   New context: a real boat which i [[supposed]] might by some tempest have
+
+3. REPLACED
+   Raw word 149: around
+   New word 149: round
+   Raw context: vice admiral this fleet sailed [[around]] while i went back to
+   New context: vice admiral this fleet sailed [[round]] while i went back by
+
+4. REPLACED
+   Raw word 154: to
+   New word 154: by
+   Raw context: around while i went back [[to]] the shortest way to the
+   New context: round while i went back [[by]] the shortest way to the
+
+5. REPLACED
+   Raw words 242-243: four parts
+   New word 242: forepart
+   Raw context: to a hole in the [[four parts]] of the boat and the
+   New context: to a hole in the [[forepart]] of the boat and the
+
+6. REPLACED
+   Raw word 479: blefescue
+   New word 478: blefuscu
+   Raw context: to the royal port of [[blefescue]] where a mighty concourse of
+   New context: to the royal port of [[blefuscu]] where a mighty concourse of
+
+7. REPLACED
+   Raw word 522: once
+   New word 521: whence
+   Raw context: carry me to some place [[once]] i might return into my
+   New context: carry me to some place [[whence]] i might return into my
+
+8. REPLACED
+   Raw word 584: blefescue
+   New word 583: blefuscu
+   Raw context: emperor to the court of [[blefescue]] but i was after it
+   New context: emperor to the court of [[blefuscu]] but i was afterwards given
+
+9. REPLACED
+   Raw words 588-589: after it
+   New word 587: afterwards
+   Raw context: of blefescue but i was [[after it]] given privately to understand that
+   New context: of blefuscu but i was [[afterwards]] given privately to understand that
+
+10. REPLACED
+   Raw word 614: blefescue
+   New word 612: blefuscu
+   Raw context: i was only gone to [[blefescue]] in performance of my promise
+   New context: i was only gone to [[blefuscu]] in performance of my promise
+
+11. REPLACED
+   Raw word 694: blefescue
+   New word 692: blefuscu
+   Raw context: represent to the monarch of [[blefescue]] the great lenity of his
+   New context: represent to the monarch of [[blefuscu]] the great lenity of his
+
+12. REPLACED
+   Raw word 739: nardak
+   New word 737: nardac
+   Raw context: deprived of my title of [[nardak]] and declared a traitor the
+   New context: deprived of my title of [[nardac]] and declared a traitor the
+
+13. REPLACED
+   Raw word 766: blefescue
+   New word 764: blefuscu
+   Raw context: expected that his brother of [[blefescue]] would give orders to have
+   New context: expected that his brother of [[blefuscu]] would give orders to have
+
+14. REPLACED
+   Raw word 790: blefescue
+   New word 788: blefuscu
+   Raw context: a traitor the emperor of [[blefescue]] having taken three days to
+   New context: a traitor the emperor of [[blefuscu]] having taken three days to
+
+15. ADDED TO CLEANED TEXT
+   Raw position 904: (nothing)
+   New word 902: an
+   Raw context: be freed from so insupportable [[(nothing)]] encumbrance with this answer the
+   New context: be freed from so insupportable [[an]] encumbrance with this answer the
+
+16. REPLACED
+   Raw word 917: blefescue
+   New word 916: blefuscu
+   Raw context: lilliput and the monarch of [[blefescue]] related to me all that
+   New context: lilliput and the monarch of [[blefuscu]] related to me all that
+
+17. REPLACED
+   Raw word 983: beg
+   New word 982: begged
+   Raw context: his favourable intentions i humbly [[beg]] to be excused i told
+   New context: his favourable intentions i humbly [[begged]] to be excused i told
+
+18. REMOVED FROM CLEANED TEXT
+   Raw word 1167: an
+   New position 1166: (nothing)
+   Raw context: other uses i was at [[an]] incredible pains in cutting down
+   New context: other uses i was at [[(nothing)]] incredible pains in cutting down
+
+19. REPLACED
+   Raw word 1358: ews
+   New word 1356: ewes
+   Raw context: bulls alive with as many [[ews]] and rams intending to carry
+   New context: bulls alive with as many [[ewes]] and rams intending to carry
+
+20. REPLACED
+   Raw word 1490: decried
+   New word 1488: descried
+   Raw context: six in the evening i [[decried]] a small island about half
+   New context: six in the evening i [[descried]] a small island about half
+
+21. REPLACED
+   Raw words 1500-1501: north west
+   New word 1498: northwest
+   Raw context: half a league to the [[north west]] i advanced forward and cast
+   New context: half a league to the [[northwest]] i advanced forward and cast
+
+22. REPLACED
+   Raw word 1645: blefiskew
+   New word 1642: blefuscu
+   Raw context: made twenty four leagues from [[blefiskew]] i decried a sail steering
+   New context: made twenty four leagues from [[blefuscu]] i descried a sail steering
+
+23. REPLACED
+   Raw word 1647: decried
+   New word 1644: descried
+   Raw context: four leagues from blefiskew i [[decried]] a sail steering to the
+   New context: four leagues from blefuscu i [[descried]] a sail steering to the
+
+24. REPLACED
+   Raw word 1770: sheeps
+   New word 1767: sheep
+   Raw context: i put my cows and [[sheeps]] into my coat pockets and
+   New context: i put my cows and [[sheep]] into my coat pockets and
+
+25. REPLACED
+   Raw word 1807: depford
+   New word 1804: deptford
+   Raw context: captain mr john biddle of [[depford]] a very civil man and
+   New context: captain mr john biddle of [[deptford]] a very civil man and
+
+26. REMOVED FROM CLEANED TEXT
+   Raw word 1862: i
+   New position 1859: (nothing)
+   Raw context: treated me with kindness and [[i]] desired i would let him
+   New context: treated me with kindness and [[(nothing)]] desired i would let him
+
+27. REPLACED
+   Raw word 1876: wither
+   New word 1872: whither
+   Raw context: i came from last and [[wither]] i was bound which i
+   New context: i came from last and [[whither]] i was bound which i
+
+28. REPLACED
+   Raw word 1917: greatest
+   New word 1913: great
+   Raw context: of my pocket which after [[greatest]] astonishment clearly convinced him of
+   New context: of my pocket which after [[great]] astonishment clearly convinced him of
+
+29. REPLACED
+   Raw word 1936: lefiscue
+   New word 1932: blefuscu
+   Raw context: given by the emperor of [[lefiscue]] together with his majestys picture
+   New context: given by the emperor of [[blefuscu]] together with his majestys picture
+
+30. REPLACED
+   Raw words 2228-2229: red riff
+   New word 2224: redriff
+   Raw context: in a good house at [[red riff]] my remaining stock i carried
+   New context: in a good house at [[redriff]] my remaining stock i carried
+
+31. REPLACED
+   Raw word 2280: fetalane
+   New words 2275-2276: fetter lane
+   Raw context: of the black bull in [[fetalane]] which yielded me as much
+   New context: of the black bull in [[fetter lane]] which yielded me as much
+
+
+================================================================================
+OVERALL SUMMARY
+================================================================================
+LESSON      STATUS  DIFFERENCE GROUPS
+----------  ------  -----------------
+Chapter_01  REVIEW  36
+Chapter_02  REVIEW  37
+Chapter_03  REVIEW  22
+Chapter_04  REVIEW  34
+Chapter_05  REVIEW  46
+Chapter_06  REVIEW  53
+Chapter_07  REVIEW  58
+Chapter_08  REVIEW  31
+
+Lessons checked:        8
+Passed:                 0
+Need review:            8
+Empty cleaned files:    0
+Errors:                 0
+Total difference groups: 317
+Result: REVIEW - inspect the differences shown above.
