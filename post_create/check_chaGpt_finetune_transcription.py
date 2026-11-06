@@ -264,4 +264,5 @@ if __name__ == "__main__":
 
 
 
-# python .\check_chaGpt_finetune_transcription.py 2>&1 Tee-Object -FilePath .\voa_learing_english_check_report.txt
+# python .\check_chaGpt_finetune_transcription.py 2>&1 | Tee-Object -FilePath .\The_secret_garden_check_report.txt
+# C:\Users\PC\Desktop\kaggle\whisper\en\BBE English Podcast\lessons
