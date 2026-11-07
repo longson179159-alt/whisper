@@ -1,0 +1,1 @@
+C:\Users\PC\anaconda3\envs\yt311\python.exe: can't open file 'C:\\Users\\PC\\Desktop\\kaggle\\whisper\\check_chaGpt_finetune_transcription.py': [Errno 2] No such file or directory
