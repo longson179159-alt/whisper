@@ -15,6 +15,7 @@ from download_youtube_playlist import (
 
 
 URL_FILE = Path(__file__).resolve().with_name("peding.txt")
+VALID_LEVELS = ("a1", "a2", "b1", "b2", "c1", "c2")
 
 
 def read_urls(url_file: Path = URL_FILE) -> list[str]:
@@ -26,7 +27,7 @@ def read_urls(url_file: Path = URL_FILE) -> list[str]:
     ]
 
 
-def build_course(output_name: str) -> None:
+def build_course(output_name: str, level: str) -> None:
     urls = read_urls()
     if not urls:
         raise ValueError(f"No YouTube URLs found in {URL_FILE}")
@@ -39,7 +40,13 @@ def build_course(output_name: str) -> None:
     audio_duration = 0.0
     for index, url in enumerate(urls, start=1):
         try:
-            audio_duration += download_lesson(index, url, output_dir)
+            audio_duration += download_lesson(
+                index,
+                url,
+                output_dir,
+                save_professional_timestamps=True,
+                lesson_level=level,
+            )
         except DownloadError as error:
             failures.append((index, url))
             print(f"[{index}] Download failed: {error}")
@@ -50,6 +57,7 @@ def build_course(output_name: str) -> None:
         audio_duration,
         youtube_id=None,
         url=None,
+        level=level,
     )
     print(f"Course description: {description_path.resolve()}")
 
@@ -66,7 +74,14 @@ def main() -> None:
     output_name = input("Output/course name: ").strip()
     if not output_name:
         raise ValueError("Output/course name cannot be blank")
-    build_course(output_name)
+
+    level = input("CEFR level (a1, a2, b1, b2, c1, c2): ").strip().lower()
+    if level not in VALID_LEVELS:
+        raise ValueError(
+            f"Invalid CEFR level {level!r}; choose one of: {', '.join(VALID_LEVELS)}"
+        )
+
+    build_course(output_name, level)
 
 
 if __name__ == "__main__":

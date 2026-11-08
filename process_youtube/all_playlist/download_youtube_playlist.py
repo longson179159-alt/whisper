@@ -38,6 +38,7 @@ def create_course_description(
     audio_duration: float,
     youtube_id: str | None = None,
     url: str | None = None,
+    level: str | None = None,
 ) -> Path:
     """Create the course metadata, leaving uncertain values as JSON null."""
     description_dir = course_dir / "course_infos"
@@ -53,7 +54,7 @@ def create_course_description(
         "is_system_course": None,
         "avatar": None,
         "has_lesson_images": True,
-        "level": None,
+        "level": level,
         "youtube_id": youtube_id,
         "url": url,
     }
@@ -78,13 +79,20 @@ def create_lesson_description(
     lesson_name: str,
     info: dict,
     subtitle_type: str,
+    level: str = DEFAULT_LESSON_LEVEL,
 ) -> Path:
     """Create lesson metadata and add new fields without replacing old values."""
     description_path = lesson_dir / "description.json"
     if description_path.exists():
         description = json.loads(description_path.read_text(encoding="utf-8"))
+        changed = False
+        if description.get("level") != level:
+            description["level"] = level
+            changed = True
         if "youtube_subtitle" not in description:
             description["youtube_subtitle"] = subtitle_type
+            changed = True
+        if changed:
             description_path.write_text(
                 json.dumps(description, ensure_ascii=False, indent=2) + "\n",
                 encoding="utf-8",
@@ -97,7 +105,7 @@ def create_lesson_description(
     description = {
         "lesson_number": lesson_number,
         "lesson_name": lesson_name,
-        "level": DEFAULT_LESSON_LEVEL,
+        "level": level,
         "youtube_id": video_id,
         "url": (
             f"https://www.youtube.com/watch?v={video_id}"
@@ -252,7 +260,29 @@ def download_options(
     return options
 
 
-def download_lesson(index: int, url: str, output_dir: Path) -> float:
+def save_timestamps_if_requested(
+    lesson_dir: Path,
+    url: str,
+    subtitle_type: str,
+    enabled: bool,
+) -> None:
+    """Create raw_timestamp.json for available English captions when requested."""
+    if not enabled or subtitle_type not in {"professional", "auto_generated"}:
+        return
+
+    from download_timestamp import download_lesson as download_timestamps
+
+    result = download_timestamps(lesson_dir, url, overwrite=False)
+    print(f"    Timestamps: {result}")
+
+
+def download_lesson(
+    index: int,
+    url: str,
+    output_dir: Path,
+    save_professional_timestamps: bool = False,
+    lesson_level: str = DEFAULT_LESSON_LEVEL,
+) -> float:
     """Download one lesson and create its plain-text subtitle file."""
     with yt_dlp.YoutubeDL(metadata_options()) as ydl:
         info = ydl.extract_info(url, download=False)
@@ -280,7 +310,10 @@ def download_lesson(index: int, url: str, output_dir: Path) -> float:
     )
     if all(path.is_file() for path in expected_files):
         description_path = create_lesson_description(
-            lesson_dir, index, lesson_name, info, subtitle_type
+            lesson_dir, index, lesson_name, info, subtitle_type, lesson_level
+        )
+        save_timestamps_if_requested(
+            lesson_dir, url, subtitle_type, save_professional_timestamps
         )
         print(f"[{index}] Already exists, skipping: {title}")
         print(f"    Lesson description: {description_path.name}")
@@ -303,7 +336,10 @@ def download_lesson(index: int, url: str, output_dir: Path) -> float:
         subtitle_file.unlink()
 
     description_path = create_lesson_description(
-        lesson_dir, index, lesson_name, info, subtitle_type
+        lesson_dir, index, lesson_name, info, subtitle_type, lesson_level
+    )
+    save_timestamps_if_requested(
+        lesson_dir, url, subtitle_type, save_professional_timestamps
     )
     print(f"    Lesson description: {description_path.name}")
     return audio_duration_from_info(info)
