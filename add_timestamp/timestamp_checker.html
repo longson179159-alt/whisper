@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audio Timestamp Checker</title>
+  <style>
+    :root { color-scheme: light; font-family: Inter, system-ui, sans-serif; color: #172033; background: #f1f5f9; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 36px 16px; }
+    main { max-width: 1000px; margin: auto; }
+    header { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+    h1 { margin: 4px 0; font-size: clamp(2rem, 5vw, 3.25rem); letter-spacing: -.04em; }
+    p { margin: 0; color: #64748b; }
+    .eyebrow { color: #4f46e5; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .clock { min-width: 190px; padding: 15px 18px; border-radius: 16px; color: white; background: #172033; }
+    .clock span, .clock small { display: block; color: #94a3b8; font-size: 12px; }
+    .clock strong { display: block; margin: 4px 0; font: 700 24px ui-monospace, monospace; }
+    .card { border: 1px solid #e2e8f0; border-radius: 18px; background: white; box-shadow: 0 8px 30px #1720330c; }
+    .files { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px; }
+    .file { min-width: 0; padding: 16px; border: 1px dashed #cbd5e1; border-radius: 12px; cursor: pointer; }
+    .file:hover { border-color: #6366f1; background: #eef2ff; }
+    .file strong, .file small { display: block; }
+    .file small { overflow: hidden; margin-top: 5px; color: #64748b; text-overflow: ellipsis; white-space: nowrap; }
+    .file input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+    #error { display: none; margin-top: 12px; padding: 12px 16px; border-radius: 12px; color: #b91c1c; background: #fef2f2; }
+    .player { position: sticky; z-index: 2; top: 10px; margin: 14px 0; padding: 16px; }
+    audio { width: 100%; }
+    .controls { display: flex; flex-wrap: wrap; align-items: end; gap: 8px; margin-top: 12px; }
+    .controls label { color: #64748b; font-size: 12px; }
+    .controls input[type="number"] { display: block; width: 130px; margin-top: 4px; }
+    input, button { padding: 9px 11px; border: 1px solid #cbd5e1; border-radius: 8px; background: white; }
+    button { cursor: pointer; }
+    button:hover { border-color: #818cf8; background: #eef2ff; }
+    .checks { display: flex; flex-wrap: wrap; gap: 16px; margin-left: auto; color: #475569; }
+    .checks label { font-size: 15px; }
+    .rows { overflow: hidden; }
+    .empty { padding: 64px 20px; color: #94a3b8; text-align: center; }
+    .row { display: grid; grid-template-columns: 44px 125px 1fr 60px; align-items: center; gap: 12px; width: 100%; padding: 14px 16px; border: 0; border-bottom: 1px solid #f1f5f9; border-radius: 0; color: inherit; text-align: left; }
+    .row.active { background: #eef2ff; box-shadow: inset 4px 0 #6366f1; }
+    .number, .duration { color: #94a3b8; font-size: 12px; }
+    .time, .duration { font-family: ui-monospace, monospace; }
+    .time { color: #64748b; font-size: 12px; line-height: 1.6; }
+    .duration { text-align: right; }
+    @media (max-width: 640px) {
+      body { padding-top: 24px; }
+      header { display: block; }
+      .clock { margin-top: 20px; }
+      .files { grid-template-columns: 1fr; }
+      .checks { width: 100%; margin-left: 0; }
+      .row { grid-template-columns: 32px 1fr 48px; }
+      .row .text { grid-column: 2 / 4; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <div class="eyebrow">Local developer tool</div>
+        <h1>Audio timestamp checker</h1>
+        <p>Choose a timestamp JSON file and its audio, then click any line to hear it.</p>
+      </div>
+      <div class="clock">
+        <span>Audio</span>
+        <strong id="audioTime">00:00.000</strong>
+        <small>JSON time <span id="jsonTime">00:00.000</span></small>
+      </div>
+    </header>
+
+    <section class="card files">
+      <label class="file">
+        <strong>Choose timestamp.json</strong>
+        <small id="jsonName">No timestamp file selected</small>
+        <input id="jsonFile" type="file" accept="application/json,.json">
+      </label>
+      <label class="file">
+        <strong>Choose audio</strong>
+        <small id="audioName">No audio selected</small>
+        <input id="audioFile" type="file" accept="audio/*,.mp3,.wav,.m4a">
+      </label>
+    </section>
+
+    <div id="error"></div>
+
+    <section class="card player">
+      <audio id="audio" controls></audio>
+      <div class="controls">
+        <label>Sync offset (seconds)<input id="offset" type="number" value="0" step="0.05"></label>
+        <button type="button" data-offset="-0.05">− 0.05s</button>
+        <button type="button" data-offset="0.05">+ 0.05s</button>
+        <button id="reset" type="button">Reset</button>
+        <div class="checks">
+          <label><input id="playOne" type="checkbox"> Play one timestamp only</label>
+          <label><input id="follow" type="checkbox" checked> Follow playback</label>
+        </div>
+      </div>
+    </section>
+
+    <section id="rows" class="card rows"><div class="empty">Load timestamp.json to see the transcript.</div></section>
+  </main>
+
+  <script>
+    const elements = Object.fromEntries(
+      ['audio', 'audioTime', 'jsonTime', 'jsonFile', 'audioFile', 'jsonName', 'audioName', 'error', 'offset', 'playOne', 'follow', 'rows', 'reset']
+        .map(id => [id, document.getElementById(id)])
+    )
+    let rows = []
+    let activeIndex = -1
+    let stopAt = null
+    let audioUrl = ''
+
+    function numberValue(value) {
+      if (typeof value === 'number') return value
+      if (typeof value !== 'string') return NaN
+      if (/^\d{1,2}:\d{2}(?::\d{2})?(?:\.\d+)?$/.test(value)) {
+        return value.split(':').reduce((total, part) => total * 60 + Number(part), 0)
+      }
+      return Number(value)
+    }
+
+    function normalize(data) {
+      const source = Array.isArray(data) ? data : data && (data.timestamps || data.segments || data.words || data.items)
+      if (!Array.isArray(source)) throw new Error('Expected an array, or an object containing timestamps, segments, words, or items.')
+      return source.map((item, index) => {
+        const start = numberValue(item.start ?? item.startTime ?? item.from ?? item.begin)
+        const end = numberValue(item.end ?? item.endTime ?? item.to ?? item.finish ?? source[index + 1]?.start)
+        const text = String(item.text ?? item.word ?? item.transcript ?? item.content ?? '')
+        if (!Number.isFinite(start)) throw new Error(`Item ${index + 1} has no valid start time.`)
+        return { text, start, end: Number.isFinite(end) ? end : start + 0.5 }
+      }).sort((a, b) => a.start - b.start)
+    }
+
+    function formatTime(seconds) {
+      if (!Number.isFinite(seconds)) return '00:00.000'
+      const minutes = Math.floor(seconds / 60)
+      const rest = seconds - minutes * 60
+      return `${String(minutes).padStart(2, '0')}:${rest.toFixed(3).padStart(6, '0')}`
+    }
+
+    function renderRows() {
+      if (!rows.length) {
+        elements.rows.innerHTML = '<div class="empty">No timestamps found in this file.</div>'
+        return
+      }
+      elements.rows.replaceChildren(...rows.map((row, index) => {
+        const button = document.createElement('button')
+        button.type = 'button'
+        button.className = 'row'
+        button.dataset.index = index
+        button.innerHTML = `<span class="number">${index + 1}</span><span class="time">${formatTime(row.start)}<br>${formatTime(row.end)}</span><span class="text"></span><span class="duration">${(row.end - row.start).toFixed(2)}s</span>`
+        button.querySelector('.text').textContent = row.text || '(no text)'
+        button.addEventListener('click', () => seek(index))
+        return button
+      }))
+    }
+
+    function offset() { return Number(elements.offset.value) || 0 }
+
+    function seek(index) {
+      const row = rows[index]
+      if (!row || !elements.audio.src) return
+      elements.audio.currentTime = Math.max(0, row.start + offset())
+      stopAt = elements.playOne.checked ? Math.max(0, row.end + offset()) : null
+      void elements.audio.play()
+      updateTime()
+    }
+
+    function updateTime() {
+      const current = elements.audio.currentTime || 0
+      if (stopAt !== null && current >= stopAt) {
+        elements.audio.pause()
+        elements.audio.currentTime = stopAt
+        stopAt = null
+      }
+      const adjusted = elements.audio.currentTime - offset()
+      elements.audioTime.textContent = formatTime(elements.audio.currentTime)
+      elements.jsonTime.textContent = formatTime(adjusted)
+      const nextIndex = rows.findIndex(row => adjusted >= row.start && adjusted < row.end)
+      if (nextIndex === activeIndex) return
+      document.querySelector('.row.active')?.classList.remove('active')
+      activeIndex = nextIndex
+      const active = document.querySelector(`.row[data-index="${nextIndex}"]`)
+      active?.classList.add('active')
+      if (active && elements.follow.checked) active.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+
+    elements.jsonFile.addEventListener('change', async event => {
+      const file = event.target.files[0]
+      if (!file) return
+      elements.error.style.display = 'none'
+      try {
+        rows = normalize(JSON.parse(await file.text()))
+        elements.jsonName.textContent = `${file.name} · ${rows.length} timestamps`
+        activeIndex = -1
+        renderRows()
+        updateTime()
+      } catch (reason) {
+        rows = []
+        elements.error.textContent = reason instanceof Error ? reason.message : 'Could not read the JSON file.'
+        elements.error.style.display = 'block'
+        renderRows()
+      }
+    })
+
+    elements.audioFile.addEventListener('change', event => {
+      const file = event.target.files[0]
+      if (!file) return
+      if (audioUrl) URL.revokeObjectURL(audioUrl)
+      audioUrl = URL.createObjectURL(file)
+      elements.audio.src = audioUrl
+      elements.audioName.textContent = file.name
+    })
+
+    elements.audio.addEventListener('timeupdate', updateTime)
+    elements.audio.addEventListener('seeked', updateTime)
+    elements.offset.addEventListener('input', updateTime)
+    document.querySelectorAll('[data-offset]').forEach(button => button.addEventListener('click', () => {
+      elements.offset.value = (offset() + Number(button.dataset.offset)).toFixed(2)
+      updateTime()
+    }))
+    elements.reset.addEventListener('click', () => { elements.offset.value = 0; updateTime() })
+    window.addEventListener('beforeunload', () => { if (audioUrl) URL.revokeObjectURL(audioUrl) })
+  </script>
+</body>
+</html>
