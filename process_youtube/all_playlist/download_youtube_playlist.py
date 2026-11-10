@@ -2,8 +2,8 @@
 
 The playlist URL, maximum video count, and course name are entered interactively.
 Each video becomes a numbered lesson folder containing a named MP3, ``image.jpg``,
-and ``youtube_subtitle.txt``. If English captions are unavailable, the text file
-is empty.
+and ``youtube_subtitle.txt``. If Simplified Chinese captions are unavailable,
+the text file is empty.
 """
 
 from __future__ import annotations
@@ -24,6 +24,7 @@ INVALID_WINDOWS_CHARS = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
 VTT_TAG = re.compile(r"<[^>]+>")
 
 DEFAULT_LESSON_LEVEL = "b1"
+VALID_LEVELS = ("a1", "a2", "b1", "b2", "c1", "c2")
 
 
 def safe_title(title: str, max_length: int = 70) -> str:
@@ -51,7 +52,7 @@ def create_course_description(
         "content_language": None,
         "type": None,
         "audio_duration": round(audio_duration, 2),
-        "is_system_course": None,
+        "is_system_course": True,
         "avatar": None,
         "has_lesson_images": True,
         "level": level,
@@ -92,6 +93,12 @@ def create_lesson_description(
         if "youtube_subtitle" not in description:
             description["youtube_subtitle"] = subtitle_type
             changed = True
+        if "media_source" not in description:
+            description["media_source"] = "audio"
+            changed = True
+        if "has_sentence_timestamps" not in description:
+            description["has_sentence_timestamps"] = True
+            changed = True
         if changed:
             description_path.write_text(
                 json.dumps(description, ensure_ascii=False, indent=2) + "\n",
@@ -114,7 +121,8 @@ def create_lesson_description(
         ),
         "audio_start_time": 0,
         "audio_duration": audio_duration,
-        "has_sentence_timestamps": False,
+        "media_source": "audio",
+        "has_sentence_timestamps": True,
         "youtube_subtitle": subtitle_type,
     }
     description_path.write_text(
@@ -124,22 +132,25 @@ def create_lesson_description(
     return description_path
 
 
-def english_subtitle_details(info: dict) -> tuple[str | None, str]:
-    """Return the preferred English caption language and caption type."""
+def simplified_chinese_subtitle_details(info: dict) -> tuple[str | None, str]:
+    """Return the preferred Simplified Chinese caption language and type."""
     sources = (
         ("subtitles", "professional"),
         ("automatic_captions", "auto_generated"),
     )
     for source_name, subtitle_type in sources:
         languages = info.get(source_name) or {}
-        english = [
+        simplified_chinese = [
             language
             for language in languages
-            if language.lower() == "en" or language.lower().startswith("en-")
+            if language.lower() == "zh"
+            or language.lower().startswith(("zh-hans", "zh-cn", "zh-sg"))
         ]
-        if english:
+        if simplified_chinese:
+            priority = {"zh-hans": 0, "zh-cn": 1, "zh-sg": 2, "zh": 3}
             language = sorted(
-                english, key=lambda value: (value != "en", value)
+                simplified_chinese,
+                key=lambda value: (priority.get(value.lower(), 4), value),
             )[0]
             return language, subtitle_type
     return None, "not_available"
@@ -266,7 +277,7 @@ def save_timestamps_if_requested(
     subtitle_type: str,
     enabled: bool,
 ) -> None:
-    """Create raw_timestamp.json for available English captions when requested."""
+    """Create raw_timestamp.json for available Chinese captions when requested."""
     if not enabled or subtitle_type not in {"professional", "auto_generated"}:
         return
 
@@ -301,7 +312,7 @@ def download_lesson(
     base_name = f"{index}. {title}"
     lesson_dir = output_dir / base_name
     lesson_dir.mkdir(parents=True, exist_ok=True)
-    subtitle_language, subtitle_type = english_subtitle_details(info)
+    subtitle_language, subtitle_type = simplified_chinese_subtitle_details(info)
 
     expected_files = (
         lesson_dir / f"{base_name}.mp3",
@@ -320,7 +331,7 @@ def download_lesson(
         return audio_duration_from_info(info)
 
     print(f"[{index}] {title}")
-    print(f"    English subtitles: {subtitle_type}")
+    print(f"    Simplified Chinese subtitles: {subtitle_type}")
 
     with yt_dlp.YoutubeDL(
         download_options(lesson_dir, base_name, subtitle_language, subtitle_type)
@@ -345,7 +356,12 @@ def download_lesson(
     return audio_duration_from_info(info)
 
 
-def build_course(playlist_url: str, maximum_videos: int, output_name: str) -> None:
+def build_course(
+    playlist_url: str,
+    maximum_videos: int,
+    output_name: str,
+    level: str,
+) -> None:
     course_name = safe_title(output_name, max_length=60)
     output_dir = PROJECT_DIR / "en" / course_name / "lessons"
     urls, playlist_info = playlist_video_urls(playlist_url, maximum_videos)
@@ -358,7 +374,12 @@ def build_course(playlist_url: str, maximum_videos: int, output_name: str) -> No
 
     for index, url in enumerate(urls, start=1):
         try:
-            audio_duration += download_lesson(index, url, output_dir)
+            audio_duration += download_lesson(
+                index,
+                url,
+                output_dir,
+                lesson_level=level,
+            )
         except DownloadError as error:
             failures.append((index, url))
             print(f"[{index}] Download failed: {error}")
@@ -369,6 +390,7 @@ def build_course(playlist_url: str, maximum_videos: int, output_name: str) -> No
         audio_duration,
         youtube_id=playlist_info.get("id"),
         url=playlist_url,
+        level=level,
     )
     print(f"Course description: {description_path.resolve()}")
 
@@ -397,7 +419,13 @@ def main() -> None:
     if not output_name:
         raise ValueError("Output/course name cannot be blank")
 
-    build_course(playlist_url, maximum_videos, output_name)
+    level = input("CEFR level (a1, a2, b1, b2, c1, c2): ").strip().lower()
+    if level not in VALID_LEVELS:
+        raise ValueError(
+            f"Invalid CEFR level {level!r}; choose one of: {', '.join(VALID_LEVELS)}"
+        )
+
+    build_course(playlist_url, maximum_videos, output_name, level)
 
 
 if __name__ == "__main__":
