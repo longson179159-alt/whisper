@@ -1,31 +1,50 @@
-import os
-from shutil import copy
 
-OUTPUT_FOLDER = r"C:\Users\PC\Desktop\kaggle\whisper\audio"
-WORKING_FOLDER = r"C:\Users\PC\Desktop\kaggle\whisper\en"
+from pathlib import Path
+import shutil
 
-os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+ROOT = Path(r"C:\Users\PC\Desktop\kaggle\whisper\en")
 
-for course_name in os.listdir(WORKING_FOLDER):
-    course_path = os.path.join(WORKING_FOLDER, course_name)
-    if not os.path.isdir(course_path):
+total_courses = 0
+total_audios = 0
+
+for course_infos in ROOT.rglob("course_infos"):
+    course_folder = course_infos.parent
+    lessons_folder = course_folder / "lessons"
+
+    if not lessons_folder.is_dir():
         continue
 
-    lessons_folder_path = os.path.join(course_path, "lessons")
-    if not os.path.isdir(lessons_folder_path):
-        continue
+    output_folder = course_folder / f"{course_folder.name}_audios"
+    output_folder.mkdir(exist_ok=True)
 
-    output_folder_path = os.path.join(OUTPUT_FOLDER, course_name)
-    os.makedirs(output_folder_path, exist_ok=True)
+    count = 0
 
-    for lesson_name in os.listdir(lessons_folder_path):
-        lesson_path = os.path.join(lessons_folder_path, lesson_name)
-        if not os.path.isdir(lesson_path):
+    for lesson_folder in sorted(lessons_folder.iterdir()):
+        if not lesson_folder.is_dir():
             continue
 
-        audio_path = os.path.join(lesson_path, "audio.mp3")
-        if not os.path.isfile(audio_path):
-            raise FileNotFoundError(f"Missing audio file: {audio_path}")
+        source_audio = lesson_folder / "audio.mp3"
 
-        output_audio_path = os.path.join(output_folder_path, f"{lesson_name}.mp3")
-        copy(audio_path, output_audio_path)
+        if not source_audio.is_file():
+            print(f"[MISSING] {source_audio}")
+            continue
+
+        destination = output_folder / f"{lesson_folder.name}.mp3"
+
+        if destination.exists():
+            print(f"[SKIPPED] {destination.name}")
+            continue
+
+        shutil.copy2(source_audio, destination)
+
+        print(f"[COPIED] {destination.name}")
+        count += 1
+        total_audios += 1
+
+    total_courses += 1
+    print(f"\n[COURSE] {course_folder.name}: {count} audios\n")
+
+print("=" * 50)
+print(f"Courses processed: {total_courses}")
+print(f"Audios copied: {total_audios}")
+print("Done!")
