@@ -133,21 +133,31 @@ def nw_ref_match_flags(
     return result
 
 
-def Get_timestamp(words_in_the_same_para):
+def Get_timestamp(words_in_the_same_para, prefer_whisper_boundaries=False):
     timestamp_sentence_level = []
 
     for words in words_in_the_same_para:
         sentence_text = " ".join([w["word"] for w in words])
         p_idx = words[0]["p_idx"]
 
-        first_non_null = next(
-            (w for w in words if w["has_timestamp"] and clean_word(w["word"])),
-            None,
-        )
-        final_non_null = next(
-            (w for w in reversed(words) if w["has_timestamp"] and clean_word(w["word"])),
-            None,
-        )
+        timestamp_words = [
+            w
+            for w in words
+            if w["has_timestamp"] and clean_word(w["word"])
+        ]
+
+        if prefer_whisper_boundaries:
+            # In dialogue text, interpolated speaker labels such as "Anna:"
+            # must not control the audible sentence boundary.
+            real_timestamp_words = [
+                w
+                for w in words
+                if w.get("is_whisper_timestamp", False) and clean_word(w["word"])
+            ]
+            timestamp_words = real_timestamp_words or timestamp_words
+
+        first_non_null = timestamp_words[0] if timestamp_words else None
+        final_non_null = timestamp_words[-1] if timestamp_words else None
 
         if not first_non_null or not final_non_null:
             start = end = None

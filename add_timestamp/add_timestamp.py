@@ -95,7 +95,25 @@ def interpolate_missing_timestamps(timestamp_word_level):
     return timestamp_word_level
 
 
-def build_standard_timestamp(txt_path, word_timestamp_path):
+def extend_ends_halfway_into_gaps(timestamps):
+    """Extend each chunk end halfway toward the next real Whisper start."""
+    for current, following in zip(timestamps, timestamps[1:]):
+        current_end = current["end"]
+        following_start = following["start"]
+
+        if current_end is None or following_start is None:
+            continue
+
+        gap = following_start - current_end
+        if gap <= 0:
+            continue
+
+        current["end"] = round(current_end + gap / 2, 2)
+
+    return timestamps
+
+
+def build_standard_timestamp(txt_path, word_timestamp_path, dialogue=False):
     list_ref, list_id = get_lists_txt(txt_path)
     whisper_wordtimestamp, whisper = get_lists_word_timestamp(word_timestamp_path)
     needleman_result = nw_ref_match_flags(list_ref, whisper)
@@ -114,6 +132,7 @@ def build_standard_timestamp(txt_path, word_timestamp_path):
                     "p_idx": p_idx,
                     "s_idx": s_idx,
                     "has_timestamp": True,
+                    "is_whisper_timestamp": True,
                     "start": ts["start"],
                     "end": ts["end"],
                 }
@@ -125,6 +144,7 @@ def build_standard_timestamp(txt_path, word_timestamp_path):
                     "p_idx": p_idx,
                     "s_idx": s_idx,
                     "has_timestamp": False,
+                    "is_whisper_timestamp": False,
                     "start": None,
                     "end": None,
                 }
@@ -137,7 +157,10 @@ def build_standard_timestamp(txt_path, word_timestamp_path):
         group_by_para_or_sentence(item, "s_idx") for item in timestamp_word_level_group_by_para
     ]
 
-    timestamp_result = [Get_timestamp(item) for item in timestamp_word_level_group_para_sentence]
+    timestamp_result = [
+        Get_timestamp(item, prefer_whisper_boundaries=dialogue)
+        for item in timestamp_word_level_group_para_sentence
+    ]
 
     flattened_result = []
     for paragraph in timestamp_result:
@@ -151,7 +174,7 @@ def build_standard_timestamp(txt_path, word_timestamp_path):
                 }
             )
 
-    return flattened_result
+    return extend_ends_halfway_into_gaps(flattened_result)
 
 
 def find_matching_file(folder, suffix):
@@ -167,7 +190,7 @@ def find_matching_file(folder, suffix):
     return matches[0]
 
 
-def process_word_timestamp(folder):
+def process_word_timestamp(folder, dialogue=False):
     txt_path = os.path.join(folder, "text.txt")
     word_timestamp_path = os.path.join(folder, "word_timestamp.json")
 
@@ -179,7 +202,11 @@ def process_word_timestamp(folder):
     output_name = 'timestamp.json'
     output_path = os.path.join(folder, output_name)
 
-    standard_timestamp = build_standard_timestamp(txt_path, word_timestamp_path)
+    standard_timestamp = build_standard_timestamp(
+        txt_path,
+        word_timestamp_path,
+        dialogue=dialogue,
+    )
     with open(output_path, "w", encoding="utf-8") as file:
         json.dump(standard_timestamp, file, ensure_ascii=False, indent=2)
 
@@ -191,6 +218,11 @@ def main():
         description="Create timestamp.json files from Whisper word timestamps."
     )
     parser.add_argument("folder_path", help="Folder containing the lesson folders")
+    parser.add_argument(
+        "--dialogue",
+        action="store_true",
+        help="Ignore interpolated speaker labels when calculating sentence boundaries.",
+    )
     args = parser.parse_args()
     current_folder_path = os.path.abspath(os.path.join(PROJECT_ROOT, args.folder_path))
 
@@ -204,7 +236,7 @@ def main():
 
         # debug
         # print(f"Processing folder: {folder_name}")
-        created_files.append(process_word_timestamp(folder))
+        created_files.append(process_word_timestamp(folder, dialogue=args.dialogue))
 
     for output_path in created_files:
         with open(output_path, "r", encoding="utf-8") as file:
