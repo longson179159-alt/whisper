@@ -18,7 +18,7 @@ def get_sentence_lists(subtext: str) -> list[list[str]]:
 
     for p in paragraphs:
         p = re.sub(r"\s+([。！？.!?])", r"\1", p)
-        p = re.sub(r"([。！？.!?]+)", r"\1<S>", p)
+        p = re.sub(r'([。！？.!?]+["”]?)', r"\1<S>", p)
         p = re.sub(r"[ \t]+", " ", p)
         sens = [s.strip() for s in p.split("<S>") if s.strip()]
         two_dimention_sentence_list.append(sens)
