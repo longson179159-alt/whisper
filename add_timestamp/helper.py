@@ -140,8 +140,14 @@ def Get_timestamp(words_in_the_same_para):
         sentence_text = " ".join([w["word"] for w in words])
         p_idx = words[0]["p_idx"]
 
-        first_non_null = next((w for w in words if w["has_timestamp"]), None)
-        final_non_null = next((w for w in reversed(words) if w["has_timestamp"]), None)
+        first_non_null = next(
+            (w for w in words if w["has_timestamp"] and clean_word(w["word"])),
+            None,
+        )
+        final_non_null = next(
+            (w for w in reversed(words) if w["has_timestamp"] and clean_word(w["word"])),
+            None,
+        )
 
         if not first_non_null or not final_non_null:
             start = end = None

@@ -1,5 +1,5 @@
 from add_lesson import process_text
-from add_timestamp import process_raw_timestamp
+from add_timestamp import process_word_timestamp
 import argparse
 import json
 import os
@@ -24,7 +24,7 @@ def main():
             continue
         
         created_files.append(process_text(folder))
-        timestamp_path = process_raw_timestamp(folder)
+        timestamp_path = process_word_timestamp(folder)
         created_files.append(timestamp_path)
         timestamp_files.append(timestamp_path)
 

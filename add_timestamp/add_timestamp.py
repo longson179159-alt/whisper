@@ -15,40 +15,52 @@ from helper import clean_word, get_lists_txt
 from helper import Get_timestamp, group_by_para_or_sentence, nw_ref_match_flags
 
 
-def get_lists_raw_timestamp(raw_timestamp_path):
-    with open(raw_timestamp_path, "r", encoding="utf-8") as file:
+def get_lists_word_timestamp(word_timestamp_path):
+    with open(word_timestamp_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
-    if isinstance(data, dict):
-        segments = data.get("segments", [])
-    elif isinstance(data, list):
-        segments = data
-    else:
-        raise ValueError(f"Unsupported timestamp format in {raw_timestamp_path}")
+    if not isinstance(data, dict) or not isinstance(data.get("segments"), list):
+        raise ValueError(f"Unsupported word timestamp format in {word_timestamp_path}")
 
     whisper_wordtimestamp = []
     whisper = []
 
-    for item in segments:
-        start_sentence = item["start"]
-        end_sentence = item["end"]
-        list_words = [clean_word(word) for word in item["text"].split()]
-        list_words = [word for word in list_words if word]
+    for segment in data["segments"]:
+        words = segment.get("words")
+        if not isinstance(words, list):
+            raise ValueError(
+                f"A segment has no word timestamps in {word_timestamp_path}. "
+                "Run Whisper with word_timestamps=True."
+            )
 
-        if list_words:
-            gap = (end_sentence - start_sentence) / len(list_words)
-        else:
-            gap = 1
+        for item in words:
+            if not all(key in item for key in ("word", "start", "end")):
+                raise ValueError(f"Invalid word timestamp entry in {word_timestamp_path}: {item}")
 
-        for i, word in enumerate(list_words):
+            word = clean_word(item["word"])
+            if not word:
+                continue
+
+            start = item["start"]
+            end = item["end"]
+            if start > end:
+                raise ValueError(
+                    f"Word timestamp starts after it ends in {word_timestamp_path}: {item}"
+                )
+            if whisper_wordtimestamp and start < whisper_wordtimestamp[-1]["start"]:
+                raise ValueError(f"Word timestamps are not chronological in {word_timestamp_path}")
+
             whisper.append(word)
             whisper_wordtimestamp.append(
                 {
                     "word": word,
-                    "start": round(start_sentence + gap * i, 2),
-                    "end": round(start_sentence + gap * (i + 1), 2),
+                    "start": start,
+                    "end": end,
                 }
             )
+
+    if not whisper_wordtimestamp:
+        raise ValueError(f"No usable word timestamps found in {word_timestamp_path}")
 
     return whisper_wordtimestamp, whisper
 
@@ -83,9 +95,9 @@ def interpolate_missing_timestamps(timestamp_word_level):
     return timestamp_word_level
 
 
-def build_standard_timestamp(txt_path, raw_timestamp_path):
+def build_standard_timestamp(txt_path, word_timestamp_path):
     list_ref, list_id = get_lists_txt(txt_path)
-    whisper_wordtimestamp, whisper = get_lists_raw_timestamp(raw_timestamp_path)
+    whisper_wordtimestamp, whisper = get_lists_word_timestamp(word_timestamp_path)
     needleman_result = nw_ref_match_flags(list_ref, whisper)
 
     timestamp_word_level = []
@@ -155,17 +167,19 @@ def find_matching_file(folder, suffix):
     return matches[0]
 
 
-def process_raw_timestamp(folder):
+def process_word_timestamp(folder):
     txt_path = os.path.join(folder, "text.txt")
-    raw_timestamp_path = os.path.join(folder, "raw_timestamp.json")
-    
-    if txt_path is None or raw_timestamp_path is None:
-        raise FileNotFoundError(f"Missing txt or raw timestamp file in {folder}")
+    word_timestamp_path = os.path.join(folder, "word_timestamp.json")
+
+    if not os.path.isfile(txt_path):
+        raise FileNotFoundError(f"Missing text.txt in {folder}")
+    if not os.path.isfile(word_timestamp_path):
+        raise FileNotFoundError(f"Missing word_timestamp.json in {folder}")
 
     output_name = 'timestamp.json'
     output_path = os.path.join(folder, output_name)
 
-    standard_timestamp = build_standard_timestamp(txt_path, raw_timestamp_path)
+    standard_timestamp = build_standard_timestamp(txt_path, word_timestamp_path)
     with open(output_path, "w", encoding="utf-8") as file:
         json.dump(standard_timestamp, file, ensure_ascii=False, indent=2)
 
@@ -173,7 +187,9 @@ def process_raw_timestamp(folder):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Create timestamp.json files.")
+    parser = argparse.ArgumentParser(
+        description="Create timestamp.json files from Whisper word timestamps."
+    )
     parser.add_argument("folder_path", help="Folder containing the lesson folders")
     args = parser.parse_args()
     current_folder_path = os.path.abspath(os.path.join(PROJECT_ROOT, args.folder_path))
@@ -188,7 +204,7 @@ def main():
 
         # debug
         # print(f"Processing folder: {folder_name}")
-        created_files.append(process_raw_timestamp(folder))
+        created_files.append(process_word_timestamp(folder))
 
     for output_path in created_files:
         with open(output_path, "r", encoding="utf-8") as file:
