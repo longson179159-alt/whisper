@@ -9,7 +9,7 @@ FILES_TO_DELETE = {
     "youtube_timestamp.json",
 }
 
-DRY_RUN = True  # Change to False to actually delete files
+DRY_RUN = False  # Change to False to actually delete files
 
 total_deleted = 0
 
