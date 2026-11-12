@@ -96,7 +96,7 @@ def interpolate_missing_timestamps(timestamp_word_level):
 
 
 def extend_ends_halfway_into_gaps(timestamps):
-    """Move adjacent chunk boundaries to the midpoint of each positive gap."""
+    """Extend each chunk end halfway toward the next real Whisper start."""
     for current, following in zip(timestamps, timestamps[1:]):
         current_end = current["end"]
         following_start = following["start"]
@@ -108,9 +108,7 @@ def extend_ends_halfway_into_gaps(timestamps):
         if gap <= 0:
             continue
 
-        midpoint = round(current_end + gap / 2, 2)
-        current["end"] = midpoint
-        following["start"] = midpoint
+        current["end"] = round(current_end + gap / 2, 2)
 
     return timestamps
 

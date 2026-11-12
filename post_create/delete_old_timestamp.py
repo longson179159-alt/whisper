@@ -7,7 +7,7 @@ FILES_TO_DELETE = {
     "raw_timestamp.json",
     "timestamp.json",
     "youtube_timestamp.json",
-    "word_timestamp.json",
+    # "word_timestamp.json",
     
 }
 
