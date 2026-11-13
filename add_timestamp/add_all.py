@@ -1,5 +1,6 @@
 from add_lesson import process_text
-from add_timestamp import process_raw_timestamp
+from add_timestamp import process_word_timestamp
+from add_timesatmp_2 import process_raw_timestamp
 import argparse
 import json
 import os
@@ -11,8 +12,24 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def main():
     parser = argparse.ArgumentParser(description="Create lesson.json and timestamp.json files.")
     parser.add_argument("folder_path", help="Folder containing the lesson folders")
+    parser.add_argument(
+        "--timestamp-type",
+        type=int,
+        choices=(1, 2),
+        required=True,
+        help=(
+            "Timestamp source: 1 = word_timestamp.json via add_timestamp.py; "
+            "2 = raw_timestamp.json via add_timesatmp_2.py"
+        ),
+    )
     args = parser.parse_args()
     current_folder_path = os.path.abspath(os.path.join(PROJECT_ROOT, args.folder_path))
+
+    timestamp_processor = (
+        process_word_timestamp
+        if args.timestamp_type == 1
+        else process_raw_timestamp
+    )
 
     created_files = []
     timestamp_files = []
@@ -24,7 +41,7 @@ def main():
             continue
         
         created_files.append(process_text(folder))
-        timestamp_path = process_raw_timestamp(folder)
+        timestamp_path = timestamp_processor(folder)
         created_files.append(timestamp_path)
         timestamp_files.append(timestamp_path)
 
@@ -52,5 +69,9 @@ if __name__ == "__main__":
     main()
 
 # Example:
-# python add_timestamp/add_all.py "en/how_to_stop_worrying_and_start_living/lessons"
+# Type 1: word_timestamp.json
+# python add_timestamp/add_all.py "zh/course/lessons" --timestamp-type 1
+#
+# Type 2: raw_timestamp.json
+# python add_timestamp/add_all.py "zh/course/lessons" --timestamp-type 2
 
